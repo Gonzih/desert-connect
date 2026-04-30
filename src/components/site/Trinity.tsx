@@ -12,9 +12,9 @@ const pillars = [
   {
     icon: Target,
     eyebrow: "Our Mission",
-    title: "Affordable, reliable, and resilient Internet — urban to rural.",
+    title: "An Internet that is open, globally connected, secure, and trustworthy.",
     body:
-      "We advocate for broadband equity from the Las Vegas Valley to Elko, Ely, and the tribal nations — ensuring every Nevadan has a meaningful path online.",
+      "Aligned with the ISOC 2030 Strategy: affordable, reliable, and resilient access for every Nevadan — and a safe, secure online experience that protects them.",
     cta: "See our priorities",
   },
   {
