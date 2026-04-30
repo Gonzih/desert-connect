@@ -47,6 +47,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "primary-glow": "hsl(var(--primary-glow))",
+        "primary-deep": "hsl(var(--primary-deep))",
+        "accent-soft": "hsl(var(--accent-soft))",
+        "surface-slate": {
+          DEFAULT: "hsl(var(--surface-slate))",
+          foreground: "hsl(var(--surface-slate-foreground))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -62,6 +69,24 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-primary": "var(--gradient-primary)",
+        "gradient-gold": "var(--gradient-gold)",
+        "gradient-subtle": "var(--gradient-subtle)",
+      },
+      boxShadow: {
+        elegant: "var(--shadow-elegant)",
+        card: "var(--shadow-card)",
+        glow: "var(--shadow-glow)",
+      },
+      transitionTimingFunction: {
+        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
+      },
+      fontFamily: {
+        sans: ["Inter", "system-ui", "sans-serif"],
+        display: ["'Inter Tight'", "Inter", "system-ui", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {
