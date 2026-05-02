@@ -7,7 +7,9 @@ import { Membership } from "@/components/site/Membership";
 import { Programs } from "@/components/site/Programs";
 import { Donate } from "@/components/site/Donate";
 import { Resources } from "@/components/site/Resources";
+import { PrivacyNotice } from "@/components/site/PrivacyNotice";
 import { Footer } from "@/components/site/Footer";
+import { CookieConsent } from "@/components/site/CookieConsent";
 
 const Index = () => {
   return (
@@ -22,8 +24,10 @@ const Index = () => {
         <Programs />
         <Donate />
         <Resources />
+        <PrivacyNotice />
       </main>
       <Footer />
+      <CookieConsent />
     </div>
   );
 };
