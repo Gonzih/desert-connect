@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/isoc-nevada-logo.webp";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -33,16 +34,14 @@ export const Header = () => {
       )}
     >
       <div className="container flex h-16 items-center justify-between">
-        <a href="#home" className="flex items-center gap-2.5 group">
-          <span className="grid h-9 w-9 place-items-center rounded-md bg-gradient-primary text-primary-foreground shadow-elegant">
-            <Globe className="h-5 w-5" />
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="font-display text-sm font-bold text-foreground">ISOC Nevada</span>
-            <span className="text-[10px] uppercase tracking-widest text-muted-foreground">
-              Internet Society Chapter
-            </span>
-          </span>
+        <a href="#home" className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
+          <img
+            src={logo}
+            alt="ISOC Nevada Chapter logo"
+            className="h-10 w-auto"
+            width={160}
+            height={40}
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-8">

@@ -1,6 +1,7 @@
-import { Globe, Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import logo from "@/assets/isoc-nevada-logo.webp";
 
 export const Footer = () => {
   return (
@@ -8,10 +9,11 @@ export const Footer = () => {
       <div className="container py-16 grid gap-10 lg:grid-cols-4">
         <div className="lg:col-span-2 max-w-md">
           <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center rounded-md bg-gradient-primary">
-              <Globe className="h-5 w-5 text-primary-foreground" />
-            </span>
-            <span className="font-display font-bold">ISOC Nevada Chapter</span>
+            <img
+              src={logo}
+              alt="ISOC Nevada Chapter logo"
+              className="h-12 w-auto bg-white rounded-md p-1.5"
+            />
           </div>
           <p className="mt-4 text-sm text-white/70 leading-relaxed">
             A volunteer chapter of the Internet Society advancing the 2030 Strategy across Nevada —
