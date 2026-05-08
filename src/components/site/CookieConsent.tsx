@@ -145,7 +145,7 @@ export const CookieConsent = () => {
               <div>
                 <p className="font-medium text-sm">Analytics</p>
                 <p className="text-xs text-muted-foreground mt-1">
-                  Aggregated, privacy-respecting metrics about how visitors use isoc-nv.org.
+                  Aggregated, privacy-respecting metrics about how visitors use isocnv.org.
                 </p>
               </div>
               <Switch checked={analytics} onCheckedChange={setAnalytics} aria-label="Analytics cookies" />

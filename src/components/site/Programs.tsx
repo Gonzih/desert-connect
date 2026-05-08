@@ -9,7 +9,7 @@ const workgroups = [
     status: "Active",
     body: "Crowdsourced speed-and-coverage data across all 17 counties to inform state broadband policy and federal BEAD funding.",
     lead: "Broadband Committee",
-    email: "broadband@isoc-nv.org",
+    email: "broadband@isocnv.org",
   },
   {
     icon: Lock,
@@ -17,7 +17,7 @@ const workgroups = [
     status: "Active",
     body: "Educate Nevada legislators and the public on the importance of strong, end-to-end encryption for everyday safety.",
     lead: "Policy Committee",
-    email: "policy@isoc-nv.org",
+    email: "policy@isocnv.org",
   },
   {
     icon: GraduationCap,
@@ -25,7 +25,7 @@ const workgroups = [
     status: "Active",
     body: "K-12 and community college partnerships bringing Internet fundamentals and online safety to underserved Nevada students.",
     lead: "Education Committee",
-    email: "education@isoc-nv.org",
+    email: "education@isocnv.org",
   },
   {
     icon: Scale,
@@ -33,7 +33,7 @@ const workgroups = [
     status: "Pilot",
     body: "Working with Nevada's tribal nations on community network feasibility and Indigenous data sovereignty.",
     lead: "Community Networks WG",
-    email: "tribal@isoc-nv.org",
+    email: "tribal@isocnv.org",
   },
 ];
 
@@ -119,7 +119,7 @@ export const Programs = () => {
               ))}
             </ul>
             <Button variant="hero" className="mt-7" asChild>
-              <a href="mailto:volunteer@isoc-nv.org">Volunteer with the chapter</a>
+              <a href="mailto:volunteer@isocnv.org">Volunteer with the chapter</a>
             </Button>
           </div>
 
@@ -146,10 +146,10 @@ export const Programs = () => {
               <li className="flex items-center justify-between gap-4 py-2">
                 <span className="text-white/85">General inquiries</span>
                 <a
-                  href="mailto:hello@isoc-nv.org"
+                  href="mailto:hello@isocnv.org"
                   className="text-accent hover:underline font-semibold text-xs"
                 >
-                  hello@isoc-nv.org
+                  hello@isocnv.org
                 </a>
               </li>
             </ul>

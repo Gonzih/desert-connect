@@ -64,8 +64,7 @@ export const Footer = () => {
             ))}
           </div>
           <p className="mt-6 text-xs text-white/55 leading-relaxed">
-            Las Vegas · Reno · Carson City<br />
-            board@isoc-nv.org
+            Las Vegas · Reno · Carson City
           </p>
         </div>
       </div>
