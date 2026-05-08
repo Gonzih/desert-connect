@@ -71,10 +71,10 @@ export const Donate = () => {
                 supporting the open Internet. Tiered benefits available.
               </p>
               <a
-                href="mailto:sponsorship@isoc-nv.org"
+                href="mailto:sponsorship@isocnv.org"
                 className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
               >
-                <Mail className="h-4 w-4" /> sponsorship@isoc-nv.org
+                <Mail className="h-4 w-4" /> sponsorship@isocnv.org
               </a>
             </div>
 

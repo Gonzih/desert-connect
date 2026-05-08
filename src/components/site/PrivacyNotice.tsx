@@ -16,7 +16,7 @@ export const PrivacyNotice = () => {
           The Internet Society Nevada Chapter ("ISOC Nevada", "we") is committed to data minimization
           and the principles of the EU General Data Protection Regulation (GDPR), the UK GDPR, and
           comparable U.S. state laws (CCPA/CPRA). This notice summarizes how we handle personal
-          data on isoc-nv.org.
+          data on isocnv.org.
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -49,8 +49,8 @@ export const PrivacyNotice = () => {
             <h3 className="mt-3 font-display font-semibold">Contact the chapter</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Email{" "}
-              <a href="mailto:privacy@isoc-nv.org" className="text-primary hover:underline">
-                privacy@isoc-nv.org
+              <a href="mailto:privacy@isocnv.org" className="text-primary hover:underline">
+                privacy@isocnv.org
               </a>{" "}
               for any data request. We respond within 30 days.
             </p>
