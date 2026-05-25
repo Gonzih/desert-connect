@@ -49,7 +49,7 @@ export const PrivacyNotice = () => {
             <h3 className="mt-3 font-display font-semibold">Contact the chapter</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Email{" "}
-              <a href="mailto:privacy@isocnv.org" className="text-primary hover:underline">
+              <a href="mailto:isocnevada@gmail.com" className="text-primary hover:underline">
                 privacy@isocnv.org
               </a>{" "}
               for any data request. We respond within 30 days.
