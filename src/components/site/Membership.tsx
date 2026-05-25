@@ -1,5 +1,6 @@
-import { PlayCircle, UserPlus, MessageSquare, Users2, Eye, Hand, Handshake } from "lucide-react";
+import { PlayCircle, UserPlus, MessageSquare, Users2, Eye, Hand, Handshake, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const steps = [
   {
@@ -64,6 +65,37 @@ export const Membership = () => {
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <button
+                    type="button"
+                    className="group relative flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-card hover:shadow-elegant transition-smooth text-left sm:col-span-2"
+                  >
+                    <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-gradient-primary text-primary-foreground">
+                      <Film className="h-6 w-6" />
+                    </div>
+                    <div>
+                      <p className="font-display font-semibold text-foreground">About Us</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">Our community impact story</p>
+                    </div>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-3xl p-0 overflow-hidden bg-background">
+                  <DialogHeader className="px-6 pt-6">
+                    <DialogTitle>About ISOC Nevada</DialogTitle>
+                  </DialogHeader>
+                  <div className="px-6 pb-6">
+                    <video
+                      controls
+                      preload="metadata"
+                      className="w-full rounded-lg bg-black"
+                      src="/isoc-nevada-about.mp4"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </DialogContent>
+              </Dialog>
               <a
                 href="#"
                 className="group relative flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-card hover:shadow-elegant transition-smooth"
