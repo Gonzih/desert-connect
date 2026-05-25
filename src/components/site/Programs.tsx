@@ -78,7 +78,7 @@ export const Programs = () => {
               <div className="mt-5 pt-5 border-t border-border flex items-center justify-between text-xs">
                 <span className="text-muted-foreground">{w.lead}</span>
                 <a
-                  href={`mailto:${w.email}`}
+                  href={`mailto:isocnevada@gmail.com`}
                   className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
                 >
                   <Mail className="h-3.5 w-3.5" /> {w.email}
@@ -119,7 +119,7 @@ export const Programs = () => {
               ))}
             </ul>
             <Button variant="hero" className="mt-7" asChild>
-              <a href="mailto:volunteer@isocnv.org">Volunteer with the chapter</a>
+              <a href="mailto:isocnevada@gmail.com">Volunteer with the chapter</a>
             </Button>
           </div>
 
@@ -136,7 +136,7 @@ export const Programs = () => {
                 >
                   <span className="text-white/85">{w.lead}</span>
                   <a
-                    href={`mailto:${w.email}`}
+                    href={`mailto:isocnevada@gmail.com`}
                     className="text-accent hover:underline font-semibold text-xs"
                   >
                     {w.email}
@@ -146,7 +146,7 @@ export const Programs = () => {
               <li className="flex items-center justify-between gap-4 py-2">
                 <span className="text-white/85">General inquiries</span>
                 <a
-                  href="mailto:hello@isocnv.org"
+                  href="mailto:isocnevada@gmail.com"
                   className="text-accent hover:underline font-semibold text-xs"
                 >
                   hello@isocnv.org
