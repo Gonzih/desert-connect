@@ -17,6 +17,28 @@ const Index = () => {
       <Header />
       <main className="flex-1">
         <Hero />
+        {/* Metaweb Course — video banner */}
+        <section className="bg-surface-slate py-16">
+          <div className="container max-w-4xl flex flex-col items-center gap-6">
+            <video
+              src="https://course.metawebbook.com/begin-your-journey-v2.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full rounded-xl shadow-2xl"
+              style={{ aspectRatio: '16/9', objectFit: 'cover' }}
+            />
+            <a
+              href="https://course.metawebbook.com/begin-your-journey"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-white shadow-lg hover:opacity-90 transition"
+            >
+              Enroll Now
+            </a>
+          </div>
+        </section>
         <Trinity />
         <GlobalRoots />
         <Events />
