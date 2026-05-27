@@ -15,15 +15,15 @@ const steps = [
     n: "02",
     icon: MessageSquare,
     title: "Join the Nevada community",
-    body: "Drop into our Discord or WhatsApp channel and introduce yourself to the chapter.",
-    cta: "Join Discord",
-    href: "#",
+    body: "Complete the application for access to our chapter.",
+    cta: "Join ISOCNV",
+    href: "https://forms.gle/NgvHEqj1LFFQ9NJ7A",
   },
   {
     n: "03",
     icon: Users2,
     title: "Pick a workgroup",
-    body: "Choose an active workgroup — broadband, policy, encryption, or education.",
+    body: "Choose an active workgroup to learn more.",
     cta: "See workgroups",
     href: "#programs",
   },
@@ -43,6 +43,11 @@ const levels = [
   {
     icon: Handshake,
     name: "Partner",
+    body: "Organizations, sponsors, and institutional allies advancing chapter initiatives.",
+  },
+  {
+    icon: UserPlus,
+    name: "Admin or Workgroup Champion",
     body: "Organizations, sponsors, and institutional allies advancing chapter initiatives.",
   },
 ];
