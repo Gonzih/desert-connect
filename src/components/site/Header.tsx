@@ -61,7 +61,7 @@ export const Header = () => {
             <a href="#membership">Sign in</a>
           </Button>
           <Button variant="hero" size="sm" asChild>
-            <a href="#membership">Join the Chapter</a>
+            <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">Join the Chapter</a>
           </Button>
         </div>
 
@@ -88,7 +88,7 @@ export const Header = () => {
               </a>
             ))}
             <Button variant="hero" size="sm" asChild className="mt-2">
-              <a href="#membership">Join the Chapter</a>
+              <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">Join the Chapter</a>
             </Button>
           </div>
         </div>

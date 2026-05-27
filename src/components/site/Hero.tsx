@@ -39,7 +39,7 @@ export const Hero = () => {
 
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <Button variant="hero" size="xl" asChild>
-              <a href="#membership">
+              <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">
                 Join the Chapter
                 <ArrowRight className="ml-1.5 h-4 w-4" />
               </a>
