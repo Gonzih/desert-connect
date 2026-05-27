@@ -3,20 +3,20 @@ import { Button } from "@/components/ui/button";
 
 const events = [
   {
-    type: "Board Meeting",
-    title: "Q2 Board of Directors Meeting",
-    date: "May 14, 2026",
-    time: "6:00 PM PT",
+    type: "MetaWeb Course",
+    title: "How a meta-layer above today's Web can eliminate misinformation, enable collective intelligence, and reshape how humans and AI interact online.",
+    date: "June 22, 2026",
+    time: "10:30 AM PT",
     location: "Virtual (Zoom)",
     icon: Video,
     cta: "Register",
   },
   {
     type: "Chapter Meetup",
-    title: "Broadband Equity in Rural Nevada",
-    date: "May 28, 2026",
+    title: "Nevada ISOC and you",
+    date: "June 15, 2026",
     time: "5:30 PM PT",
-    location: "UNLV — Las Vegas",
+    location: "Zoom Room",
     icon: MapPin,
     cta: "Register",
   },
