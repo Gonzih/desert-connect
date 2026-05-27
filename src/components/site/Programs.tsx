@@ -1,4 +1,4 @@
-import { Radio, Lock, GraduationCap, Scale, Mail, ArrowUpRight } from "lucide-react";
+import { Radio, Lock, GraduationCap, Scale, Mail, ArrowUpRight, Orbit, Landmark, Wifi, BookOpen, Network } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
@@ -35,6 +35,38 @@ const workgroups = [
     lead: "Community Networks WG",
     email: "tribal@isocnv.org",
   },
+  {
+    icon: BookOpen,
+    name: "The MetaLayer Initiative",
+    status: "Pilot",
+    body: "Working with The MetaLayer to explore decentralized identity solutions for the Internet.",
+    lead: "Community Networks WG",
+    email: "metaweb@isocnv.org",
+  },
+  {
+    icon: Orbit,
+    name: "Onboarding, Outreach, and Engagement",
+    status: "Pilot",
+    body: "Working with Nevada's communities towards better network connectivity and data literacy.",
+    lead: "Community Networks WG",
+    email: "community@isocnv.org",
+  },
+  {
+    icon: Wifi,
+    name: "Nevada Digital Policy and Regulations",
+    status: "Pilot",
+    body: "Nevada's Digital Policy and Regulations workgroup.",
+    lead: "Community Networks WG",
+    email: "nevada@isocnv.org",
+  }, 
+  {
+    icon: Landmark,
+    name: "Nevada Connectivity Initiative",
+    status: "Pilot",
+    body: "Working with Nevada's legislators to advance connectivity policies.",
+    lead: "Community Networks WG",
+    email: "nvstate@isocnv.org",
+  },
 ];
 
 const helpWanted = [
@@ -61,27 +93,31 @@ export const Programs = () => {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
+        <div className="mt-12 grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {workgroups.map((w) => (
             <article
               key={w.name}
-              className="group flex flex-col rounded-xl border border-border bg-card p-7 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-smooth"
+              className="group flex min-h-[13rem] flex-col rounded-lg border border-border bg-card p-4 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-smooth"
             >
-              <div className="flex items-start justify-between gap-4">
-                <div className="grid h-12 w-12 place-items-center rounded-lg bg-gradient-primary text-primary-foreground shadow-elegant">
-                  <w.icon className="h-5 w-5" />
+              <div className="flex items-start justify-between gap-3">
+                <div className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-gradient-primary text-primary-foreground shadow-elegant">
+                  <w.icon className="h-4 w-4" />
                 </div>
                 <Badge variant={w.status === "Active" ? "default" : "secondary"}>{w.status}</Badge>
               </div>
-              <h3 className="mt-5 font-display text-xl font-bold text-foreground">{w.name}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed flex-1">{w.body}</p>
-              <div className="mt-5 pt-5 border-t border-border flex items-center justify-between text-xs">
+              <h3 className="mt-4 font-display text-base font-bold leading-snug text-foreground">
+                {w.name}
+              </h3>
+              <p className="mt-2 line-clamp-2 flex-1 text-xs leading-relaxed text-muted-foreground">
+                {w.body}
+              </p>
+              <div className="mt-4 flex items-center justify-between gap-2 border-t border-border pt-3 text-[11px]">
                 <span className="text-muted-foreground">{w.lead}</span>
                 <a
                   href={`mailto:isocnevada@gmail.com`}
-                  className="inline-flex items-center gap-1 font-semibold text-primary hover:underline"
+                  className="inline-flex min-w-0 items-center gap-1 font-semibold text-primary hover:underline"
                 >
-                  <Mail className="h-3.5 w-3.5" /> {w.email}
+                  <Mail className="h-3 w-3 shrink-0" /> <span className="truncate">{w.email}</span>
                 </a>
               </div>
             </article>
