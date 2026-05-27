@@ -35,7 +35,7 @@ const Index = () => {
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-white shadow-lg hover:opacity-90 transition"
             >
-              Enroll Now
+              Your ISOC Nevada Membership includes a discounted rate. Enroll Now!
             </a>
           </div>
         </section>
