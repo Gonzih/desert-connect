@@ -164,17 +164,17 @@ export const Membership = () => {
         <div className="mt-20">
           <h3 className="font-display text-2xl font-bold text-foreground">Engagement Levels</h3>
           <p className="mt-2 text-muted-foreground">Find the level of involvement that fits you.</p>
-          <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-5 grid-cols-2 md:grid-cols-4">
             {levels.map((l) => (
               <div
                 key={l.name}
-                className="rounded-xl border border-border bg-card p-6 shadow-card hover:shadow-elegant transition-smooth"
+                className="rounded-xl border border-border bg-card p-4 shadow-card hover:shadow-elegant transition-smooth"
               >
-                <div className="grid h-11 w-11 place-items-center rounded-lg bg-accent/15 text-accent">
-                  <l.icon className="h-5 w-5" />
+                <div className="grid h-9 w-9 place-items-center rounded-lg bg-accent/15 text-accent">
+                  <l.icon className="h-4 w-4" />
                 </div>
-                <p className="mt-5 font-display text-lg font-bold text-foreground">{l.name}</p>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{l.body}</p>
+                <p className="mt-3 font-display text-base font-bold text-foreground">{l.name}</p>
+                <p className="mt-1 text-xs text-muted-foreground leading-relaxed">{l.body}</p>
               </div>
             ))}
           </div>
