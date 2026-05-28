@@ -1,6 +1,7 @@
 import { PlayCircle, UserPlus, MessageSquare, Users2, Eye, Hand, Handshake, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import rubyMountainsBackground from "ruby-mountains-events-background.png";
 
 const steps = [
   {
@@ -54,8 +55,15 @@ const levels = [
 
 export const Membership = () => {
   return (
-    <section id="membership" className="py-20 md:py-28 bg-gradient-subtle">
-      <div className="container">
+    <section id="membership" className="relative overflow-hidden py-20 md:py-28 bg-gradient-subtle">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${rubyMountainsBackground})` }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-background/72" aria-hidden="true" />
+
+      <div className="container relative">
         <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] lg:items-start">
           <div>
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
@@ -74,7 +82,7 @@ export const Membership = () => {
                 <DialogTrigger asChild>
                   <button
                     type="button"
-                    className="group relative flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-card hover:shadow-elegant transition-smooth text-left sm:col-span-2"
+                    className="group relative flex items-center gap-4 rounded-xl border border-border/80 bg-card/90 p-5 shadow-card backdrop-blur-sm hover:shadow-elegant transition-smooth text-left sm:col-span-2"
                   >
                     <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-gradient-primary text-primary-foreground">
                       <Film className="h-6 w-6" />
@@ -103,7 +111,7 @@ export const Membership = () => {
               </Dialog>
               <a
                 href="#"
-                className="group relative flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-card hover:shadow-elegant transition-smooth"
+                className="group relative flex items-center gap-4 rounded-xl border border-border/80 bg-card/90 p-5 shadow-card backdrop-blur-sm hover:shadow-elegant transition-smooth"
               >
                 <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-gradient-primary text-primary-foreground">
                   <PlayCircle className="h-6 w-6" />
@@ -115,7 +123,7 @@ export const Membership = () => {
               </a>
               <a
                 href="#"
-                className="group relative flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-card hover:shadow-elegant transition-smooth"
+                className="group relative flex items-center gap-4 rounded-xl border border-border/80 bg-card/90 p-5 shadow-card backdrop-blur-sm hover:shadow-elegant transition-smooth"
               >
                 <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent">
                   <UserPlus className="h-6 w-6" />
@@ -128,7 +136,7 @@ export const Membership = () => {
             </div>
           </div>
 
-          <div className="rounded-2xl bg-card border border-border p-7 shadow-elegant">
+          <div className="rounded-2xl bg-card/90 border border-border/80 p-7 shadow-elegant backdrop-blur-sm">
             <h3 className="font-display text-xl font-bold text-foreground">
               Get started in 3 steps
             </h3>
@@ -168,7 +176,7 @@ export const Membership = () => {
             {levels.map((l) => (
               <div
                 key={l.name}
-                className="rounded-xl border border-border bg-card p-4 shadow-card hover:shadow-elegant transition-smooth"
+                className="rounded-xl border border-border/80 bg-card/90 p-4 shadow-card backdrop-blur-sm hover:shadow-elegant transition-smooth"
               >
                 <div className="grid h-9 w-9 place-items-center rounded-lg bg-accent/15 text-accent">
                   <l.icon className="h-4 w-4" />
