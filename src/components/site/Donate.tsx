@@ -1,10 +1,18 @@
 import { Heart, Building2, Mail, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import blackRockDesertBackground from "./black-rock-desert-donate-background.png";
 
 export const Donate = () => {
   return (
-    <section id="donate" className="py-20 md:py-28 bg-gradient-subtle">
-      <div className="container">
+    <section id="donate" className="relative overflow-hidden py-20 md:py-28 bg-gradient-subtle">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${blackRockDesertBackground})` }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-background/72" aria-hidden="true" />
+
+      <div className="container relative">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Donation & Support
@@ -20,7 +28,7 @@ export const Donate = () => {
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
           {/* Zeffy widget placeholder */}
-          <div className="rounded-2xl border border-border bg-card p-2 shadow-elegant overflow-hidden">
+          <div className="rounded-2xl border border-border/80 bg-card/90 p-2 shadow-elegant overflow-hidden backdrop-blur-sm">
             <div className="rounded-xl bg-gradient-primary p-8 text-primary-foreground">
               <div className="flex items-center gap-3">
                 <Heart className="h-5 w-5 text-accent" />
@@ -59,7 +67,7 @@ export const Donate = () => {
 
           {/* Offline giving */}
           <div className="space-y-5">
-            <div className="rounded-2xl border border-border bg-card p-7 shadow-card">
+            <div className="rounded-2xl border border-border/80 bg-card/90 p-7 shadow-card backdrop-blur-sm">
               <div className="grid h-11 w-11 place-items-center rounded-lg bg-accent/15 text-accent">
                 <Building2 className="h-5 w-5" />
               </div>
@@ -78,7 +86,7 @@ export const Donate = () => {
               </a>
             </div>
 
-            <div className="rounded-2xl border border-border bg-card p-7 shadow-card">
+            <div className="rounded-2xl border border-border/80 bg-card/90 p-7 shadow-card backdrop-blur-sm">
               <div className="grid h-11 w-11 place-items-center rounded-lg bg-primary/10 text-primary">
                 <Mail className="h-5 w-5" />
               </div>
