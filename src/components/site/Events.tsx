@@ -1,6 +1,5 @@
 import { Calendar, MapPin, Video, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import rubyMountainsEventsBackground from "./ruby-mountains-events-background.png";
 
 const events = [
   {
@@ -34,15 +33,8 @@ const events = [
 
 export const Events = () => {
   return (
-    <section id="events" className="relative overflow-hidden py-20 md:py-28">
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${rubyMountainsEventsBackground})` }}
-        aria-hidden="true"
-      />
-      <div className="absolute inset-0 bg-background/72" aria-hidden="true" />
-
-      <div className="container relative">
+    <section id="events" className="py-20 md:py-28">
+      <div className="container">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-2xl">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
@@ -56,7 +48,7 @@ export const Events = () => {
               public.
             </p>
           </div>
-          <Button variant="outline" className="bg-background/80 backdrop-blur-sm" asChild>
+          <Button variant="outline" asChild>
             <a href="#events">
               View full calendar <ArrowRight className="ml-1 h-4 w-4" />
             </a>
@@ -67,7 +59,7 @@ export const Events = () => {
           {events.map((e) => (
             <article
               key={e.title}
-              className="group flex flex-col rounded-xl border border-border/80 bg-card/90 p-6 shadow-card backdrop-blur-sm hover:shadow-elegant hover:-translate-y-1 transition-smooth"
+              className="group flex flex-col rounded-xl border border-border bg-card p-6 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-smooth"
             >
               <div className="flex items-center justify-between">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-primary">
