@@ -32,8 +32,8 @@ export const Hero = () => {
           </h1>
 
           <p className="mt-6 max-w-2xl text-base sm:text-lg text-white/85 leading-relaxed">
-            We're building an open, globally-connected, secure, and trustworthy Internet — from the
-            Las Vegas Strip to the most remote corners of rural Nevada. Join the movement closing
+            We're building an open, globally-connected, secure, and trustworthy Internet — from Reno to
+            Las Vegas to the most remote corners of rural Nevada. Join the movement closing
             the digital divide and defending encryption.
           </p>
 
