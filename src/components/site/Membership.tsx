@@ -65,8 +65,8 @@ export const Membership = () => {
               Welcome to ISOC Nevada — here's how to plug in.
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
-              Whether you're a network engineer, educator, policymaker, student, or simply care
-              about a free and open Internet — there's a place for you in the chapter.
+              Whether you're a network engineer, educator, policymaker, rancher, student, or simply care
+              about a free and open Internet — there's a place for you in the ISOC Nevada chapter.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -109,8 +109,8 @@ export const Membership = () => {
                   <PlayCircle className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="font-display font-semibold text-foreground">Watch orientation</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">5-min welcome video</p>
+                  <p className="font-display font-semibold text-foreground">Watch orientation - Coming Soon</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">5-min welcome video - Coming Soon</p>
                 </div>
               </a>
               <a
@@ -121,8 +121,8 @@ export const Membership = () => {
                   <UserPlus className="h-6 w-6" />
                 </div>
                 <div>
-                  <p className="font-display font-semibold text-foreground">Member handbook</p>
-                  <p className="text-xs text-muted-foreground mt-0.5">PDF · onboarding guide</p>
+                  <p className="font-display font-semibold text-foreground">Member handbook - Coming Soon</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">PDF · onboarding guide - Coming Soon</p>
                 </div>
               </a>
             </div>
