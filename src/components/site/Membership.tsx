@@ -16,7 +16,7 @@ const steps = [
     n: "02",
     icon: MessageSquare,
     title: "Join the Nevada community",
-    body: "Complete the application for access to our chapter.",
+    body: "Grab your ISOC Global member number and complete the application to join our chapter.",
     cta: "Join ISOCNV",
     href: "https://forms.gle/NgvHEqj1LFFQ9NJ7A",
   },
