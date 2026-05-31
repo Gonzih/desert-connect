@@ -5,7 +5,7 @@ const events = [
   {
     type: "MetaWeb Course",
     title: "How a meta-layer above today's Web can eliminate misinformation, enable collective intelligence, and reshape how humans and AI interact online.",
-    date: "June 22, 2026",
+    date: "June 15, 2026",
     time: "11:30 AM PT - 1:00 PM",
     location: "Virtual (Zoom)",
     icon: Video,
