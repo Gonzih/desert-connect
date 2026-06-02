@@ -37,9 +37,9 @@ const workgroups = [
   },
   {
     icon: BookOpen,
-    name: "The MetaLayer Initiative",
+    name: "The Meta-Layer Initiative",
     status: "Pilot",
-    body: "Working with The MetaLayer to explore decentralized identity solutions for the Internet.",
+    body: "Working with The Meta-Layer to explore decentralized identity solutions for the Internet.",
     lead: "Community Networks WG",
     email: "metaweb@isocnv.org",
   },
