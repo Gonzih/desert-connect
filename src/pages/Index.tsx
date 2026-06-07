@@ -4,7 +4,7 @@ import { Trinity } from "@/components/site/Trinity";
 import { GlobalRoots } from "@/components/site/GlobalRoots";
 import { Events } from "@/components/site/Events";
 import { Membership } from "@/components/site/Membership";
-import { Programs } from "@/components/site/Programs";
+import { Projects } from "@/components/site/Projects";
 import { Donate } from "@/components/site/Donate";
 import { Resources } from "@/components/site/Resources";
 import { PrivacyNotice } from "@/components/site/PrivacyNotice";
@@ -43,7 +43,7 @@ const Index = () => {
         <GlobalRoots />
         <Events />
         <Membership />
-        <Programs />
+        <Projects />
         <Donate />
         <Resources />
         <PrivacyNotice />
