@@ -76,9 +76,9 @@ const helpWanted = [
   { role: "Communications Writer", group: "Chapter-wide", commitment: "~3 hrs/mo" },
 ];
 
-export const Programs = () => {
+export const Projects = () => {
   return (
-    <section id="programs" className="py-20 md:py-28">
+    <section id="projects" className="py-20 md:py-28">
       <div className="container">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
