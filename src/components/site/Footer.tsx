@@ -42,7 +42,7 @@ export const Footer = () => {
           <ul className="mt-4 space-y-2.5 text-sm text-white/75">
             <li><a href="#home" className="hover:text-white">About</a></li>
             <li><a href="#membership" className="hover:text-white">Membership</a></li>
-            <li><a href="#programs" className="hover:text-white">Workgroups</a></li>
+            <li><a href="#projects" className="hover:text-white">Workgroups</a></li>
             <li><a href="#resources" className="hover:text-white">Bylaws & Minutes</a></li>
             <li><a href="#donate" className="hover:text-white">Donate</a></li>
           </ul>
@@ -53,7 +53,7 @@ export const Footer = () => {
             Connect
           </h4>
           <div className="mt-4 flex gap-3">
-            {[Twitter, Linkedin, Github].map((Icon, i) => (
+            {[Discord, Linkedin, Github].map((Icon, i) => (
               <a
                 key={i}
                 href="#"
@@ -64,7 +64,7 @@ export const Footer = () => {
             ))}
           </div>
           <p className="mt-6 text-xs text-white/55 leading-relaxed">
-            Las Vegas · Reno · Carson City
+            Reno · Carson City · Las Vegas  
           </p>
         </div>
       </div>
