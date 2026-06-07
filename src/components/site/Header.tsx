@@ -3,12 +3,13 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/isoc-nevada-logo.webp";
+import { Link } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Global Roots", href: "#global" },
   { label: "Membership", href: "#membership" },
-  { label: "Projects", href: "/Projects" },
+  { label: "Projects", href: "/projects" },
   { label: "Resources", href: "#resources" },
   { label: "Donate", href: "#donate" },
 ];
@@ -44,8 +45,17 @@ export const Header = () => {
           />
         </a>
 
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((l) => (
+       <nav className="hidden md:flex items-center gap-8">
+            {navLinks.map((l) =>
+              l.href.startsWith("/") ? (
+                <Link
+                key={l.href}
+                to={l.href}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
+           >
+              {l.label}
+            </Link>
+          ) : (
             <a
               key={l.href}
               href={l.href}
@@ -53,8 +63,9 @@ export const Header = () => {
             >
               {l.label}
             </a>
-          ))}
-        </nav>
+          )
+        )}
+      </nav>
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
