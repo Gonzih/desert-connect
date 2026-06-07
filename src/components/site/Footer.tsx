@@ -53,7 +53,7 @@ export const Footer = () => {
             Connect
           </h4>
           <div className="mt-4 flex gap-3">
-            {[Discord, Linkedin, Github].map((Icon, i) => (
+            {[Twitter, Linkedin, Github].map((Icon, i) => (
               <a
                 key={i}
                 href="#"
