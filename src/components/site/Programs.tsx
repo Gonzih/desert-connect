@@ -108,8 +108,7 @@ export const Programs = () => {
               <h3 className="mt-4 font-display text-base font-bold leading-snug text-foreground">
                 {w.name}
               </h3>
-              - <p className="mt-2 line-clamp-2 flex-1 text-xs leading-relaxed text-muted-foreground">
-+ <p className="mt-2 flex-1 text-xs leading-relaxed text-muted-foreground">
+              <p className="mt-2 flex-1 text-xs leading-relaxed text-muted-foreground">
                 {w.body}
               </p>
               <div className="mt-4 flex items-center justify-between gap-2 border-t border-border pt-3 text-[11px]">
