@@ -215,8 +215,8 @@ const Projects = () => {
             <nav className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Projects">
               {projects.map((project) => (
                 <a
-                  key={projects.slug}
-                  href={`#${projects.slug}`}
+                  key={project.slug}
+                  href={`#${project.slug}`}
                   className="group flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-card transition-smooth hover:-translate-y-0.5 hover:shadow-elegant"
                 >
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-gradient-primary text-primary-foreground">
@@ -233,7 +233,7 @@ const Projects = () => {
 
         <section className="py-16 md:py-20">
           <div className="container space-y-8">
-            {projects.map((project) => (
+              {projects.map((project) => (
               <article
                 id={project.slug}
                 key={project.slug}
@@ -299,7 +299,7 @@ const Projects = () => {
 
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5 text-sm">
                   <span className="text-muted-foreground">{project.lead}</span>
-                  <Link to="/#projects" className="font-semibold text-primary hover:underline">
+                  <Link to="/#projects" className="font-semibold text-primary hover:underline">                   
                     Return to project list
                   </Link>
                 </div>
