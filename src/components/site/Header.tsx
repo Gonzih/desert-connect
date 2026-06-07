@@ -85,18 +85,18 @@ export const Header = () => {
         </button>
       </div>
 
-      {open && (
+            {open && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="container py-4 flex flex-col gap-3">
             {navLinks.map((l) =>
-                l.href.startsWith("/") ? (
-                  <Link
-                    key={l.href}
-                    to={l.href}
-                    onClick={() => setOpen(false)}
-                    className="py-2 text-sm font-medium text-foreground/80"
-                  >
-                    {l.label}
+              l.href.startsWith("/") ? (
+                <Link
+                  key={l.href}
+                  to={l.href}
+                  onClick={() => setOpen(false)}
+                  className="py-2 text-sm font-medium text-foreground/80"
+                >
+                  {l.label}
                 </Link>
               ) : (
                 <a
@@ -110,6 +110,14 @@ export const Header = () => {
               )
             )}
             <Button variant="hero" size="sm" asChild className="mt-2">
+              <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">
+                Join the Chapter
+              </a>
+            </Button>
+          </div>
+        </div>
+      )}
+    </header>
         <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">
           Join the Chapter
         </a>
