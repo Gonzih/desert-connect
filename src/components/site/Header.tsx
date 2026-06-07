@@ -118,13 +118,5 @@ export const Header = () => {
         </div>
       )}
     </header>
-        <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">
-          Join the Chapter
-        </a>
-      </Button>
-    </div>
-  </div>
-)}
-    </header>
   );
 };
