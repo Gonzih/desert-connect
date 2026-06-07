@@ -18,7 +18,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { CookieConsent } from "@/components/site/CookieConsent";
 
-const programs = [
+const projects = [
   {
     icon: Radio,
     slug: "nevada-broadband-mapping",
@@ -192,38 +192,38 @@ const Projects = () => {
         <section className="bg-gradient-subtle py-16 md:py-24">
           <div className="container">
             <Button variant="ghost" className="mb-8" asChild>
-              <Link to="/#programs">
+              <Link to="/#projects">
                 <ArrowLeft className="mr-2 h-4 w-4" />
-                Back to home programs
+                Back to home projects
               </Link>
             </Button>
 
             <div className="max-w-3xl">
               <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-                Programs
+                Projects
               </span>
               <h1 className="mt-3 font-display text-4xl font-bold text-foreground md:text-5xl">
                 Chapter projects and workgroups
               </h1>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-                These programs are where ISOC Nevada turns Internet Society principles into
+                These projects are where ISOC Nevada turns Internet Society principles into
                 practical work for access, security, education, policy, and community connectivity
                 across Nevada.
               </p>
             </div>
 
-            <nav className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Programs">
-              {programs.map((program) => (
+            <nav className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Projects">
+              {projects.map((projects) => (
                 <a
-                  key={program.slug}
-                  href={`#${program.slug}`}
+                  key={projects.slug}
+                  href={`#${projects.slug}`}
                   className="group flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-card transition-smooth hover:-translate-y-0.5 hover:shadow-elegant"
                 >
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-gradient-primary text-primary-foreground">
-                    <program.icon className="h-4 w-4" />
+                    <project.icon className="h-4 w-4" />
                   </span>
                   <span className="text-sm font-semibold leading-snug text-foreground group-hover:text-primary">
-                    {program.name}
+                    {project.name}
                   </span>
                 </a>
               ))}
@@ -233,28 +233,28 @@ const Projects = () => {
 
         <section className="py-16 md:py-20">
           <div className="container space-y-8">
-            {programs.map((program) => (
+            {project.map((project) => (
               <article
-                id={program.slug}
-                key={program.slug}
+                id={project.slug}
+                key={project.slug}
                 className="scroll-mt-24 rounded-lg border border-border bg-card p-6 shadow-card md:p-8"
               >
                 <div className="flex flex-col gap-4 border-b border-border pb-5 md:flex-row md:items-start md:justify-between">
                   <div className="flex gap-4">
                     <div className="grid h-11 w-11 shrink-0 place-items-center rounded-md bg-gradient-primary text-primary-foreground shadow-elegant">
-                      <program.icon className="h-5 w-5" />
+                      <project.icon className="h-5 w-5" />
                     </div>
                     <div>
                       <div className="flex flex-wrap items-center gap-3">
                         <h2 className="font-display text-2xl font-bold text-foreground">
-                          {program.name}
+                          {project.name}
                         </h2>
-                        <Badge variant={program.status === "Active" ? "default" : "secondary"}>
-                          {program.status}
+                        <Badge variant={project.status === "Active" ? "default" : "secondary"}>
+                          {project.status}
                         </Badge>
                       </div>
                       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                        {program.summary}
+                        {project.summary}
                       </p>
                     </div>
                   </div>
@@ -264,7 +264,7 @@ const Projects = () => {
                     className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-primary hover:underline"
                   >
                     <Mail className="h-4 w-4" />
-                    {program.email}
+                    {project.email}
                   </a>
                 </div>
 
@@ -272,14 +272,14 @@ const Projects = () => {
                   <div>
                     <h3 className="font-display text-lg font-bold text-foreground">Purpose</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {program.purpose}
+                      {project.purpose}
                     </p>
                   </div>
 
                   <div>
                     <h3 className="font-display text-lg font-bold text-foreground">Function</h3>
                     <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      {program.function}
+                      {project.function}
                     </p>
                   </div>
 
@@ -288,7 +288,7 @@ const Projects = () => {
                       Current Focus
                     </h3>
                     <ul className="mt-2 space-y-2 text-sm leading-relaxed text-muted-foreground">
-                      {program.priorities.map((priority) => (
+                      {project.priorities.map((priority) => (
                         <li key={priority} className="border-l-2 border-primary/30 pl-3">
                           {priority}
                         </li>
@@ -298,9 +298,9 @@ const Projects = () => {
                 </div>
 
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5 text-sm">
-                  <span className="text-muted-foreground">{program.lead}</span>
-                  <Link to="/#programs" className="font-semibold text-primary hover:underline">
-                    Return to program list
+                  <span className="text-muted-foreground">{project.lead}</span>
+                  <Link to="/#projectss" className="font-semibold text-primary hover:underline">
+                    Return to project list
                   </Link>
                 </div>
               </article>
