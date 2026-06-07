@@ -92,7 +92,7 @@ export const Header = () => {
                 l.href.startsWith("/") ? (
                   <Link
                     key={l.href}
-                    href={l.href}
+                    to={l.href}
                     onClick={() => setOpen(false)}
                     className="py-2 text-sm font-medium text-foreground/80"
                   >
@@ -109,6 +109,14 @@ export const Header = () => {
                 </a>
               )
             )}
+            <Button variant="hero" size="sm" asChild className="mt-2">
+        <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">
+          Join the Chapter
+        </a>
+      </Button>
+    </div>
+  </div>
+)}
     </header>
   );
 };
