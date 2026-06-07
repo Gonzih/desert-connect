@@ -213,7 +213,7 @@ const Projects = () => {
             </div>
 
             <nav className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Projects">
-              {projects.map((projects) => (
+              {projects.map((project) => (
                 <a
                   key={projects.slug}
                   href={`#${projects.slug}`}
@@ -233,7 +233,7 @@ const Projects = () => {
 
         <section className="py-16 md:py-20">
           <div className="container space-y-8">
-            {project.map((project) => (
+            {projects.map((project) => (
               <article
                 id={project.slug}
                 key={project.slug}
@@ -299,7 +299,7 @@ const Projects = () => {
 
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5 text-sm">
                   <span className="text-muted-foreground">{project.lead}</span>
-                  <Link to="/#projectss" className="font-semibold text-primary hover:underline">
+                  <Link to="/#projects" className="font-semibold text-primary hover:underline">
                     Return to project list
                   </Link>
                 </div>
