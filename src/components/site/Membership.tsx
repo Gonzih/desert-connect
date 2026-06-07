@@ -26,7 +26,7 @@ const steps = [
     title: "Pick a workgroup",
     body: "Choose an active workgroup to learn more.",
     cta: "See workgroups",
-    href: "#programs",
+    href: "#projects",
   },
 ];
 
