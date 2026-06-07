@@ -15,7 +15,7 @@ const events = [
     type: "Chapter Meetup",
     title: "Nevada ISOC and you",
     date: "June 15, 2026",
-    time: "5:30 PM PT",
+    time: "4:00 PM PT",
     location: "Zoom Room",
     icon: MapPin,
     cta: "Register",
