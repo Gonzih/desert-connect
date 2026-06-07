@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Global Roots", href: "#global" },
   { label: "Membership", href: "#membership" },
-  { label: "Projects", href: "/src/pages/Projects.tsx" },
+  { label: "Projects", href: "/Projects" },
   { label: "Resources", href: "#resources" },
   { label: "Donate", href: "#donate" },
 ];
