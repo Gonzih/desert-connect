@@ -4,6 +4,23 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/isoc-nevada-logo.webp";
 import { Link } from "react-router-dom";
+import { Info } from "lucide-react";
+
+export const HomeBanner = () => {
+  return (
+    <aside className="border-b border-primary/20 bg-primary/10">
+      <div className="container py-3">
+        <div className="flex gap-3 text-sm leading-relaxed text-foreground">
+          <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+          <p>
+            <strong className="font-semibold">Chapter status:</strong> ISOC Nevada is currently
+            in formation and has not yet been finalized as a formal Internet Society chapter.
+          </p>
+        </div>
+      </div>
+    </aside>
+  );
+};
 
 const navLinks = [
   { label: "Home", href: "#home" },
