@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/isoc-nevada-logo.webp";
 import { Link } from "react-router-dom";
-import { Info } from "lucide-react";
+import { Info, Menu, X } from "lucide-react";
 
 const HomeBanner = () => (
   <aside className="border-b border-primary/20 bg-primary/10">
