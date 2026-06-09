@@ -6,6 +6,19 @@ import logo from "@/assets/isoc-nevada-logo.webp";
 import { Link } from "react-router-dom";
 import { Info } from "lucide-react";
 
+const HomeBanner = () => (
+  <aside className="border-b border-primary/20 bg-primary/10">
+    <div className="container py-3">
+      <div className="flex gap-3 text-sm leading-relaxed text-foreground">
+        <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
+        <p>
+          <strong className="font-semibold">Chapter status:</strong> ISOC Nevada is currently
+          in formation and has not yet been finalized as a formal Internet Society chapter.
+        </p>
+      </div>
+    </div>
+  </aside>
+);
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -20,21 +33,7 @@ export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-  const HomeBanner = () => (
-  <aside className="border-b border-primary/20 bg-primary/10">
-    <div className="container py-3">
-      <div className="flex gap-3 text-sm leading-relaxed text-foreground">
-        <Info className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-        <p>
-          <strong className="font-semibold">Chapter status:</strong> ISOC Nevada is currently
-          in formation and has not yet been finalized as a formal Internet Society chapter.
-        </p>
-      </div>
-    </div>
-  </aside>
-);
-  
-  useEffect(() => {
+    useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -50,6 +49,7 @@ export const Header = () => {
           : "bg-background/60 backdrop-blur-sm"
       )}
     >
+      <HomeBanner />
       <div className="container flex h-16 items-center justify-between">
         <a href="#home" className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
           <img
@@ -60,10 +60,7 @@ export const Header = () => {
             height={40}
           />
         </a>
-    <header ...>
-      <HomeBanner />
-      <div className="container flex h-16 items-center justify-between">
-      
+    
         <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((l) =>
               l.href.startsWith("/") ? (
