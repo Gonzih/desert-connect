@@ -96,9 +96,9 @@ export const Donate = () => {
               <address className="mt-3 not-italic text-sm text-muted-foreground leading-relaxed">
                 Make checks payable to <strong className="text-foreground">ISOC Nevada Chapter</strong>
                 <br />
-                PO Box · TBD
+                PO Box 3888
                 <br />
-                Las Vegas, NV 89101
+                Carson City, NV 89702
               </address>
               <p className="mt-3 text-xs text-muted-foreground">
                 Donations may be tax-deductible — consult your tax advisor.
