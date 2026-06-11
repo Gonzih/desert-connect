@@ -76,7 +76,7 @@ export const MetaLayerBlastPopup = () => {
               <div>
                 <p className="font-semibold text-foreground">Regular course cost: $249</p>
                 <p className="mt-1 text-lg font-extrabold text-primary">
-                  ISOC Nevada community access: $10
+                 Discount ISOC Nevada community members.
                 </p>
                 <p className="mt-1 text-sm text-muted-foreground">
                   Use discount code{" "}
