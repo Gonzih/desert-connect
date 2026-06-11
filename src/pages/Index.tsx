@@ -13,7 +13,12 @@ import { CookieConsent } from "@/components/site/CookieConsent";
 
 const Index = () => {
   return (
-   
+    <div className="min-h-screen flex flex-col bg-background">
+      <Header />
+
+      <main className="flex-1">
+        <Hero />
+
         {/* Metaweb Course video banner */}
         <section className="bg-surface-slate py-16">
           <div className="container max-w-4xl flex flex-col items-center gap-6">
@@ -46,6 +51,7 @@ const Index = () => {
         <Resources />
         <PrivacyNotice />
       </main>
+
       <Footer />
       <CookieConsent />
     </div>
