@@ -1,4 +1,5 @@
 import { Header } from "@/components/site/Header";
+import { MetaLayerBlastPopup } from "@/components/site/MetaLayerBlastPopup";
 import { Hero } from "@/components/site/Hero";
 import { Trinity } from "@/components/site/Trinity";
 import { GlobalRoots } from "@/components/site/GlobalRoots";
@@ -10,6 +11,22 @@ import { Resources } from "@/components/site/Resources";
 import { PrivacyNotice } from "@/components/site/PrivacyNotice";
 import { Footer } from "@/components/site/Footer";
 import { CookieConsent } from "@/components/site/CookieConsent";
+
+const Index = () => {
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      <MetaLayerBlastPopup />
+
+      <Header />
+      <main className="flex-1">
+        <Hero />
+        ...
+      </main>
+      <Footer />
+      <CookieConsent />
+    </div>
+  );
+};
 
 const Index = () => {
   return (
