@@ -20,21 +20,8 @@ const Index = () => {
       <Header />
       <main className="flex-1">
         <Hero />
-        ...
-      </main>
-      <Footer />
-      <CookieConsent />
-    </div>
-  );
-};
 
-const Index = () => {
-  return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <Header />
-      <main className="flex-1">
-        <Hero />
-        {/* Metaweb Course — video banner */}
+        {/* Metaweb Course video banner */}
         <section className="bg-surface-slate py-16">
           <div className="container max-w-4xl flex flex-col items-center gap-6">
             <video
@@ -44,7 +31,7 @@ const Index = () => {
               loop
               playsInline
               className="w-full rounded-xl shadow-2xl"
-              style={{ aspectRatio: '16/9', objectFit: 'cover' }}
+              style={{ aspectRatio: "16/9", objectFit: "cover" }}
             />
             <a
               href="https://course.metawebbook.com/begin-your-journey"
@@ -56,6 +43,7 @@ const Index = () => {
             </a>
           </div>
         </section>
+
         <Trinity />
         <GlobalRoots />
         <Events />
