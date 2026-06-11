@@ -47,6 +47,11 @@ export const MetaLayerBlastPopup = () => {
           />
         </div>
 
+        <div className="overflow-y-auto p-6 sm:p-8">
+          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+            <Sparkles className="h-4 w-4" aria-hidden="true" />
+            </div>
+
         <h2
             id="metalayer-popup-title"
             className="mt-4 font-display text-2xl font-extrabold leading-tight text-foreground sm:text-3xl"
