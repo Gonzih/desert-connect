@@ -24,12 +24,12 @@ export const MetaLayerBlastPopup = () => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 px-4 py-6 backdrop-blur-sm"
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-background/80 px-4 py-6 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-labelledby="metalayer-popup-title"
     >
-      <div className="relative grid max-h-[92vh] w-full max-w-5xl overflow-hidden rounded-lg border border-primary/30 bg-background shadow-2xl md:grid-cols-[1.15fr_0.85fr]">
+      <div className="relative grid max-h-[88vh] w-full max-w-5xl overflow-hidden rounded-lg border border-primary/30 bg-background shadow-2xl md:grid-cols-[1.15fr_0.85fr]">
         <button
           type="button"
           onClick={closePopup}
