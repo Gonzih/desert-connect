@@ -1,5 +1,4 @@
 import { Header } from "@/components/site/Header";
-import { MetaLayerBlastPopup } from "@/components/site/MetaLayerBlastPopup";
 import { Hero } from "@/components/site/Hero";
 import { Trinity } from "@/components/site/Trinity";
 import { GlobalRoots } from "@/components/site/GlobalRoots";
@@ -14,13 +13,7 @@ import { CookieConsent } from "@/components/site/CookieConsent";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <MetaLayerBlastPopup />
-
-      <Header />
-      <main className="flex-1">
-        <Hero />
-
+   
         {/* Metaweb Course video banner */}
         <section className="bg-surface-slate py-16">
           <div className="container max-w-4xl flex flex-col items-center gap-6">
