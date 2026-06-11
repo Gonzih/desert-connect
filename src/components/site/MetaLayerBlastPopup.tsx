@@ -103,7 +103,7 @@ export const MetaLayerBlastPopup = () => {
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <a
-              href="https://https://www.zeffy.com/en-US/ticketing/the-metaweb-book-nft-course"
+              href="https://www.zeffy.com/en-US/ticketing/the-metaweb-book-nft-course"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground transition hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary"
