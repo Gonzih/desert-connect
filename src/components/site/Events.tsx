@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button";
 const events = [
   {
     type: "MetaWeb Course",
-    title: "How a meta-layer above today's Web can eliminate misinformation, enable collective intelligence, and reshape how humans and AI interact online.",
-    date: "June 15, 2026",
+    title: "Session 2: Building the Meta-Layer.",
+    date: "June 22, 2026",
     time: "11:30 AM PT - 1:00 PM",
     location: "Virtual (Zoom)",
     icon: Video,
@@ -14,7 +14,7 @@ const events = [
   {
     type: "Chapter Meetup",
     title: "Nevada ISOC and you",
-    date: "June 15, 2026",
+    date: "July 13, 2026",
     time: "4:00 PM PT",
     location: "Zoom Room",
     icon: MapPin,
@@ -23,7 +23,7 @@ const events = [
   {
     type: "Workshop",
     title: "Encryption 101 for Nevada Nonprofits",
-    date: "June 11, 2026",
+    date: "June 29, 2026",
     time: "12:00 PM PT",
     location: "Virtual (Zoom)",
     icon: Video,
