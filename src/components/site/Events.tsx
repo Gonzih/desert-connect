@@ -41,7 +41,7 @@ export const Events = () => {
               Upcoming Events
             </span>
             <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold text-foreground">
-              Join the next chapter meeting.
+              Join the next chapter meeting or sign up for an event.
             </h2>
             <p className="mt-3 text-muted-foreground">
               Board meetings, community workshops, and policy briefings — open to members and the
