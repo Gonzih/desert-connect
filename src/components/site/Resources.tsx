@@ -1,4 +1,4 @@
-import { FileText, BookOpen, MapPin, Download, ArrowUpRight } from "lucide-react";
+import { BookOpen, MapPin, ArrowUpRight } from "lucide-react";
 
 const topics = [
   {
@@ -45,12 +45,12 @@ export const Resources = () => {
             The chapter library.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            Governance documents, white papers, and Nevada-specific publications you can use,
-            cite, and share.
+            White papers and Nevada-specific publications you can use, cite, and share.
           </p>
         </div>
-        
-        {/* Topics */}
+
+        <div className="mt-12 grid gap-10 md:grid-cols-2">
+          {/* Topics */}
           <div>
             <h3 className="font-display text-lg font-bold text-foreground">Focused Topics</h3>
             <p className="mt-1 text-xs text-muted-foreground">White papers from the chapter</p>
