@@ -37,7 +37,7 @@ export const Resources = () => {
   return (
     <section id="resources" className="py-20 md:py-28">
       <div className="container">
-        <div className="max-w-2xl">
+        <div className="max-w-4xl">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Resources & References
           </span>
