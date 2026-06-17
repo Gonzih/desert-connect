@@ -35,8 +35,8 @@ const publications = [
 
 export const Resources = () => {
   return (
-    <section id="resources" className="py-16 md:py-20">
-      <div className="container max-w-4xl">
+    <section id="resources" className="py-14 md:py-16">
+      <div className="mx-auto w-full max-w-4xl px-6">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Resources & References
@@ -49,16 +49,16 @@ export const Resources = () => {
           </p>
         </div>
 
-      <div className="mt-8 grid gap-4 md:grid-cols-2">
+        <div className="mt-8 grid items-start gap-6 md:grid-cols-2">
           {/* Topics */}
           <div>
             <h3 className="font-display text-lg font-bold text-foreground">Focused Topics</h3>
             <p className="mt-1 text-xs text-muted-foreground">White papers from the chapter</p>
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-4 grid gap-3">
               {topics.map((t) => (
                 <li
                   key={t.title}
-                  className="rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-border hover:shadow-sm transition-smooth"
+                  className="min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-border hover:shadow-sm transition-smooth"
                 >
                   <div className="flex items-center gap-2">
                     <t.icon className="h-4 w-4 text-accent" />
@@ -74,13 +74,14 @@ export const Resources = () => {
           <div>
             <h3 className="font-display text-lg font-bold text-foreground">Nevada Publications</h3>
             <p className="mt-1 text-xs text-muted-foreground">Regional reports & legislative summaries</p>
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-4 grid gap-3">
               {publications.map((p) => (
                 <li key={p.title}>
                   <a
                     href="#"
-                    className="group block rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-primary/30 hover:shadow-sm transition-smooth">
-                    <div className="flex items-start justify-between gap-3">
+                    className="group flex min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-primary/30 hover:shadow-sm transition-smooth"
+                  >
+                    <div className="flex w-full items-start justify-between gap-3">
                       <div>
                         <div className="flex items-center gap-2">
                           <MapPin className="h-3.5 w-3.5 text-primary" />
