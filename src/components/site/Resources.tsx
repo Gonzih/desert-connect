@@ -36,7 +36,7 @@ const publications = [
 export const Resources = () => {
   return (
     <section id="resources" className="py-14 md:py-16">
-      <div className="mx-auto w-full max-w-4xl px-6">
+      <div className="mx-auto w-full max-w-2xl px-6">
         <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Resources & References
