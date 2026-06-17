@@ -1,12 +1,5 @@
 import { FileText, BookOpen, MapPin, Download, ArrowUpRight } from "lucide-react";
 
-const repository = [
-  { title: "Chapter Bylaws", type: "PDF · 2025", icon: FileText },
-  { title: "Articles of Incorporation", type: "PDF", icon: FileText },
-  { title: "Board Meeting Minutes", type: "Archive", icon: FileText },
-  { title: "Annual Report 2025", type: "PDF", icon: FileText },
-];
-
 const topics = [
   {
     icon: BookOpen,
@@ -57,33 +50,8 @@ export const Resources = () => {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-3">
-          {/* Repository */}
-          <div>
-            <h3 className="font-display text-lg font-bold text-foreground">ISOC NV Repository</h3>
-            <p className="mt-1 text-xs text-muted-foreground">Official chapter documents</p>
-            <ul className="mt-5 space-y-2">
-              {repository.map((r) => (
-                <li key={r.title}>
-                  <a
-                    href="#"
-                    className="group flex items-center justify-between rounded-lg border border-border bg-card px-4 py-3 hover:border-primary/40 hover:shadow-card transition-smooth"
-                  >
-                    <div className="flex items-center gap-3">
-                      <r.icon className="h-4 w-4 text-primary" />
-                      <div>
-                        <p className="text-sm font-semibold text-foreground">{r.title}</p>
-                        <p className="text-[11px] text-muted-foreground">{r.type}</p>
-                      </div>
-                    </div>
-                    <Download className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-smooth" />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Topics */}
+        
+        {/* Topics */}
           <div>
             <h3 className="font-display text-lg font-bold text-foreground">Focused Topics</h3>
             <p className="mt-1 text-xs text-muted-foreground">White papers from the chapter</p>
