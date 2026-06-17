@@ -35,9 +35,9 @@ const publications = [
 
 export const Resources = () => {
   return (
-    <section id="resources" className="py-20 md:py-28">
-      <div className="container">
-        <div className="max-w-4xl">
+    <section id="resources" className="py-16 md:py-20">
+      <div className="container max-w-4xl">
+        <div className="max-w-2xl">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
             Resources & References
           </span>
@@ -49,7 +49,7 @@ export const Resources = () => {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-10 md:grid-cols-2">
+      <div className="mt-8 grid gap-4 md:grid-cols-2">
           {/* Topics */}
           <div>
             <h3 className="font-display text-lg font-bold text-foreground">Focused Topics</h3>
