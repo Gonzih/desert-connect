@@ -58,7 +58,7 @@ export const Resources = () => {
               {topics.map((t) => (
                 <li
                   key={t.title}
-                  className="rounded-lg border border-border bg-card p-4 hover:shadow-card transition-smooth"
+                  className="rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-border hover:shadow-sm transition-smooth"
                 >
                   <div className="flex items-center gap-2">
                     <t.icon className="h-4 w-4 text-accent" />
