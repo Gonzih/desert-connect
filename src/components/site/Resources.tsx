@@ -49,7 +49,6 @@ export const Resources = () => {
             cite, and share.
           </p>
         </div>
-
         
         {/* Topics */}
           <div>
