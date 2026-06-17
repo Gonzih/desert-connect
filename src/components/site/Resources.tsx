@@ -79,8 +79,7 @@ export const Resources = () => {
                 <li key={p.title}>
                   <a
                     href="#"
-                    className="group block rounded-lg border border-border bg-card p-4 hover:border-primary/40 hover:shadow-card transition-smooth"
-                  >
+                    className="group block rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-primary/30 hover:shadow-sm transition-smooth">
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <div className="flex items-center gap-2">
