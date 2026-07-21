@@ -78,7 +78,7 @@ export const TechTalk = () => {
           />
           <div className="relative overflow-hidden rounded-2xl border border-white/15 shadow-2xl ring-1 ring-white/10">
             <img
-              src={src/assets/tech-talk-flyer.jpg.asset.json}
+              src={flyerAsset.url}
               alt="ISOC Nevada, IEEE, and SWE Tech Talk flyer — Daveed Benjamin, July 23 2026, Reno"
               className="w-full h-auto"
               loading="lazy"
