@@ -1,6 +1,6 @@
 import { Calendar, MapPin, Ticket, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import flyerAsset from "@/assets/tech-talk-flyer.jpg.asset.json";
+
 
 export const TechTalk = () => {
   return (
