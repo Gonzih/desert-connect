@@ -30,6 +30,7 @@ const events = [
     location: "Hybrid, SF Bay",
     icon: Video,
     cta: "Register",
+    ctaHref: "https://luma.com/wfi1z9lv",
   },
 ];
 
