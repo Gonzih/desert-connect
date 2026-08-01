@@ -51,10 +51,10 @@ export const Events = () => {
             </p>
           </div>
           <Button variant="outline" asChild>
-          <Link to="/calendar">
-            View full calendar <ArrowRight className="ml-1 h-4 w-4" />
-          </Link>
-        </Button>
+            <Link to="/calendar">
+              View full calendar <ArrowRight className="ml-1 h-4 w-4" />
+            </Link>
+          </Button>
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">
