@@ -83,9 +83,24 @@ export const Events = () => {
                   <span>{e.location}</span>
                 </div>
               </dl>
-              <Button variant="hero" size="sm" className="mt-6 self-start" asChild>
-                <a href={e.ctaHref ?? "#membership"} target={e.ctaHref ? "_blank" : undefined} rel={e.ctaHref ? "noopener noreferrer" : undefined}>{e.cta}</a>
-              </Button>
+
+              {/* CTA: wrap external links in an anchor so they open reliably */}
+              {e.ctaHref ? (
+                <a
+                  href={e.ctaHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 self-start inline-block"
+                >
+                  <Button variant="hero" size="sm">
+                    {e.cta}
+                  </Button>
+                </a>
+              ) : (
+                <Button variant="hero" size="sm" className="mt-6 self-start" asChild>
+                  <a href="#membership">{e.cta}</a>
+                </Button>
+              )}
             </article>
           ))}
         </div>
