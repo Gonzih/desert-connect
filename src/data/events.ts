@@ -30,7 +30,7 @@ export const calendarEvents = [
   {
     id: "Oct-session",
     title: "Community Workshop",
-    date: "TBA",
+    date: null, // TBA
     time: "TBA",
     location: "Virtual",
     description: "How to navigate a spooky email with scary links.",
