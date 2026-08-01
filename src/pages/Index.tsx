@@ -1,7 +1,7 @@
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { Trinity } from "@/components/site/Trinity";
-import { TechTalk } from "@/components/site/TechTalk";
+//import { TechTalk } from "@/components/site/TechTalk";
 import { GlobalRoots } from "@/components/site/GlobalRoots";
 import { Events } from "@/components/site/Events";
 import { Membership } from "@/components/site/Membership";
@@ -43,7 +43,9 @@ const Index = () => {
           </div>
         </section>
 
-        <TechTalk />
+        {/* TechTalk temporarily hidden */}
+        {/* <TechTalk /> */}
+
         <Trinity />
         <GlobalRoots />
         <Events />
