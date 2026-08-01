@@ -13,10 +13,19 @@ export const calendarEvents = [
     id: "meetup-2026-08-18",
     title: "Nevada ISOC and you",
     date: "2026-08-17",
-    time: "18:00",
+    time: "7:00pm PT",
     location: "Zoom Room",
     description: "Monthly chapter meetup to discuss chapter progress and welcome new members.",
     rsvpUrl: "https://luma.com/e0ef4i1b",
+  },
+   {
+    id: "Hawai'i Public Radio",
+    title: "Live with Burt Lum, Dee & Daveed",
+    date: "2026-08-4",
+    time: "8:00pm PT",
+    location: "https://www.hawaiipublicradio.org/events",
+    description: "Raise awareness and build capacity about digital technologies in Hawai'i and the Pacific region.",
+    rsvpUrl: "https://www.hawaiipublicradio.org/events",
   },
   {
     id: "summit-2026-09-16",
@@ -29,11 +38,11 @@ export const calendarEvents = [
   },
   {
     id: "Oct-session",
-    title: "Community Workshop",
-    date: null, // TBA
-    time: "TBA",
+    title: "ISOC NV Member Monthly Meeting",
+    date: "2026-10-19",
+    time: "7:00pm PT",
     location: "Virtual",
-    description: "How to navigate a spooky email with scary links.",
-    rsvpUrl: "https://forms.gle/CMM3T3LJCGbcFEYcA",
+    description: "Member Monthly meeting",
+    rsvpUrl: "https://luma.com/29s8aw5d",
   },
 ];
