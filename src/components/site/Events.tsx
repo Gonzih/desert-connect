@@ -51,7 +51,7 @@ export const Events = () => {
             </p>
           </div>
           <Button variant="outline" asChild>
-            <Link to="/calendar">
+            <Link to="/calendarpage">
               View full calendar <ArrowRight className="ml-1 h-4 w-4" />
             </Link>
           </Button>
