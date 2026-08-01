@@ -21,7 +21,7 @@ export const calendarEvents = [
    {
     id: "Hawai'i Public Radio",
     title: "Live with Burt Lum, Dee & Daveed",
-    date: "2026-08-4",
+    date: "2026-08-04",
     time: "8:00pm PT",
     location: "https://www.hawaiipublicradio.org/events",
     description: "Raise awareness and build capacity about digital technologies in Hawai'i and the Pacific region.",
