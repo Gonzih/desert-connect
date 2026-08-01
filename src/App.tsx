@@ -7,7 +7,7 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Projects from "./pages/Projects.tsx";
 import EventsPage from "./pages/EventsPage.tsx";
-import CalendarPage from "./pages/CalendarPage";
+import CalendarPage from "./pages/CalendarPage.tsx";
 
 const queryClient = new QueryClient();
 
