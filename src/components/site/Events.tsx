@@ -20,7 +20,7 @@ const events = [
     location: "Zoom Room",
     icon: MapPin,
     cta: "Register",
-    ctaHref: "https://forms.gle/g4tbjWWdMpcP2rJ98",
+    ctaHref: "https://luma.com/e0ef4i1b",
   },
   {
     type: "Metaweb Summit",
