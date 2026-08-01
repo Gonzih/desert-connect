@@ -19,6 +19,7 @@ const events = [
     location: "Zoom Room",
     icon: MapPin,
     cta: "Register",
+    ctaHref: "https://forms.gle/g4tbjWWdMpcP2rJ98",
   },
   {
     type: "Metaweb Summit",
@@ -83,7 +84,7 @@ export const Events = () => {
                 </div>
               </dl>
               <Button variant="hero" size="sm" className="mt-6 self-start" asChild>
-                <a href="#membership">{e.cta}</a>
+                <a href={e.ctaHref ?? "#membership"} target={e.ctaHref ? "_blank" : undefined} rel={e.ctaHref ? "noopener noreferrer" : undefined}>{e.cta}</a>
               </Button>
             </article>
           ))}
