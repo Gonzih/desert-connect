@@ -16,7 +16,7 @@ export const calendarEvents = [
     time: "18:00",
     location: "Zoom Room",
     description: "Monthly chapter meetup to discuss chapter progress and welcome new members.",
-    rsvpUrl: "https://forms.gle/kWicdHh617j8RDk58",
+    rsvpUrl: "https://luma.com/e0ef4i1b",
   },
   {
     id: "summit-2026-09-16",
