@@ -25,7 +25,7 @@ const events = [
   {
     type: "Metaweb Summit",
     title: "Desirable Properties Revealed",
-    date: "Sept 21, 2026",
+    date: "Sept 16, 2026",
     time: "4:00 - 6:00 PM PT",
     location: "Hybrid, SF Bay",
     icon: Video,
