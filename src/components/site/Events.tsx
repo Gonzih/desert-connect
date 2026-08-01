@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Calendar, MapPin, Video, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -50,10 +51,10 @@ export const Events = () => {
             </p>
           </div>
           <Button variant="outline" asChild>
-            <a href="#events">
-              View full calendar <ArrowRight className="ml-1 h-4 w-4" />
-            </a>
-          </Button>
+          <Link to="/calendar">
+            View full calendar <ArrowRight className="ml-1 h-4 w-4" />
+          </Link>
+        </Button>
         </div>
 
         <div className="mt-12 grid gap-5 md:grid-cols-3">
