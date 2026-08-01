@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { Calendar, MapPin, Video, ArrowRight } from "lucide-react";
-import { calendarEvents } from "@/data/events.ts";
 import { Button } from "@/components/ui/button";
 
 const events = [
