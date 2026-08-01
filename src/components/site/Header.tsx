@@ -1,26 +1,9 @@
 import { useEffect, useState } from "react";
-import { Info, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/isoc-nevada-logo.webp";
 import { Link } from "react-router-dom";
-
-const HomeBanner = () => (
-  <aside className="border-b border-primary/20 bg-primary/10">
-    <div className="container py-4">
-      <div className="flex gap-3 text-lg sm:text-2xl lg:text-3xl leading-relaxed text-foreground">
-        <Info
-          className="mt-1 h-5 w-5 sm:h-6 sm:w-6 lg:h-7 lg:w-7 shrink-0 text-primary"
-          aria-hidden="true"
-        />
-        <p>
-          <strong className="font-semibold">Chapter status:</strong> ISOC Nevada is currently
-          in formation and has not yet been finalized as a formal Internet Society chapter.
-        </p>
-      </div>
-    </div>
-  </aside>
-);
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -35,7 +18,7 @@ export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
-    useEffect(() => {
+  useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -51,7 +34,6 @@ export const Header = () => {
           : "bg-background/60 backdrop-blur-sm"
       )}
     >
-      <HomeBanner />
       <div className="container flex h-16 items-center justify-between">
         <a href="#home" className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
           <img
