@@ -25,7 +25,7 @@ export const calendarEvents = [
     time: "16:00",
     location: "Hybrid, SF Bay",
     description: "Metaweb Summit presentation and discussion on desirable properties.",
-    rsvpUrl: "https://forms.gle/example-sept-16",
+    rsvpUrl: "https://luma.com/wfi1z9lv",
   },
   {
     id: "Oct-session",
