@@ -19,7 +19,7 @@ export const calendarEvents = [
     rsvpUrl: "https://luma.com/e0ef4i1b",
   },
   {
-    id: "summit-2026-09-21",
+    id: "summit-2026-09-16",
     title: "Desirable Properties Revealed",
     date: "2026-09-21",
     time: "16:00",
