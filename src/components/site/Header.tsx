@@ -98,7 +98,7 @@ export const Header = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <a href="#membership">Sign in</a>
+            <a href="#membership" onClick={(e) => handleAnchorClick(e, "#membership")}>Sign in</a>
           </Button>
           <Button variant="hero" size="sm" asChild>
             <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">Join the Chapter</a>
@@ -114,7 +114,7 @@ export const Header = () => {
         </button>
       </div>
 
-            {open && (
+      {open && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="container py-4 flex flex-col gap-3">
             {navLinks.map((l) =>
@@ -131,7 +131,7 @@ export const Header = () => {
                 <a
                   key={l.href}
                   href={l.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => handleAnchorClick(e, l.href)}
                   className="py-2 text-sm font-medium text-foreground/80"
                 >
                   {l.label}
