@@ -6,12 +6,12 @@ import logo from "@/assets/isoc-nevada-logo.webp";
 import { Link } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Global Roots", href: "#global" },
-  { label: "Membership", href: "#membership" },
+  { label: "Home", href: "/#home" },
+  { label: "Global Roots", href: "/#global" },
+  { label: "Membership", href: "/#membership" },
   { label: "Projects", href: "/projects" },
-  { label: "Resources", href: "#resources" },
-  { label: "Donate", href: "#donate" },
+  { label: "Resources", href: "/#resources" },
+  { label: "Donate", href: "/#donate" },
 ];
 
 export const Header = () => {
@@ -35,7 +35,7 @@ export const Header = () => {
       )}
     >
       <div className="container flex h-16 items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
+        <Link to="/#home" className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
           <img
             src={logo}
             alt="ISOC Nevada Chapter logo"
@@ -43,7 +43,7 @@ export const Header = () => {
             width={160}
             height={40}
           />
-        </a>
+        </Link>
     
         <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((l) =>
@@ -69,7 +69,7 @@ export const Header = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <a href="#membership">Sign in</a>
+            <Link to="/#membership">Sign in</Link>
           </Button>
           <Button variant="hero" size="sm" asChild>
             <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">Join the Chapter</a>
