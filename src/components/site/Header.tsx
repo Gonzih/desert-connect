@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type MouseEvent } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/isoc-nevada-logo.webp";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -14,9 +14,31 @@ const navLinks = [
   { label: "Donate", href: "#donate" },
 ];
 
+const HEADER_OFFSET = 80;
+
+const smoothScrollTo = (hash: string) => {
+  const el = document.querySelector(hash);
+  if (!el) return;
+  const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
+  window.scrollTo({ top, behavior: "smooth" });
+};
+
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHome = location.pathname === "/";
+
+  const handleAnchorClick = (e: MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setOpen(false);
+    if (isHome) {
+      smoothScrollTo(href);
+    } else {
+      navigate("/", { state: { scrollTo: href } });
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -35,7 +57,12 @@ export const Header = () => {
       )}
     >
       <div className="container flex h-16 items-center justify-between">
-        <a href="#home" className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
+        <a
+          href="#home"
+          onClick={(e) => handleAnchorClick(e, "#home")}
+          className="flex items-center gap-2 group"
+          aria-label="ISOC Nevada home"
+        >
           <img
             src={logo}
             alt="ISOC Nevada Chapter logo"
@@ -44,32 +71,34 @@ export const Header = () => {
             height={40}
           />
         </a>
-    
+
         <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((l) =>
-              l.href.startsWith("/") ? (
-                <Link
+          {navLinks.map((l) =>
+            l.href.startsWith("/") ? (
+              <Link
                 key={l.href}
                 to={l.href}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
-           >
-              {l.label}
-            </Link>
-          ) : (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
-            >
-              {l.label}
-            </a>
-          )
-        )}
-      </nav>
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={(e) => handleAnchorClick(e, l.href)}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
+              >
+                {l.label}
+              </a>
+            )
+          )}
+        </nav>
+
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <a href="#membership">Sign in</a>
+            <a href="#membership" onClick={(e) => handleAnchorClick(e, "#membership")}>Sign in</a>
           </Button>
           <Button variant="hero" size="sm" asChild>
             <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">Join the Chapter</a>
@@ -85,7 +114,7 @@ export const Header = () => {
         </button>
       </div>
 
-            {open && (
+      {open && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="container py-4 flex flex-col gap-3">
             {navLinks.map((l) =>
@@ -102,7 +131,7 @@ export const Header = () => {
                 <a
                   key={l.href}
                   href={l.href}
-                  onClick={() => setOpen(false)}
+                  onClick={(e) => handleAnchorClick(e, l.href)}
                   className="py-2 text-sm font-medium text-foreground/80"
                 >
                   {l.label}
