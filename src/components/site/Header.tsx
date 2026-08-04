@@ -35,7 +35,7 @@ export const Header = () => {
       )}
     >
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/#home" className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
+        <Link to={{ pathname: "/", hash: "#home" }} className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
           <img
             src={logo}
             alt="ISOC Nevada Chapter logo"
@@ -44,32 +44,41 @@ export const Header = () => {
             height={40}
           />
         </Link>
-    
+
         <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((l) =>
-              l.href.startsWith("/") ? (
-                <Link
+          {navLinks.map((l) =>
+            // Use object form for route-scoped hashes so React Router sets pathname + hash correctly
+            l.href.startsWith("/#") ? (
+              <Link
+                key={l.href}
+                to={{ pathname: "/", hash: l.href.slice(1) }}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
+              >
+                {l.label}
+              </Link>
+            ) : l.href.startsWith("/") ? (
+              <Link
                 key={l.href}
                 to={l.href}
                 className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
-           >
-              {l.label}
-            </Link>
-          ) : (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
-            >
-              {l.label}
-            </a>
-          )
-        )}
-      </nav>
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
+              >
+                {l.label}
+              </a>
+            )
+          )}
+        </nav>
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <Link to="/#membership">Sign in</Link>
+            <Link to={{ pathname: "/", hash: "#membership" }}>Sign in</Link>
           </Button>
           <Button variant="hero" size="sm" asChild>
             <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">Join the Chapter</a>
@@ -85,11 +94,20 @@ export const Header = () => {
         </button>
       </div>
 
-            {open && (
+      {open && (
         <div className="md:hidden border-t border-border bg-background">
           <div className="container py-4 flex flex-col gap-3">
             {navLinks.map((l) =>
-              l.href.startsWith("/") ? (
+              l.href.startsWith("/#") ? (
+                <Link
+                  key={l.href}
+                  to={{ pathname: "/", hash: l.href.slice(1) }}
+                  onClick={() => setOpen(false)}
+                  className="py-2 text-sm font-medium text-foreground/80"
+                >
+                  {l.label}
+                </Link>
+              ) : l.href.startsWith("/") ? (
                 <Link
                   key={l.href}
                   to={l.href}
