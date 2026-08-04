@@ -5,13 +5,25 @@ import { cn } from "@/lib/utils";
 import logo from "@/assets/isoc-nevada-logo.webp";
 import { Link } from "react-router-dom";
 
+// Keep an (inert) HomeBanner container so header behavior/offsets match the previous layout
+// The visible chapter status text was intentionally removed per request.
+const HomeBanner = () => (
+  <aside className="border-b border-primary/20 bg-primary/10" aria-hidden="true">
+    <div className="container py-4">
+      <div className="flex gap-3 text-lg sm:text-2xl lg:text-3xl leading-relaxed text-foreground">
+        {/* banner content removed intentionally */}
+      </div>
+    </div>
+  </aside>
+);
+
 const navLinks = [
-  { label: "Home", href: "/#home" },
-  { label: "Global Roots", href: "/#global" },
-  { label: "Membership", href: "/#membership" },
+  { label: "Home", href: "#home" },
+  { label: "Global Roots", href: "#global" },
+  { label: "Membership", href: "#membership" },
   { label: "Projects", href: "/projects" },
-  { label: "Resources", href: "/#resources" },
-  { label: "Donate", href: "/#donate" },
+  { label: "Resources", href: "#resources" },
+  { label: "Donate", href: "#donate" },
 ];
 
 export const Header = () => {
@@ -34,8 +46,9 @@ export const Header = () => {
           : "bg-background/60 backdrop-blur-sm"
       )}
     >
+      <HomeBanner />
       <div className="container flex h-16 items-center justify-between">
-        <Link to={{ pathname: "/", hash: "#home" }} className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
+        <a href="#home" className="flex items-center gap-2 group" aria-label="ISOC Nevada home">
           <img
             src={logo}
             alt="ISOC Nevada Chapter logo"
@@ -43,20 +56,11 @@ export const Header = () => {
             width={160}
             height={40}
           />
-        </Link>
+        </a>
 
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((l) =>
-            // Use object form for route-scoped hashes so React Router sets pathname + hash correctly
-            l.href.startsWith("/#") ? (
-              <Link
-                key={l.href}
-                to={{ pathname: "/", hash: l.href.slice(1) }}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-smooth"
-              >
-                {l.label}
-              </Link>
-            ) : l.href.startsWith("/") ? (
+            l.href.startsWith("/") ? (
               <Link
                 key={l.href}
                 to={l.href}
@@ -78,7 +82,7 @@ export const Header = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <Link to={{ pathname: "/", hash: "#membership" }}>Sign in</Link>
+            <a href="#membership">Sign in</a>
           </Button>
           <Button variant="hero" size="sm" asChild>
             <a href="https://forms.gle/NgvHEqj1LFFQ9NJ7A" target="_blank" rel="noreferrer">Join the Chapter</a>
@@ -98,16 +102,7 @@ export const Header = () => {
         <div className="md:hidden border-t border-border bg-background">
           <div className="container py-4 flex flex-col gap-3">
             {navLinks.map((l) =>
-              l.href.startsWith("/#") ? (
-                <Link
-                  key={l.href}
-                  to={{ pathname: "/", hash: l.href.slice(1) }}
-                  onClick={() => setOpen(false)}
-                  className="py-2 text-sm font-medium text-foreground/80"
-                >
-                  {l.label}
-                </Link>
-              ) : l.href.startsWith("/") ? (
+              l.href.startsWith("/") ? (
                 <Link
                   key={l.href}
                   to={l.href}
