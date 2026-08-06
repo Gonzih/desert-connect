@@ -2,7 +2,7 @@ import { useEffect, useState, type MouseEvent } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/isoc-nevada-logo.webp";
+import logo from "@/assets/Standard JPG-US-Nevada-Chapter-Logo.jpg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const navLinks = [
