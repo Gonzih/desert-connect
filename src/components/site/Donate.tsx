@@ -53,11 +53,10 @@ export const Donate = () => {
                   Zeffy donation widget
                 </p>
                 <p className="mt-1 text-xs text-muted-foreground max-w-xs mx-auto">
-                  Embed point for the chapter's Zeffy form. Replace this block with the iframe
-                  Zeffy provides.
+                 <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
                 </p>
                 <Button variant="hero" size="sm" className="mt-5" asChild>
-                  <a href="https://www.zeffy.com" target="_blank" rel="noreferrer">
+                  <a href="https://www.zeffy.com/embed/donation-form/chapter-formation-donation?modal=true"" target="_blank" rel="noreferrer">
                     Open Zeffy
                   </a>
                 </Button>
