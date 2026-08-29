@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Calendar, MapPin, Video, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Image } from "@assets/fixed_chapter_invite.png
 
 const events = [
   {
@@ -47,6 +48,13 @@ export const Events = () => {
             <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold text-foreground">
               Join the next chapter meeting or sign up for an event.
             </h2>
+            <img
+          src={img}
+          alt="Nevada Chapter Formation Invite"
+          width={620}
+          height={680}
+          className="h-full w-full object-cover"
+          />
             <p className="mt-3 text-muted-foreground">
               Board meetings, community workshops, and policy briefings — open to members and the
               public.
