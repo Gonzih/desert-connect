@@ -43,18 +43,15 @@ export const Donate = () => {
               </p>
             </div>
 
-            <a href="https://www.zeffy.com/en-US/donation-form/chapter-formation-donation"</a>
-            <div className="aspect-[4/3] md:aspect-[16/10] w-full grid place-items-center bg-muted/40 m-2 rounded-lg border border-dashed border-border">
-              <div className="text-center px-6 py-10">
-                <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-primary/10 text-primary">
-                  <ShieldCheck className="h-6 w-6" />
-                </div>
-                <p className="mt-4 font-display font-semibold text-foreground">
-                  Zeffy donation widget
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground max-w-xs mx-auto">
-                 <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
-                </p>
+            <div>
+              <div data-zeffy-embed data-form-url="/embed/donation-form/chapter-formation-donation"></div>
+                <div data-zeffy-embed-fallback style="display:none;">
+                  <div style="position:relative;overflow:hidden;height:450px;width:100%;"><iframe title='Donation form powered by Zeffy' style='position: absolute; border: 0; top:0;left:0;bottom:0;right:0;width:100%;height:100%' data-zeffy-embed-src='https://www.zeffy.com/embed/donation-form/chapter-formation-donation' allowpaymentrequest allowTransparency="true"></iframe></div>
+              </div>
+        <script src="https://www.zeffy.com/embed/v2/zeffy-embed.js"
+    onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';el.querySelectorAll('iframe[data-zeffy-embed-src]').forEach(function(f){f.src=f.getAttribute('data-zeffy-embed-src');});});">
+        </script>
+        </div>
                 <Button variant="hero" size="sm" className="mt-5" asChild>
                   <a href="https://www.zeffy.com/embed/donation-form/chapter-formation-donation?modal=true"" target="_blank" rel="noreferrer">
                     Open Zeffy
