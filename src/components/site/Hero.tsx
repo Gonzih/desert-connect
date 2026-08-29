@@ -1,6 +1,5 @@
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { img } from "@/assets/fixed_chapter_invite.png";  
 import heroImg from "@/assets/hero-nevada.jpg";
 
 export const Hero = () => {
@@ -48,13 +47,6 @@ export const Hero = () => {
             <Button variant="glass" size="xl" asChild>
               <a href="#projects">Explore Our Work</a>
             </Button>
-        <img
-          src={img}
-          alt="Nevada Chapter Formation Invite"
-          width={620}
-          height={680}
-          className="h-full w-full object-cover"
-        />
           </div>
 
           <dl className="mt-14 grid grid-cols-2 sm:grid-cols-3 gap-6 max-w-2xl">
