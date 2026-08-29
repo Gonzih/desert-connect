@@ -43,7 +43,7 @@ export const Donate = () => {
               </p>
             </div>
 
-            {https://www.zeffy.com/en-US/donation-form/chapter-formation-donation}
+            <a href="https://www.zeffy.com/en-US/donation-form/chapter-formation-donation"</a>
             <div className="aspect-[4/3] md:aspect-[16/10] w-full grid place-items-center bg-muted/40 m-2 rounded-lg border border-dashed border-border">
               <div className="text-center px-6 py-10">
                 <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-primary/10 text-primary">
