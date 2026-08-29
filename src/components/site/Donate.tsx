@@ -27,7 +27,7 @@ export const Donate = () => {
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
-          {https://www.zeffy.com/en-US/donation-form/chapter-formation-donation}
+          <script src="https://zeffy-scripts.s3.ca-central-1.amazonaws.com/embed-form-script.min.js"></script>
           <div className="rounded-2xl border border-border/80 bg-card/90 p-2 shadow-elegant overflow-hidden backdrop-blur-sm">
             <div className="rounded-xl bg-gradient-primary p-8 text-primary-foreground">
               <div className="flex items-center gap-3">
