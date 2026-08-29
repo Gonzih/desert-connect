@@ -51,8 +51,8 @@ export const Events = () => {
             <img
               src={fixedChapterInvite}
               alt="Nevada Chapter Formation Invite"
-              width={620}
-              height={680}
+              width={370}
+              height={470}
               className="h-auto w-full object-contain"
             />
             <p className="mt-3 text-muted-foreground">
