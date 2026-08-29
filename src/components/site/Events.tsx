@@ -48,13 +48,31 @@ export const Events = () => {
             <h2 className="mt-3 font-display text-3xl md:text-4xl font-bold text-foreground">
               Join the next chapter meeting or sign up for an event.
             </h2>
+            <a
+              href="https://luma.com/pjyx1zpy"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Register for the Internet Society Nevada Chapter Chartering Celebration"
+              className="mt-6 block"
+            >
             <img
               src={fixedChapterInvite}
               alt="Nevada Chapter Formation Invite"
               width={370}
               height={470}
-              className="h-auto w-full object-contain"
+              className="
+              h-auto
+              w-full
+              cursor-pointer
+              rounded-xl
+              object-contain
+              shadow-card
+              transition-all
+              duration-300
+              hover:-translate-y-1
+              hover:shadow-elegant"
             />
+          </a>
             <p className="mt-3 text-muted-foreground">
               Board meetings, community workshops, and policy briefings — open to members and the
               public.
