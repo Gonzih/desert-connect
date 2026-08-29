@@ -27,7 +27,7 @@ export const Donate = () => {
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[1.3fr_1fr]">
-          {/* Zeffy widget placeholder */}
+          {https://www.zeffy.com/en-US/donation-form/chapter-formation-donation}
           <div className="rounded-2xl border border-border/80 bg-card/90 p-2 shadow-elegant overflow-hidden backdrop-blur-sm">
             <div className="rounded-xl bg-gradient-primary p-8 text-primary-foreground">
               <div className="flex items-center gap-3">
@@ -43,7 +43,7 @@ export const Donate = () => {
               </p>
             </div>
 
-            {/* Replace iframe src with the chapter's Zeffy form URL when issued. */}
+            {https://www.zeffy.com/en-US/donation-form/chapter-formation-donation}
             <div className="aspect-[4/3] md:aspect-[16/10] w-full grid place-items-center bg-muted/40 m-2 rounded-lg border border-dashed border-border">
               <div className="text-center px-6 py-10">
                 <div className="mx-auto grid h-12 w-12 place-items-center rounded-full bg-primary/10 text-primary">
