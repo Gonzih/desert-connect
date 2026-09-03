@@ -61,8 +61,7 @@ export const MetaLayerBlastPopup = () => {
 
           <p className="mt-4 leading-relaxed text-muted-foreground">
             Join the <strong className="font-semibold text-foreground">Meta-Layer Certification Course</strong>,
-            a 3-week asynchronous course with weekly live author-led sessions, replay access,
-            AI-enabled annotation, community discussion, and a digital NFT book/passport experience.
+            A self guided course with replay access, AI-enabled annotation, and a digital NFT book/passport experience.
           </p>
 
           <p className="mt-4 leading-relaxed text-muted-foreground">
