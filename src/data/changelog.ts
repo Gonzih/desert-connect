@@ -22,7 +22,7 @@ export const changelogEntries: ChangelogEntry[] = [
     prNumber: 17,
     title: "Contact Matrix lists each workgroup by name",
     date: "2025-09-04",
-    status: "open",
+    status: "merged",
     summary:
       "The Contact Matrix on the home page was showing committee names instead of workgroup names, so five different programs all appeared as “Community Networks WG.” Each row now shows the actual workgroup.",
     changes: [
