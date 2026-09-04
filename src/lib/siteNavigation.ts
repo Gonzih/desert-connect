@@ -65,4 +65,4 @@ export const externalLinks = [
 
 export const sectionHash = (section: HomeSectionId) => `#${section}`;
 
-export const sectionHref = (section: HomeSectionId) => `/${sectionHash(section)}`;
+export const projectPath = (slug: string) => `/projects/${slug}`;
