@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
-import { externalLinks, homeSectionAnchors } from "@/lib/siteLinks";
+import { externalLinks, homeSectionAnchors, siteEmailAddresses } from "@/lib/siteLinks";
 import { footerChapterLinks } from "@/lib/siteNavigation";
 import { projectSlugs, projects } from "@/data/projects";
 
@@ -111,6 +111,22 @@ describe("link audit (static)", () => {
     expect(footer).toContain("footerChapterLinks");
     expect(footer).toContain("SiteLink");
     expect(footer).not.toContain("HomeAnchorLink");
+  });
+
+  it("keeps mailto link text matching href addresses", () => {
+    const privacy = readFileSync(join(srcRoot, "components", "site", "PrivacyNotice.tsx"), "utf8");
+    expect(privacy).toContain('href="mailto:isocnevada@gmail.com"');
+    expect(privacy).toContain("isocnevada@gmail.com");
+    expect(privacy).not.toContain("privacy@isocnv.org");
+  });
+
+  it("documents all site email addresses", () => {
+    for (const entry of siteEmailAddresses) {
+      expect(entry.address).toMatch(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+    }
+    expect(siteEmailAddresses.some((e) => e.address === "isocnevada@gmail.com" && e.receives)).toBe(
+      true,
+    );
   });
 });
 

@@ -19,6 +19,25 @@ export const externalLinks = [
   { label: "NELIS 83rd bills", url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bills/HomeBills" },
 ] as const;
 
+export const internalMediaLinks = [
+  { label: "About us video", url: "/isoc-nevada-about.mp4" },
+] as const;
+
+/** mailto addresses shown on the public site */
+export const siteEmailAddresses = [
+  { label: "Newsletter / general", address: "hello@isocnv.org", receives: false },
+  { label: "Volunteer / privacy contact", address: "isocnevada@gmail.com", receives: true },
+  { label: "Sponsorship", address: "sponsorship@isocnv.org", receives: false },
+  { label: "Broadband workgroup", address: "broadband@isocnv.org", receives: false },
+  { label: "Policy workgroup", address: "policy@isocnv.org", receives: false },
+  { label: "Education workgroup", address: "education@isocnv.org", receives: false },
+  { label: "Tribal workgroup", address: "tribal@isocnv.org", receives: false },
+  { label: "MetaWeb workgroup", address: "metaweb@isocnv.org", receives: false },
+  { label: "Community workgroup", address: "community@isocnv.org", receives: false },
+  { label: "Nevada policy workgroup", address: "nevada@isocnv.org", receives: false },
+  { label: "NV state workgroup", address: "nvstate@isocnv.org", receives: false },
+] as const;
+
 export const homeSectionAnchors = [
   "#home",
   "#global",
