@@ -20,17 +20,26 @@ const Index = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const scrollTo =
-      (location.state as { scrollTo?: string } | null)?.scrollTo ?? location.hash;
-    if (!scrollTo) return;
+    const scrollTarget = (location.state as { scrollTo?: string } | null)?.scrollTo;
+    if (!scrollTarget) return;
 
-    requestAnimationFrame(() => {
-      smoothScrollTo(scrollTo.startsWith("#") ? scrollTo : `#${scrollTo}`);
-      if (location.state) {
+    const selector = scrollTarget.startsWith("#") ? scrollTarget : `#${scrollTarget}`;
+    let attempts = 0;
+
+    const tryScroll = () => {
+      if (document.querySelector(selector)) {
+        smoothScrollTo(selector);
         navigate(location.pathname, { replace: true, state: null });
+        return;
       }
-    });
-  }, [location, navigate]);
+
+      if (attempts++ < 12) {
+        requestAnimationFrame(tryScroll);
+      }
+    };
+
+    tryScroll();
+  }, [location.state, location.pathname, navigate]);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -52,7 +61,7 @@ const Index = () => {
               style={{ aspectRatio: "16/9", objectFit: "cover" }}
             />
             <a
-              href="https://course.metawebbook.com/begin-your-journey"
+              href="https://course.metawebbook.com/"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-white shadow-lg hover:opacity-90 transition"

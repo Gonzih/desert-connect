@@ -9,7 +9,7 @@ export const ScrollToTop = () => {
     if (scrollTo) return;
 
     window.scrollTo(0, 0);
-  }, [pathname, state]);
+  }, [pathname]);
 
   return null;
 };

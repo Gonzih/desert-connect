@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { HomeAnchorLink } from "@/components/HomeAnchorLink";
+import { InPageAnchor } from "@/components/InPageAnchor";
 import {
   ArrowLeft,
   BookOpen,
@@ -218,7 +219,7 @@ const Projects = () => {
 
             <nav className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Projects">
               {projects.map((project) => (
-                <a
+                <InPageAnchor
                   key={project.slug}
                   href={`#${project.slug}`}
                   className="group flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-card transition-smooth hover:-translate-y-0.5 hover:shadow-elegant"
@@ -229,7 +230,7 @@ const Projects = () => {
                   <span className="text-sm font-semibold leading-snug text-foreground group-hover:text-primary">
                     {project.name}
                   </span>
-                </a>
+                </InPageAnchor>
               ))}
             </nav>
           </div>

@@ -138,10 +138,11 @@ export const Projects = () => {
             </p>
             <ul className="mt-6 divide-y divide-border">
               {helpWanted.map((h) => (
-                <li
-                  key={h.role}
-                  className="flex items-center justify-between py-4 gap-4 group cursor-pointer"
-                >
+                <li key={h.role}>
+                  <a
+                    href={`mailto:isocnevada@gmail.com?subject=${encodeURIComponent(`Volunteer interest: ${h.role}`)}`}
+                    className="flex items-center justify-between py-4 gap-4 group"
+                  >
                   <div>
                     <p className="font-semibold text-foreground group-hover:text-primary transition-smooth">
                       {h.role}
@@ -151,6 +152,7 @@ export const Projects = () => {
                     </p>
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-smooth" />
+                  </a>
                 </li>
               ))}
             </ul>

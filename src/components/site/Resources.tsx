@@ -60,12 +60,12 @@ export const Resources = () => {
         <div className="mt-8 grid items-start gap-6 md:grid-cols-2">
           <div>
             <h3 className="font-display text-lg font-bold text-foreground">Focused Topics</h3>
-            <p className="mt-1 text-xs text-muted-foreground">White papers from the chapter</p>
+            <p className="mt-1 text-xs text-muted-foreground">Chapter white papers coming soon</p>
             <ul className="mt-4 grid gap-3">
               {topics.map((t) => (
                 <li
                   key={t.title}
-                  className="min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-border hover:shadow-sm transition-smooth"
+                  className="min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3"
                 >
                   <div className="flex items-center gap-2">
                     <t.icon className="h-4 w-4 text-accent" />
