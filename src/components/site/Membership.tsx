@@ -1,4 +1,5 @@
 import { PlayCircle, UserPlus, MessageSquare, Users2, Eye, Hand, Handshake, Film } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { HomeAnchorLink } from "@/components/HomeAnchorLink";
@@ -30,7 +31,7 @@ const steps = [
     title: "Pick a workgroup",
     body: "Choose an active workgroup to learn more.",
     cta: "See workgroups",
-    href: "#projects",
+    href: "/projects",
   },
 ];
 
@@ -173,6 +174,13 @@ export const Membership = () => {
                       >
                         {s.cta} →
                       </a>
+                    ) : s.href.startsWith("/") ? (
+                      <Link
+                        to={s.href}
+                        className="mt-2 inline-block text-xs font-semibold text-primary hover:underline"
+                      >
+                        {s.cta} →
+                      </Link>
                     ) : (
                       <HomeAnchorLink
                         href={s.href}

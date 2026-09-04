@@ -1,4 +1,5 @@
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { HomeAnchorLink } from "@/components/HomeAnchorLink";
@@ -6,11 +7,11 @@ import { InactiveLink } from "@/components/InactiveLink";
 import logo from "@/assets/isoc-nevada-logo.webp";
 
 const chapterLinks = [
-  { label: "About", href: "#home" },
-  { label: "Membership", href: "#membership" },
-  { label: "Workgroups", href: "#projects" },
-  { label: "Bylaws & Minutes", href: "#resources" },
-  { label: "Donate", href: "#donate" },
+  { label: "About", href: "#home", type: "anchor" as const },
+  { label: "Membership", href: "#membership", type: "anchor" as const },
+  { label: "Workgroups", href: "/projects", type: "route" as const },
+  { label: "Bylaws & Minutes", href: "#resources", type: "anchor" as const },
+  { label: "Donate", href: "#donate", type: "anchor" as const },
 ];
 
 const socialLinks = [
@@ -20,6 +21,14 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
+  const location = useLocation();
+
+  const scrollToTopIfSameRoute = (path: string) => {
+    if (location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="bg-surface-slate text-surface-slate-foreground">
       <div className="container py-16 grid gap-10 lg:grid-cols-4">
@@ -58,9 +67,19 @@ export const Footer = () => {
           <ul className="mt-4 space-y-2.5 text-sm text-white/75">
             {chapterLinks.map((link) => (
               <li key={link.href}>
-                <HomeAnchorLink href={link.href} className="hover:text-white">
-                  {link.label}
-                </HomeAnchorLink>
+                {link.type === "route" ? (
+                  <Link
+                    to={link.href}
+                    onClick={() => scrollToTopIfSameRoute(link.href)}
+                    className="hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                ) : (
+                  <HomeAnchorLink href={link.href} className="hover:text-white">
+                    {link.label}
+                  </HomeAnchorLink>
+                )}
               </li>
             ))}
           </ul>
