@@ -40,7 +40,8 @@ const ChangesPage = () => {
               A running log of updates made to the ISOC Nevada website. Written for chapter
               volunteers — not a technical changelog. This page is not linked from the public
               navigation; bookmark <span className="font-mono text-white">/changes</span> to
-              return here.
+              return here. Pull requests that change the site must update this log — CI checks for
+              it automatically.
             </p>
           </div>
         </section>
