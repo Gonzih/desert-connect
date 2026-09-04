@@ -1,6 +1,7 @@
 import emailRoutingDoc from "../../docs/EMAIL_ROUTING.md?raw";
 import aboutUsVideoDialog from "../components/site/AboutUsVideoDialog.tsx?raw";
 import header from "../components/site/Header.tsx?raw";
+import siteProjects from "../components/site/Projects.tsx?raw";
 import siteLink from "../components/SiteLink.tsx?raw";
 import changelog from "../data/changelog.ts?raw";
 import events from "../data/events.ts?raw";
@@ -18,6 +19,7 @@ const fileContents = new Map<string, string>([
   ["docs/EMAIL_ROUTING.md", emailRoutingDoc],
   ["src/components/site/AboutUsVideoDialog.tsx", aboutUsVideoDialog],
   ["src/components/site/Header.tsx", header],
+  ["src/components/site/Projects.tsx", siteProjects],
   ["src/components/SiteLink.tsx", siteLink],
   ["src/data/changelog.ts", changelog],
   ["src/data/events.ts", events],

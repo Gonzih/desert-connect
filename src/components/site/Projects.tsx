@@ -115,10 +115,10 @@ export const Projects = () => {
             <ul className="mt-6 space-y-3 text-sm">
               {projects.map((workgroup) => (
                 <li
-                  key={workgroup.intendedEmail}
+                  key={workgroup.slug}
                   className="flex items-center justify-between gap-4 py-2 border-b border-white/10"
                 >
-                  <span className="text-white/85">{workgroup.lead}</span>
+                  <span className="text-white/85">{workgroup.name}</span>
                   <a
                     href={mailtoWorkgroup(workgroup.intendedEmail, workgroup.name)}
                     className="text-accent hover:underline font-semibold text-xs"
