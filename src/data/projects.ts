@@ -87,7 +87,7 @@ export const projects: Project[] = [
     slug: "tribal-connectivity-initiative",
     name: "Tribal Connectivity Initiative",
     status: "Pilot",
-    lead: "Community Networks WG",
+    lead: "Tribal Connectivity WG",
     intendedEmail: "tribal@isocnv.org",
     summary:
       "Working with Nevada's tribal nations on community network feasibility and Indigenous data sovereignty.",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     slug: "the-meta-layer-initiative",
     name: "The Meta-Layer Initiative",
     status: "Active",
-    lead: "Community Networks WG",
+    lead: "MetaWeb WG",
     intendedEmail: "metaweb@isocnv.org",
     summary:
       "Working with The Meta-Layer to explore decentralized identity solutions for the Internet.",
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     slug: "onboarding-outreach-and-engagement",
     name: "Onboarding, Outreach, and Engagement",
     status: "Pilot",
-    lead: "Community Networks WG",
+    lead: "Outreach & Engagement WG",
     intendedEmail: "community@isocnv.org",
     summary:
       "Working with Nevada's communities towards better network connectivity and data literacy.",
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     slug: "nevada-digital-policy-and-regulations",
     name: "Nevada Digital Policy and Regulations",
     status: "Pilot",
-    lead: "Community Networks WG",
+    lead: "Digital Policy WG",
     intendedEmail: "nevada@isocnv.org",
     summary: "Nevada's Digital Policy and Regulations workgroup.",
     purpose:
@@ -162,7 +162,7 @@ export const projects: Project[] = [
     slug: "nevada-connectivity-initiative",
     name: "Nevada Connectivity Initiative",
     status: "Pilot",
-    lead: "Community Networks WG",
+    lead: "State Connectivity WG",
     intendedEmail: "nvstate@isocnv.org",
     summary: "Working with Nevada's legislators to advance connectivity policies.",
     purpose:

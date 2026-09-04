@@ -110,7 +110,7 @@ export const Projects = () => {
           <aside className="rounded-2xl bg-surface-slate text-surface-slate-foreground p-8">
             <h3 className="font-display text-xl font-bold text-white">Contact Matrix</h3>
             <p className="mt-2 text-sm text-white/70">
-              Direct line to the people running each program.
+              Direct line to each workgroup running our programs.
             </p>
             <ul className="mt-6 space-y-3 text-sm">
               {projects.map((workgroup) => (
