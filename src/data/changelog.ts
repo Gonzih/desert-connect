@@ -22,7 +22,7 @@ export const changelogEntries: ChangelogEntry[] = [
     prNumber: 16,
     title: "CI now requires updating the Changes log",
     date: "2025-09-04",
-    status: "open",
+    status: "merged",
     summary:
       "Pull requests that change the public site must now include an update to the /changes log. CI will fail with a clear message if someone forgets.",
     changes: [
