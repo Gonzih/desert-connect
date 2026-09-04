@@ -1,4 +1,5 @@
 import { Shield, Lock, FileText, Mail } from "lucide-react";
+import { displayEmail, mailtoPrivacy, CHAPTER_DOMAIN_EMAILS } from "@/lib/siteEmails";
 
 export const PrivacyNotice = () => {
   return (
@@ -49,8 +50,8 @@ export const PrivacyNotice = () => {
             <h3 className="mt-3 font-display font-semibold">Contact the chapter</h3>
             <p className="mt-2 text-sm text-muted-foreground">
               Email{" "}
-              <a href="mailto:isocnevada@gmail.com" className="text-primary hover:underline">
-                isocnevada@gmail.com
+              <a href={mailtoPrivacy()} className="text-primary hover:underline">
+                {displayEmail(CHAPTER_DOMAIN_EMAILS.privacy)}
               </a>{" "}
               for any data request. We respond within 30 days.
             </p>

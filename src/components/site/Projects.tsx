@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SiteLink } from "@/components/SiteLink";
 import { projects } from "@/data/projects";
+import { displayEmail, mailtoGeneral, mailtoVolunteer, mailtoWorkgroup, CHAPTER_DOMAIN_EMAILS } from "@/lib/siteEmails";
 
 const helpWanted = [
   { role: "GIS Volunteer", group: "Broadband Mapping", commitment: "~4 hrs/mo" },
@@ -58,11 +59,11 @@ export const Projects = () => {
               <div className="mt-4 flex items-center justify-between gap-2 border-t border-border pt-3 text-[11px]">
                 <span className="text-muted-foreground">{workgroup.lead}</span>
                 <a
-                  href={`mailto:${workgroup.email}`}
+                  href={mailtoWorkgroup(workgroup.intendedEmail, workgroup.name)}
                   className="inline-flex min-w-0 items-center gap-1 font-semibold text-primary hover:underline"
                 >
                   <Mail className="h-3 w-3 shrink-0" />
-                  <span className="truncate">{workgroup.email}</span>
+                  <span className="truncate">{displayEmail(workgroup.intendedEmail)}</span>
                 </a>
               </div>
             </article>
@@ -85,7 +86,7 @@ export const Projects = () => {
               {helpWanted.map((h) => (
                 <li key={h.role}>
                   <a
-                    href={`mailto:isocnevada@gmail.com?subject=${encodeURIComponent(`Volunteer interest: ${h.role}`)}`}
+                    href={mailtoVolunteer(h.role)}
                     className="flex items-center justify-between py-4 gap-4 group"
                   >
                     <div>
@@ -102,7 +103,7 @@ export const Projects = () => {
               ))}
             </ul>
             <Button variant="hero" className="mt-7" asChild>
-              <a href="mailto:isocnevada@gmail.com">Volunteer with the chapter</a>
+              <a href={mailtoVolunteer()}>Volunteer with the chapter</a>
             </Button>
           </div>
 
@@ -114,25 +115,22 @@ export const Projects = () => {
             <ul className="mt-6 space-y-3 text-sm">
               {projects.map((workgroup) => (
                 <li
-                  key={workgroup.email}
+                  key={workgroup.intendedEmail}
                   className="flex items-center justify-between gap-4 py-2 border-b border-white/10"
                 >
                   <span className="text-white/85">{workgroup.lead}</span>
                   <a
-                    href={`mailto:${workgroup.email}`}
+                    href={mailtoWorkgroup(workgroup.intendedEmail, workgroup.name)}
                     className="text-accent hover:underline font-semibold text-xs"
                   >
-                    {workgroup.email}
+                    {displayEmail(workgroup.intendedEmail)}
                   </a>
                 </li>
               ))}
               <li className="flex items-center justify-between gap-4 py-2">
                 <span className="text-white/85">General inquiries</span>
-                <a
-                  href="mailto:hello@isocnv.org"
-                  className="text-accent hover:underline font-semibold text-xs"
-                >
-                  hello@isocnv.org
+                <a href={mailtoGeneral()} className="text-accent hover:underline font-semibold text-xs">
+                  {displayEmail(CHAPTER_DOMAIN_EMAILS.general)}
                 </a>
               </li>
             </ul>

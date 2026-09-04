@@ -13,7 +13,6 @@ export const HOME_SECTIONS = {
 export type HomeSectionId = (typeof HOME_SECTIONS)[keyof typeof HOME_SECTIONS];
 
 export const JOIN_FORM_URL = "https://forms.gle/NgvHEqj1LFFQ9NJ7A";
-export const NEWSLETTER_EMAIL = "hello@isocnv.org";
 export const ABOUT_US_VIDEO_URL = "/isoc-nevada-about.mp4";
 export const ABOUT_US_HASH = "about-us";
 

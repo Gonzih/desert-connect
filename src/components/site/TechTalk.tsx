@@ -1,5 +1,6 @@
 import { Calendar, MapPin, Ticket, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { mailtoHref } from "@/lib/siteEmails";
 
 
 export const TechTalk = () => {
@@ -58,7 +59,12 @@ export const TechTalk = () => {
 
           <div className="mt-8 flex flex-wrap items-center gap-4">
             <Button variant="hero" size="xl" asChild>
-              <a href="mailto:isocnevada@gmail.com?subject=RSVP%20-%20Tech%20Talk%20July%2023">
+              <a
+                href={mailtoHref({
+                  intended: "isocnevada@gmail.com",
+                  subject: "RSVP - Tech Talk July 23",
+                })}
+              >
                 RSVP — Join Us <ArrowRight className="ml-1.5 h-4 w-4" />
               </a>
             </Button>

@@ -5,7 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SiteLink } from "@/components/SiteLink";
 import { InactiveLink } from "@/components/InactiveLink";
-import { footerChapterLinks, NEWSLETTER_EMAIL } from "@/lib/siteNavigation";
+import { footerChapterLinks } from "@/lib/siteNavigation";
+import { mailtoNewsletter } from "@/lib/siteEmails";
 import logo from "@/assets/isoc-nevada-logo.webp";
 
 const socialLinks = [
@@ -21,11 +22,7 @@ export const Footer = () => {
     const email = new FormData(event.currentTarget).get("email");
     if (typeof email !== "string" || !email.trim()) return;
 
-    const mailto = `mailto:${NEWSLETTER_EMAIL}?subject=${encodeURIComponent("ISOC Nevada newsletter subscription")}&body=${encodeURIComponent(
-      `Please add me to the ISOC Nevada chapter newsletter.\n\nEmail: ${email.trim()}`,
-    )}`;
-
-    window.location.href = mailto;
+    window.location.href = mailtoNewsletter(email.trim());
     toast.success("Opening your email app to send your subscription request.");
   };
 
