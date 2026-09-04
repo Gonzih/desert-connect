@@ -28,18 +28,18 @@ const ChangesPage = () => {
       <Header />
 
       <main className="flex-1">
-        <section className="bg-surface-slate py-16 md:py-20">
+        <section className="bg-surface-slate py-16 text-surface-slate-foreground md:py-20">
           <div className="container">
             <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
               Internal
             </span>
-            <h1 className="mt-3 font-display text-4xl font-bold text-foreground md:text-5xl">
+            <h1 className="mt-3 font-display text-4xl font-bold md:text-5xl">
               Site Changes
             </h1>
-            <p className="mt-4 max-w-2xl text-muted-foreground">
+            <p className="mt-4 max-w-2xl text-surface-slate-foreground/80">
               A running log of updates made to the ISOC Nevada website. Written for chapter
               volunteers — not a technical changelog. This page is not linked from the public
-              navigation; bookmark <span className="font-mono text-foreground">/changes</span> to
+              navigation; bookmark <span className="font-mono text-white">/changes</span> to
               return here.
             </p>
           </div>
