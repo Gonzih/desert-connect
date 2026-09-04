@@ -90,13 +90,16 @@ describe("link audit (static)", () => {
 
   it("defines footer chapter links per site spec", () => {
     expect(footerChapterLinks.map((l) => l.label)).toEqual([
-      "About",
+      "About Us",
       "Membership",
       "Workgroups",
       "Bylaws & Minutes",
       "Donate",
     ]);
-    expect(footerChapterLinks[0].target).toEqual({ type: "section", section: "global" });
+    expect(footerChapterLinks[0].target).toMatchObject({
+      type: "external",
+      href: "/isoc-nevada-about.mp4",
+    });
     expect(footerChapterLinks[1].target).toMatchObject({
       type: "external",
       href: "https://forms.gle/NgvHEqj1LFFQ9NJ7A",

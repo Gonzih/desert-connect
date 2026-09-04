@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { SiteLink } from "@/components/SiteLink";
 import { InactiveLink } from "@/components/InactiveLink";
+import { ABOUT_US_VIDEO_URL } from "@/lib/siteNavigation";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
 import rubyMountainsBackground from "./ruby-mountains-events-background.png";
@@ -106,7 +107,7 @@ export const Membership = () => {
                       controls
                       preload="metadata"
                       className="w-full rounded-lg bg-black"
-                      src="/isoc-nevada-about.mp4"
+                      src={ABOUT_US_VIDEO_URL}
                     >
                       Your browser does not support the video tag.
                     </video>
