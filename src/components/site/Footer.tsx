@@ -1,5 +1,7 @@
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { type FormEvent } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { HomeAnchorLink } from "@/components/HomeAnchorLink";
@@ -7,6 +9,7 @@ import { InactiveLink } from "@/components/InactiveLink";
 import logo from "@/assets/isoc-nevada-logo.webp";
 
 const JOIN_FORM_URL = "https://forms.gle/NgvHEqj1LFFQ9NJ7A";
+const NEWSLETTER_EMAIL = "hello@isocnv.org";
 
 const chapterLinks = [
   { label: "About", type: "anchor" as const, href: "#global" },
@@ -31,6 +34,19 @@ export const Footer = () => {
     }
   };
 
+  const handleSubscribe = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const email = new FormData(event.currentTarget).get("email");
+    if (typeof email !== "string" || !email.trim()) return;
+
+    const mailto = `mailto:${NEWSLETTER_EMAIL}?subject=${encodeURIComponent("ISOC Nevada newsletter subscription")}&body=${encodeURIComponent(
+      `Please add me to the ISOC Nevada chapter newsletter.\n\nEmail: ${email.trim()}`,
+    )}`;
+
+    window.location.href = mailto;
+    toast.success("Opening your email app to send your subscription request.");
+  };
+
   return (
     <footer className="bg-surface-slate text-surface-slate-foreground">
       <div className="container py-16 grid gap-10 lg:grid-cols-4">
@@ -47,11 +63,12 @@ export const Footer = () => {
             closing the digital divide and defending encryption and online safety.
           </p>
           <form
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={handleSubscribe}
             className="mt-6 flex flex-col sm:flex-row gap-2 max-w-sm"
           >
             <Input
               type="email"
+              name="email"
               required
               placeholder="you@nevada.org"
               className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
