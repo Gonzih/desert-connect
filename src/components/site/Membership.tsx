@@ -1,6 +1,10 @@
 import { PlayCircle, UserPlus, MessageSquare, Users2, Eye, Hand, Handshake, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { HomeAnchorLink } from "@/components/HomeAnchorLink";
+import { InactiveLink } from "@/components/InactiveLink";
+import { cn } from "@/lib/utils";
+import { inactiveLinkClassName } from "@/lib/navigation";
 import rubyMountainsBackground from "./ruby-mountains-events-background.png";
 
 const steps = [
@@ -109,9 +113,12 @@ export const Membership = () => {
                   </div>
                 </DialogContent>
               </Dialog>
-              <a
-                href="#"
-                className="group relative flex items-center gap-4 rounded-xl border border-border/80 bg-card/90 p-5 shadow-card backdrop-blur-sm hover:shadow-elegant transition-smooth"
+              <InactiveLink
+                title="Orientation video coming soon"
+                className={cn(
+                  "group relative flex items-center gap-4 rounded-xl border border-border/80 bg-card/90 p-5 shadow-card backdrop-blur-sm",
+                  inactiveLinkClassName,
+                )}
               >
                 <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-gradient-primary text-primary-foreground">
                   <PlayCircle className="h-6 w-6" />
@@ -120,10 +127,13 @@ export const Membership = () => {
                   <p className="font-display font-semibold text-foreground">Watch orientation - Coming Soon</p>
                   <p className="text-xs text-muted-foreground mt-0.5">5-min welcome video - Coming Soon</p>
                 </div>
-              </a>
-              <a
-                href="#"
-                className="group relative flex items-center gap-4 rounded-xl border border-border/80 bg-card/90 p-5 shadow-card backdrop-blur-sm hover:shadow-elegant transition-smooth"
+              </InactiveLink>
+              <InactiveLink
+                title="Member handbook coming soon"
+                className={cn(
+                  "group relative flex items-center gap-4 rounded-xl border border-border/80 bg-card/90 p-5 shadow-card backdrop-blur-sm",
+                  inactiveLinkClassName,
+                )}
               >
                 <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent">
                   <UserPlus className="h-6 w-6" />
@@ -132,7 +142,7 @@ export const Membership = () => {
                   <p className="font-display font-semibold text-foreground">Member handbook - Coming Soon</p>
                   <p className="text-xs text-muted-foreground mt-0.5">PDF · onboarding guide - Coming Soon</p>
                 </div>
-              </a>
+              </InactiveLink>
             </div>
           </div>
 
@@ -154,14 +164,23 @@ export const Membership = () => {
                       <p className="font-semibold text-foreground">{s.title}</p>
                     </div>
                     <p className="mt-1 text-sm text-muted-foreground">{s.body}</p>
-                    <a
-                      href={s.href}
-                      target={s.href.startsWith("http") ? "_blank" : undefined}
-                      rel="noreferrer"
-                      className="mt-2 inline-block text-xs font-semibold text-primary hover:underline"
-                    >
-                      {s.cta} →
-                    </a>
+                    {s.href.startsWith("http") ? (
+                      <a
+                        href={s.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-2 inline-block text-xs font-semibold text-primary hover:underline"
+                      >
+                        {s.cta} →
+                      </a>
+                    ) : (
+                      <HomeAnchorLink
+                        href={s.href}
+                        className="mt-2 inline-block text-xs font-semibold text-primary hover:underline"
+                      >
+                        {s.cta} →
+                      </HomeAnchorLink>
+                    )}
                   </div>
                 </li>
               ))}

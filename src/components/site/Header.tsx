@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/Standard JPG-US-Nevada-Chapter-Logo.jpg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { smoothScrollTo } from "@/lib/navigation";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -13,15 +14,6 @@ const navLinks = [
   { label: "Resources", href: "#resources" },
   { label: "Donate", href: "#donate" },
 ];
-
-const HEADER_OFFSET = 80;
-
-const smoothScrollTo = (hash: string) => {
-  const el = document.querySelector(hash);
-  if (!el) return;
-  const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
-  window.scrollTo({ top, behavior: "smooth" });
-};
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState(false);

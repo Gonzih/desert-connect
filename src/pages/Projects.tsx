@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+import { HomeAnchorLink } from "@/components/HomeAnchorLink";
 import {
   ArrowLeft,
   BookOpen,
@@ -192,10 +193,10 @@ const Projects = () => {
         <section className="bg-gradient-subtle py-16 md:py-24">
           <div className="container">
             <Button variant="ghost" className="mb-8" asChild>
-              <Link to="/#projects">
+              <HomeAnchorLink href="#projects" className="inline-flex items-center">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to home projects
-              </Link>
+              </HomeAnchorLink>
             </Button>
 
             <div className="max-w-3xl">
@@ -299,9 +300,9 @@ const Projects = () => {
 
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5 text-sm">
                   <span className="text-muted-foreground">{project.lead}</span>
-                  <Link to="/#projects" className="font-semibold text-primary hover:underline">                   
+                  <HomeAnchorLink href="#projects" className="font-semibold text-primary hover:underline">
                     Return to project list
-                  </Link>
+                  </HomeAnchorLink>
                 </div>
               </article>
             ))}

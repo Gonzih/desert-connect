@@ -1,4 +1,7 @@
 import { BookOpen, MapPin, ArrowUpRight } from "lucide-react";
+import { InactiveLink } from "@/components/InactiveLink";
+import { cn } from "@/lib/utils";
+import { inactiveLinkClassName } from "@/lib/navigation";
 
 const topics = [
   {
@@ -77,23 +80,24 @@ export const Resources = () => {
             <ul className="mt-4 grid gap-3">
               {publications.map((p) => (
                 <li key={p.title}>
-                  <a
-                    href="#"
-                    className="group flex min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-primary/30 hover:shadow-sm transition-smooth"
+                  <InactiveLink
+                    title="Publication coming soon"
+                    className={cn(
+                      "group flex min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3",
+                      inactiveLinkClassName,
+                    )}
                   >
                     <div className="flex w-full items-start justify-between gap-3">
                       <div>
                         <div className="flex items-center gap-2">
-                          <MapPin className="h-3.5 w-3.5 text-primary" />
-                          <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-smooth">
-                            {p.title}
-                          </p>
+                          <MapPin className="h-3.5 w-3.5 text-primary/60" />
+                          <p className="text-sm font-semibold text-foreground/70">{p.title}</p>
                         </div>
                         <p className="mt-1 text-xs text-muted-foreground">{p.meta}</p>
                       </div>
-                      <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-smooth shrink-0" />
+                      <ArrowUpRight className="h-4 w-4 text-muted-foreground/60 shrink-0" />
                     </div>
-                  </a>
+                  </InactiveLink>
                 </li>
               ))}
             </ul>
