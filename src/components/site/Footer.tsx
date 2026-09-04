@@ -1,4 +1,4 @@
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Facebook, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { type FormEvent } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { toast } from "sonner";
@@ -20,8 +20,9 @@ const chapterLinks = [
 ];
 
 const socialLinks = [
-  { label: "Twitter", icon: Twitter },
+  { label: "Facebook", icon: Facebook },
   { label: "LinkedIn", icon: Linkedin },
+  { label: "Twitter", icon: Twitter },
   { label: "GitHub", icon: Github },
 ];
 
@@ -124,15 +125,16 @@ export const Footer = () => {
           <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-accent">
             Connect
           </h4>
+          <p className="mt-1 text-xs text-white/45">Social profiles coming soon</p>
           <div className="mt-4 flex gap-3">
             {socialLinks.map(({ label, icon: Icon }) => (
               <InactiveLink
                 key={label}
                 title={`${label} profile coming soon`}
-                className="grid h-9 w-9 place-items-center rounded-md border border-white/15 text-white/50"
+                className="grid h-9 w-9 place-items-center rounded-md border border-dashed border-white/20 bg-white/5 text-white/40"
               >
                 <Icon className="h-4 w-4" aria-hidden="true" />
-                <span className="sr-only">{label}</span>
+                <span className="sr-only">{label} (coming soon)</span>
               </InactiveLink>
             ))}
           </div>
