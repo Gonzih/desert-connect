@@ -1,11 +1,11 @@
 import { type MouseEvent, type ReactNode } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { InactiveLink } from "@/components/InactiveLink";
 import { smoothScrollTo } from "@/lib/navigation";
 import {
+  projectPath,
   sectionHash,
-  sectionHref,
   type SiteLinkTarget,
 } from "@/lib/siteNavigation";
 
@@ -18,7 +18,6 @@ type SiteLinkProps = {
 
 export const SiteLink = ({ target, className, children, onNavigate }: SiteLinkProps) => {
   const location = useLocation();
-  const navigate = useNavigate();
 
   if (target.type === "inactive") {
     return (
@@ -58,46 +57,33 @@ export const SiteLink = ({ target, className, children, onNavigate }: SiteLinkPr
   }
 
   if (target.type === "project") {
-    const hash = `#${target.slug}`;
-
-    const handleProjectClick = (event: MouseEvent<HTMLAnchorElement>) => {
-      event.preventDefault();
-      onNavigate?.();
-
-      if (location.pathname === "/projects") {
-        smoothScrollTo(hash);
-        return;
-      }
-
-      navigate({ pathname: "/projects", hash });
-    };
+    const path = projectPath(target.slug);
 
     return (
-      <a href={`/projects${hash}`} onClick={handleProjectClick} className={cn(className)}>
+      <Link to={path} className={cn(className)} onClick={onNavigate}>
         {children}
-      </a>
+      </Link>
     );
   }
 
   const hash = sectionHash(target.section);
-  const href = sectionHref(target.section);
 
   const handleSectionClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    event.preventDefault();
     onNavigate?.();
 
     if (location.pathname === "/") {
+      event.preventDefault();
       smoothScrollTo(hash);
-      window.history.replaceState(null, "", href);
+      window.history.replaceState(null, "", hash);
       return;
     }
 
-    navigate({ pathname: "/", hash });
+    // Let <Link> navigate to /#section from other pages
   };
 
   return (
-    <a href={href} onClick={handleSectionClick} className={cn(className)}>
+    <Link to={{ pathname: "/", hash }} className={cn(className)} onClick={handleSectionClick}>
       {children}
-    </a>
+    </Link>
   );
 };

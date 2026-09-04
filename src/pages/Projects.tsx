@@ -1,16 +1,49 @@
-import { useScrollToHash } from "@/hooks/useScrollToSection";
+import { useEffect } from "react";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { SiteLink } from "@/components/SiteLink";
-import { InPageAnchor } from "@/components/InPageAnchor";
 import { ArrowLeft, Mail } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { CookieConsent } from "@/components/site/CookieConsent";
-import { projects } from "@/data/projects";
+import { projects, projectSlugs } from "@/data/projects";
+import { projectPath } from "@/lib/siteNavigation";
+import { smoothScrollTo } from "@/lib/navigation";
 
 const Projects = () => {
-  useScrollToHash();
+  const { slug } = useParams<{ slug?: string }>();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Redirect legacy /projects#slug bookmarks to /projects/slug
+  useEffect(() => {
+    if (!location.hash) return;
+    const legacySlug = location.hash.slice(1);
+    if (projectSlugs.includes(legacySlug)) {
+      navigate(projectPath(legacySlug), { replace: true });
+    }
+  }, [location.hash, navigate]);
+
+  useEffect(() => {
+    if (!slug) {
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    let attempts = 0;
+    const tryScroll = () => {
+      if (document.getElementById(slug)) {
+        smoothScrollTo(`#${slug}`);
+        return;
+      }
+      if (attempts++ < 12) {
+        requestAnimationFrame(tryScroll);
+      }
+    };
+
+    tryScroll();
+  }, [slug]);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -44,9 +77,9 @@ const Projects = () => {
 
             <nav className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-4" aria-label="Projects">
               {projects.map((project) => (
-                <InPageAnchor
+                <Link
                   key={project.slug}
-                  href={`#${project.slug}`}
+                  to={projectPath(project.slug)}
                   className="group flex items-center gap-3 rounded-lg border border-border bg-card p-4 shadow-card transition-smooth hover:-translate-y-0.5 hover:shadow-elegant"
                 >
                   <span className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-gradient-primary text-primary-foreground">
@@ -55,7 +88,7 @@ const Projects = () => {
                   <span className="text-sm font-semibold leading-snug text-foreground group-hover:text-primary">
                     {project.name}
                   </span>
-                </InPageAnchor>
+                </Link>
               ))}
             </nav>
           </div>
@@ -129,12 +162,12 @@ const Projects = () => {
 
                 <div className="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5 text-sm">
                   <span className="text-muted-foreground">{project.lead}</span>
-                  <SiteLink
-                    target={{ type: "section", section: "projects" }}
+                  <Link
+                    to="/projects"
                     className="font-semibold text-primary hover:underline"
                   >
                     Return to project list
-                  </SiteLink>
+                  </Link>
                 </div>
               </article>
             ))}

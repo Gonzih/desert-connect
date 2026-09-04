@@ -1,11 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { externalLinks, homeSectionAnchors } from "@/lib/siteLinks";
 import { footerChapterLinks } from "@/lib/siteNavigation";
 import { projectSlugs, projects } from "@/data/projects";
 
 const srcRoot = join(process.cwd(), "src");
+const root = process.cwd();
 
 const collectFiles = (dir: string): string[] =>
   readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
@@ -21,6 +22,7 @@ const siteSource = collectFiles(join(srcRoot, "components", "site"))
     join(srcRoot, "pages", "CalendarPage.tsx"),
     join(srcRoot, "pages", "NotFound.tsx"),
     join(srcRoot, "components", "site", "Footer.tsx"),
+    join(srcRoot, "components", "SiteLink.tsx"),
   ])
   .map((file) => readFileSync(file, "utf8"))
   .join("\n");
@@ -30,10 +32,30 @@ describe("link audit (static)", () => {
     expect(siteSource).not.toMatch(/href="#"/);
   });
 
-  it("does not use HashRouter", () => {
+  it("does not use HashRouter or hash-based route URLs", () => {
     const appSource = readFileSync(join(srcRoot, "App.tsx"), "utf8");
     expect(appSource).not.toContain("HashRouter");
     expect(appSource).toContain("BrowserRouter");
+    expect(siteSource).not.toContain("#/");
+    expect(siteSource).not.toContain("HomeAnchorLink");
+    expect(siteSource).not.toContain("InPageAnchor");
+  });
+
+  it("uses real /projects paths for workgroups (not hash fragments)", () => {
+    const projectsPage = readFileSync(join(srcRoot, "pages", "Projects.tsx"), "utf8");
+    const siteLink = readFileSync(join(srcRoot, "components", "SiteLink.tsx"), "utf8");
+    expect(projectsPage).toContain("projectPath");
+    expect(projectsPage).not.toMatch(/href=\{`#\$\{/);
+    expect(siteLink).toContain("projectPath");
+    expect(siteLink).not.toContain("/projects${hash}");
+  });
+
+  it("ships GitHub Pages SPA redirect for deep links", () => {
+    expect(existsSync(join(root, "public", "404.html"))).toBe(true);
+    const spa404 = readFileSync(join(root, "public", "404.html"), "utf8");
+    expect(spa404).toContain("segmentCount");
+    const indexHtml = readFileSync(join(root, "index.html"), "utf8");
+    expect(indexHtml).toContain("replaceState");
   });
 
   it("documents every home section anchor used in site components", () => {
