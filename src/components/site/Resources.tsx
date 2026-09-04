@@ -1,7 +1,4 @@
-import { BookOpen, MapPin, ArrowUpRight } from "lucide-react";
-import { InactiveLink } from "@/components/InactiveLink";
-import { cn } from "@/lib/utils";
-import { inactiveLinkClassName } from "@/lib/navigation";
+import { BookOpen, ExternalLink, MapPin } from "lucide-react";
 
 const topics = [
   {
@@ -23,16 +20,19 @@ const topics = [
 
 const publications = [
   {
-    title: "The Nevada Digital Divide: 2025 Snapshot",
-    meta: "Regional report · 28 pages",
+    title: "Nevada Statewide Digital Equity Plan",
+    meta: "Nevada OSIT · State plan (PDF)",
+    href: "https://broadbandexpanded.com/files/iija_plans/NV%20-%20Digital%20Equity%20Plan%20-%20Draft.pdf",
   },
   {
-    title: "Broadband Funding in the Silver State",
-    meta: "BEAD & state programs primer",
+    title: "Broadband Equity, Access, and Deployment in Nevada",
+    meta: "UNLV Lincy Institute · Policy brief (PDF)",
+    href: "https://oasis.library.unlv.edu/cgi/viewcontent.cgi?article=1012&context=lincy_policybriefs_reports",
   },
   {
-    title: "Nevada Legislative Tracker",
-    meta: "Internet & technology bills, 83rd session",
+    title: "83rd Session Legislative Tracker",
+    meta: "Nevada Legislature · NELIS bill search",
+    href: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025",
   },
 ];
 
@@ -48,12 +48,12 @@ export const Resources = () => {
             The chapter library.
           </h2>
           <p className="mt-4 text-muted-foreground leading-relaxed">
-            White papers and Nevada-specific publications you can use, cite, and share.
+            Curated Nevada-specific reports and trackers from state agencies and research partners.
+            Chapter-authored publications will be added here as they are released.
           </p>
         </div>
 
         <div className="mt-8 grid items-start gap-6 md:grid-cols-2">
-          {/* Topics */}
           <div>
             <h3 className="font-display text-lg font-bold text-foreground">Focused Topics</h3>
             <p className="mt-1 text-xs text-muted-foreground">White papers from the chapter</p>
@@ -73,31 +73,33 @@ export const Resources = () => {
             </ul>
           </div>
 
-          {/* Publications */}
           <div>
-            <h3 className="font-display text-lg font-bold text-foreground">Nevada Publications</h3>
-            <p className="mt-1 text-xs text-muted-foreground">Regional reports & legislative summaries</p>
+            <h3 className="font-display text-lg font-bold text-foreground">Nevada References</h3>
+            <p className="mt-1 text-xs text-muted-foreground">
+              Official state &amp; partner sources (opens in a new tab)
+            </p>
             <ul className="mt-4 grid gap-3">
               {publications.map((p) => (
-                <li key={p.title}>
-                  <InactiveLink
-                    title="Publication coming soon"
-                    className={cn(
-                      "group flex min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3",
-                      inactiveLinkClassName,
-                    )}
+                <li key={p.href}>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group flex min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-primary/30 hover:shadow-sm transition-smooth"
                   >
                     <div className="flex w-full items-start justify-between gap-3">
                       <div>
                         <div className="flex items-center gap-2">
-                          <MapPin className="h-3.5 w-3.5 text-primary/60" />
-                          <p className="text-sm font-semibold text-foreground/70">{p.title}</p>
+                          <MapPin className="h-3.5 w-3.5 text-primary" />
+                          <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-smooth">
+                            {p.title}
+                          </p>
                         </div>
                         <p className="mt-1 text-xs text-muted-foreground">{p.meta}</p>
                       </div>
-                      <ArrowUpRight className="h-4 w-4 text-muted-foreground/60 shrink-0" />
+                      <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-smooth shrink-0" />
                     </div>
-                  </InactiveLink>
+                  </a>
                 </li>
               ))}
             </ul>
