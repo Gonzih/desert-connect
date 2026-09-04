@@ -18,6 +18,20 @@ export type ChangelogEntry = {
  *  Update this file for every user-facing change — CI enforces it on pull requests. */
 export const changelogEntries: ChangelogEntry[] = [
   {
+    id: "pr-17",
+    prNumber: 17,
+    title: "Contact Matrix lists each workgroup by name",
+    date: "2025-09-04",
+    status: "open",
+    summary:
+      "The Contact Matrix on the home page was showing committee names instead of workgroup names, so five different programs all appeared as “Community Networks WG.” Each row now shows the actual workgroup.",
+    changes: [
+      "Contact Matrix rows now use workgroup names like Nevada Broadband Mapping and Encryption Defense",
+      "Fixes five duplicate “Community Networks WG” entries on the projects section",
+    ],
+    linkedFiles: [{ path: "src/components/site/Projects.tsx", label: "Projects section" }],
+  },
+  {
     id: "pr-16",
     prNumber: 16,
     title: "CI now requires updating the Changes log",
