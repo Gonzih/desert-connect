@@ -14,14 +14,69 @@ export type ChangelogEntry = {
   linkedFiles?: ChangelogLinkedFile[];
 };
 
-/** Running record of site updates, written for chapter volunteers (not developers). */
+/** Running record of site updates, written for chapter volunteers (not developers).
+ *  Update this file for every user-facing change — CI enforces it on pull requests. */
 export const changelogEntries: ChangelogEntry[] = [
+  {
+    id: "pr-16",
+    prNumber: 16,
+    title: "CI now requires updating the Changes log",
+    date: "2025-09-04",
+    status: "open",
+    summary:
+      "Pull requests that change the public site must now include an update to the /changes log. CI will fail with a clear message if someone forgets.",
+    changes: [
+      "New CI workflow runs tests and checks for changelog updates on every pull request",
+      "Site changes without an entry in src/data/changelog.ts are blocked",
+      "Added npm run check:changelog for local use before opening a PR",
+    ],
+    linkedFiles: [
+      { path: "src/data/changelog.ts", label: "Changelog data" },
+      { path: "src/test/changelog.test.ts", label: "Changelog tests" },
+    ],
+  },
+  {
+    id: "pr-15",
+    prNumber: 15,
+    title: "Fixed unreadable text on the Changes page",
+    date: "2025-09-04",
+    status: "merged",
+    summary:
+      "The title and description at the top of the Changes page were nearly invisible because dark text was placed on a dark background. Text is now light and easy to read.",
+    changes: [
+      "Site Changes heading and description are now legible on the dark banner",
+      "Same readability fix applied to the Calendar page header",
+    ],
+    linkedFiles: [
+      { path: "src/pages/ChangesPage.tsx", label: "Changes page" },
+      { path: "src/pages/CalendarPage.tsx", label: "Calendar page" },
+    ],
+  },
+  {
+    id: "pr-14",
+    prNumber: 14,
+    title: "Added hidden Changes log and email guide",
+    date: "2025-09-04",
+    status: "merged",
+    summary:
+      "Created a volunteer-friendly log of site updates at /changes (not linked from the public menu). Also added written instructions for how email works today and how to restore chapter addresses later.",
+    changes: [
+      "New /changes page summarizes recent updates in plain language",
+      "Related docs and code files can be previewed in a popup",
+      "Email routing and restoration steps documented in docs/EMAIL_ROUTING.md",
+    ],
+    linkedFiles: [
+      { path: "docs/EMAIL_ROUTING.md", label: "Email routing guide" },
+      { path: "src/data/changelog.ts", label: "Changelog data" },
+      { path: "src/pages/ChangesPage.tsx", label: "Changes page" },
+    ],
+  },
   {
     id: "pr-13",
     prNumber: 13,
     title: "Email links now go to the chapter Gmail inbox",
     date: "2025-09-04",
-    status: "open",
+    status: "merged",
     summary:
       "Because isocnv.org email is not set up yet, every contact link on the site now opens a message to isocnevada@gmail.com. The subject line notes which chapter address the message was meant for, so volunteers can sort mail easily.",
     changes: [
