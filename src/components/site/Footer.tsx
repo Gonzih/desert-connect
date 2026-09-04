@@ -6,12 +6,14 @@ import { HomeAnchorLink } from "@/components/HomeAnchorLink";
 import { InactiveLink } from "@/components/InactiveLink";
 import logo from "@/assets/isoc-nevada-logo.webp";
 
+const JOIN_FORM_URL = "https://forms.gle/NgvHEqj1LFFQ9NJ7A";
+
 const chapterLinks = [
-  { label: "About", href: "#home", type: "anchor" as const },
-  { label: "Membership", href: "#membership", type: "anchor" as const },
-  { label: "Workgroups", href: "/projects", type: "route" as const },
-  { label: "Bylaws & Minutes", href: "#resources", type: "anchor" as const },
-  { label: "Donate", href: "#donate", type: "anchor" as const },
+  { label: "About", type: "anchor" as const, href: "#global" },
+  { label: "Membership", type: "external" as const, href: JOIN_FORM_URL },
+  { label: "Workgroups", type: "route" as const, href: "/projects" },
+  { label: "Bylaws & Minutes", type: "inactive" as const },
+  { label: "Donate", type: "anchor" as const, href: "#donate" },
 ];
 
 const socialLinks = [
@@ -23,8 +25,8 @@ const socialLinks = [
 export const Footer = () => {
   const location = useLocation();
 
-  const scrollToTopIfSameRoute = (path: string) => {
-    if (location.pathname === path) {
+  const goToProjectsTop = () => {
+    if (location.pathname === "/projects") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
@@ -66,15 +68,31 @@ export const Footer = () => {
           </h4>
           <ul className="mt-4 space-y-2.5 text-sm text-white/75">
             {chapterLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.label}>
                 {link.type === "route" ? (
                   <Link
-                    to={link.href}
-                    onClick={() => scrollToTopIfSameRoute(link.href)}
+                    to={{ pathname: link.href, hash: "" }}
+                    onClick={goToProjectsTop}
                     className="hover:text-white"
                   >
                     {link.label}
                   </Link>
+                ) : link.type === "external" ? (
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white"
+                  >
+                    {link.label}
+                  </a>
+                ) : link.type === "inactive" ? (
+                  <InactiveLink
+                    title="Bylaws and minutes coming soon"
+                    className="text-white/50"
+                  >
+                    {link.label}
+                  </InactiveLink>
                 ) : (
                   <HomeAnchorLink href={link.href} className="hover:text-white">
                     {link.label}

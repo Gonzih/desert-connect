@@ -173,18 +173,21 @@ const projects = [
 ];
 
 const Projects = () => {
-  const { hash } = useLocation();
+  const { hash, pathname } = useLocation();
 
   useEffect(() => {
-    if (!hash) return;
-
-    requestAnimationFrame(() => {
-      document.getElementById(hash.slice(1))?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
+    if (hash) {
+      requestAnimationFrame(() => {
+        document.getElementById(hash.slice(1))?.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
       });
-    });
-  }, [hash]);
+      return;
+    }
+
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
