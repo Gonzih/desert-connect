@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Cookie, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { HomeAnchorLink } from "@/components/HomeAnchorLink";
+import { SiteLink } from "@/components/SiteLink";
 import { Switch } from "@/components/ui/switch";
 import {
   Dialog,
@@ -92,9 +92,12 @@ export const CookieConsent = () => {
                   your consent, we also use analytics cookies to understand how the chapter site is
                   used, in line with the GDPR and the ePrivacy Directive. You can change your
                   choices any time.{" "}
-                  <HomeAnchorLink href="#privacy" className="text-primary underline-offset-2 hover:underline">
+                  <SiteLink
+                    target={{ type: "section", section: "privacy" }}
+                    className="text-primary underline-offset-2 hover:underline"
+                  >
                     Privacy &amp; Cookie Policy
-                  </HomeAnchorLink>
+                  </SiteLink>
                   .
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">

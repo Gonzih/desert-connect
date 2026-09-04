@@ -25,16 +25,20 @@ const publications = [
     href: "https://broadbandexpanded.com/files/iija_plans/NV%20-%20Digital%20Equity%20Plan%20-%20Draft.pdf",
   },
   {
-    title: "Broadband Equity, Access, and Deployment in Nevada",
-    meta: "UNLV Lincy Institute · Policy brief (PDF)",
-    href: "https://oasis.library.unlv.edu/cgi/viewcontent.cgi?article=1012&context=lincy_policybriefs_reports",
+    title: "Nevada BEAD Final Proposal",
+    meta: "Nevada OSIT · Broadband funding program (PDF)",
+    href: "https://prod.osit.nv.gov/siteassets/nevada-draft-bead-final-proposal---public-comment_final.pdf",
   },
   {
-    title: "83rd Session Legislative Tracker",
+    title: "83rd Session Bills & Resolutions",
     meta: "Nevada Legislature · NELIS bill search",
-    href: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025",
+    href: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bills/HomeBills",
   },
 ];
+
+const openExternal = (url: string) => {
+  window.open(url, "_blank", "noopener,noreferrer");
+};
 
 export const Resources = () => {
   return (
@@ -56,12 +60,12 @@ export const Resources = () => {
         <div className="mt-8 grid items-start gap-6 md:grid-cols-2">
           <div>
             <h3 className="font-display text-lg font-bold text-foreground">Focused Topics</h3>
-            <p className="mt-1 text-xs text-muted-foreground">White papers from the chapter</p>
+            <p className="mt-1 text-xs text-muted-foreground">Chapter white papers coming soon</p>
             <ul className="mt-4 grid gap-3">
               {topics.map((t) => (
                 <li
                   key={t.title}
-                  className="min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-border hover:shadow-sm transition-smooth"
+                  className="min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3"
                 >
                   <div className="flex items-center gap-2">
                     <t.icon className="h-4 w-4 text-accent" />
@@ -85,6 +89,10 @@ export const Resources = () => {
                     href={p.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={(event) => {
+                      event.preventDefault();
+                      openExternal(p.href);
+                    }}
                     className="group flex min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-primary/30 hover:shadow-sm transition-smooth"
                   >
                     <div className="flex w-full items-start justify-between gap-3">

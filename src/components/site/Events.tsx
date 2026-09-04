@@ -12,7 +12,7 @@ const events = [
     location: "Virtual (Zoom)",
     icon: Video,
     cta: "Register",
-    ctaHref: "https://course.metawebbook.com/begin-your-journey",
+    ctaHref: "https://course.metawebbook.com/",
   },
   {
     type: "Chapter Meetup",

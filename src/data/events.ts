@@ -7,7 +7,7 @@ export const calendarEvents = [
     location: "Virtual (Zoom)",
     description:
       "A series of sessions introducing MetaWeb concepts. Register to receive dates and access links.",
-    rsvpUrl: "https://course.metawebbook.com/begin-your-journey",
+    rsvpUrl: "https://course.metawebbook.com/",
   },
   {
     id: "meetup-2026-08-18",

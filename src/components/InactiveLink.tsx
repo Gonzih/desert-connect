@@ -16,6 +16,7 @@ export const InactiveLink = ({
   <span
     role="link"
     aria-disabled="true"
+    tabIndex={-1}
     title={title}
     className={cn(inactiveLinkClassName, className)}
   >

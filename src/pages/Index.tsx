@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { smoothScrollTo } from "@/lib/navigation";
+import { useScrollToHash } from "@/hooks/useScrollToSection";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { Trinity } from "@/components/site/Trinity";
@@ -16,21 +14,7 @@ import { Footer } from "@/components/site/Footer";
 import { CookieConsent } from "@/components/site/CookieConsent";
 
 const Index = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const scrollTo =
-      (location.state as { scrollTo?: string } | null)?.scrollTo ?? location.hash;
-    if (!scrollTo) return;
-
-    requestAnimationFrame(() => {
-      smoothScrollTo(scrollTo.startsWith("#") ? scrollTo : `#${scrollTo}`);
-      if (location.state) {
-        navigate(location.pathname, { replace: true, state: null });
-      }
-    });
-  }, [location, navigate]);
+  useScrollToHash();
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
@@ -52,7 +36,7 @@ const Index = () => {
               style={{ aspectRatio: "16/9", objectFit: "cover" }}
             />
             <a
-              href="https://course.metawebbook.com/begin-your-journey"
+              href="https://course.metawebbook.com/"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-white shadow-lg hover:opacity-90 transition"
