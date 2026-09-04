@@ -22,7 +22,7 @@ export const changelogEntries: ChangelogEntry[] = [
     prNumber: 18,
     title: "Contact Matrix shows all eight workgroups distinctly",
     date: "2025-09-04",
-    status: "open",
+    status: "merged",
     summary:
       "Follow-up to ensure the Contact Matrix lists every workgroup by name (not repeated committee labels) and gives each program a unique lead name in the project data.",
     changes: [
