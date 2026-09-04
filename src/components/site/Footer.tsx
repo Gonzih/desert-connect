@@ -1,7 +1,23 @@
 import { Github, Twitter, Linkedin, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { HomeAnchorLink } from "@/components/HomeAnchorLink";
+import { InactiveLink } from "@/components/InactiveLink";
 import logo from "@/assets/isoc-nevada-logo.webp";
+
+const chapterLinks = [
+  { label: "About", href: "#home" },
+  { label: "Membership", href: "#membership" },
+  { label: "Workgroups", href: "#projects" },
+  { label: "Bylaws & Minutes", href: "#resources" },
+  { label: "Donate", href: "#donate" },
+];
+
+const socialLinks = [
+  { label: "Twitter", icon: Twitter },
+  { label: "LinkedIn", icon: Linkedin },
+  { label: "GitHub", icon: Github },
+];
 
 export const Footer = () => {
   return (
@@ -40,11 +56,13 @@ export const Footer = () => {
             Chapter
           </h4>
           <ul className="mt-4 space-y-2.5 text-sm text-white/75">
-            <li><a href="#home" className="hover:text-white">About</a></li>
-            <li><a href="#membership" className="hover:text-white">Membership</a></li>
-            <li><a href="#projects" className="hover:text-white">Workgroups</a></li>
-            <li><a href="#resources" className="hover:text-white">Bylaws & Minutes</a></li>
-            <li><a href="#donate" className="hover:text-white">Donate</a></li>
+            {chapterLinks.map((link) => (
+              <li key={link.href}>
+                <HomeAnchorLink href={link.href} className="hover:text-white">
+                  {link.label}
+                </HomeAnchorLink>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -53,14 +71,15 @@ export const Footer = () => {
             Connect
           </h4>
           <div className="mt-4 flex gap-3">
-            {[Twitter, Linkedin, Github].map((Icon, i) => (
-              <a
-                key={i}
-                href="#"
-                className="grid h-9 w-9 place-items-center rounded-md border border-white/15 text-white/80 hover:border-accent hover:text-accent transition-smooth"
+            {socialLinks.map(({ label, icon: Icon }) => (
+              <InactiveLink
+                key={label}
+                title={`${label} profile coming soon`}
+                className="grid h-9 w-9 place-items-center rounded-md border border-white/15 text-white/50"
               >
-                <Icon className="h-4 w-4" />
-              </a>
+                <Icon className="h-4 w-4" aria-hidden="true" />
+                <span className="sr-only">{label}</span>
+              </InactiveLink>
             ))}
           </div>
           <p className="mt-6 text-xs text-white/55 leading-relaxed">

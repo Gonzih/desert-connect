@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import { smoothScrollTo } from "@/lib/navigation";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { Trinity } from "@/components/site/Trinity";
@@ -14,21 +15,22 @@ import { PrivacyNotice } from "@/components/site/PrivacyNotice";
 import { Footer } from "@/components/site/Footer";
 import { CookieConsent } from "@/components/site/CookieConsent";
 
-const HEADER_OFFSET = 80;
-
 const Index = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const scrollTo = (location.state as { scrollTo?: string })?.scrollTo;
+    const scrollTo =
+      (location.state as { scrollTo?: string } | null)?.scrollTo ?? location.hash;
     if (!scrollTo) return;
-    const el = document.querySelector(scrollTo);
-    if (!el) return;
+
     requestAnimationFrame(() => {
-      const top = el.getBoundingClientRect().top + window.scrollY - HEADER_OFFSET;
-      window.scrollTo({ top, behavior: "smooth" });
+      smoothScrollTo(scrollTo.startsWith("#") ? scrollTo : `#${scrollTo}`);
+      if (location.state) {
+        navigate(location.pathname, { replace: true, state: null });
+      }
     });
-  }, [location]);
+  }, [location, navigate]);
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

@@ -1,4 +1,7 @@
 import { Users, Target, Compass, ArrowUpRight } from "lucide-react";
+import { InactiveLink } from "@/components/InactiveLink";
+import { cn } from "@/lib/utils";
+import { inactiveLinkClassName } from "@/lib/navigation";
 
 const pillars = [
   {
@@ -59,13 +62,16 @@ export const Trinity = () => {
                 {p.title}
               </h3>
               <p className="mt-3 text-sm text-muted-foreground leading-relaxed flex-1">{p.body}</p>
-              <a
-                href="#"
-                className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-2.5 transition-smooth"
+              <InactiveLink
+                title={`${p.cta} — coming soon`}
+                className={cn(
+                  "mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary/60",
+                  inactiveLinkClassName,
+                )}
               >
                 {p.cta}
                 <ArrowUpRight className="h-4 w-4" />
-              </a>
+              </InactiveLink>
             </article>
           ))}
         </div>

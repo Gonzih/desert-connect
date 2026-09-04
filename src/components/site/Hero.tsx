@@ -1,5 +1,6 @@
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { HomeAnchorLink } from "@/components/HomeAnchorLink";
 import heroImg from "@/assets/hero-nevada.jpg";
 
 export const Hero = () => {
@@ -45,7 +46,7 @@ export const Hero = () => {
               </a>
             </Button>
             <Button variant="glass" size="xl" asChild>
-              <a href="#projects">Explore Our Work</a>
+              <HomeAnchorLink href="#projects">Explore Our Work</HomeAnchorLink>
             </Button>
           </div>
 
