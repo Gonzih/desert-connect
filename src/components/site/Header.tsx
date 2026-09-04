@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/Standard JPG-US-Nevada-Chapter-Logo.jpg";
 import { SiteLink } from "@/components/SiteLink";
+import { InactiveLink } from "@/components/InactiveLink";
 import { headerNav, JOIN_FORM_URL } from "@/lib/siteNavigation";
 
 export const Header = () => {
@@ -58,7 +59,7 @@ export const Header = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Button variant="ghost" size="sm" asChild>
-            <SiteLink target={{ type: "section", section: "membership" }}>Sign in</SiteLink>
+            <InactiveLink title="Member sign-in coming soon">Sign in</InactiveLink>
           </Button>
           <Button variant="hero" size="sm" asChild>
             <a href={JOIN_FORM_URL} target="_blank" rel="noreferrer">
