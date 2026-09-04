@@ -15,11 +15,13 @@ export type HomeSectionId = (typeof HOME_SECTIONS)[keyof typeof HOME_SECTIONS];
 export const JOIN_FORM_URL = "https://forms.gle/NgvHEqj1LFFQ9NJ7A";
 export const NEWSLETTER_EMAIL = "hello@isocnv.org";
 export const ABOUT_US_VIDEO_URL = "/isoc-nevada-about.mp4";
+export const ABOUT_US_HASH = "about-us";
 
 export type SiteLinkTarget =
   | { type: "section"; section: HomeSectionId }
   | { type: "route"; path: "/projects" | "/calendar" }
   | { type: "project"; slug: string }
+  | { type: "aboutVideo" }
   | { type: "external"; href: string; newTab?: boolean }
   | { type: "inactive"; reason: string };
 
@@ -40,7 +42,7 @@ export const headerNav: SiteNavItem[] = [
 
 /** Footer → Chapter links (per site spec) */
 export const footerChapterLinks: SiteNavItem[] = [
-  { label: "About Us", target: { type: "external", href: ABOUT_US_VIDEO_URL } },
+  { label: "About Us", target: { type: "aboutVideo" } },
   { label: "Membership", target: { type: "external", href: JOIN_FORM_URL, newTab: true } },
   { label: "Workgroups", target: { type: "route", path: "/projects" } },
   { label: "Bylaws & Minutes", target: { type: "inactive", reason: "Bylaws and minutes coming soon" } },

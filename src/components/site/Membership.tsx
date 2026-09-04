@@ -1,9 +1,8 @@
 import { PlayCircle, UserPlus, MessageSquare, Users2, Eye, Hand, Handshake, Film } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { AboutUsVideoDialog } from "@/components/site/AboutUsVideoDialog";
 import { SiteLink } from "@/components/SiteLink";
 import { InactiveLink } from "@/components/InactiveLink";
-import { ABOUT_US_VIDEO_URL } from "@/lib/siteNavigation";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
 import rubyMountainsBackground from "./ruby-mountains-events-background.png";
@@ -83,8 +82,8 @@ export const Membership = () => {
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <Dialog>
-                <DialogTrigger asChild>
+              <AboutUsVideoDialog
+                trigger={
                   <button
                     type="button"
                     className="group relative flex items-center gap-4 rounded-xl border border-border/80 bg-card/90 p-5 shadow-card backdrop-blur-sm hover:shadow-elegant transition-smooth text-left sm:col-span-2"
@@ -97,23 +96,8 @@ export const Membership = () => {
                       <p className="text-xs text-muted-foreground mt-0.5">Our community impact story</p>
                     </div>
                   </button>
-                </DialogTrigger>
-                <DialogContent className="max-w-3xl p-0 overflow-hidden bg-background">
-                  <DialogHeader className="px-6 pt-6">
-                    <DialogTitle>About ISOC Nevada</DialogTitle>
-                  </DialogHeader>
-                  <div className="px-6 pb-6">
-                    <video
-                      controls
-                      preload="metadata"
-                      className="w-full rounded-lg bg-black"
-                      src={ABOUT_US_VIDEO_URL}
-                    >
-                      Your browser does not support the video tag.
-                    </video>
-                  </div>
-                </DialogContent>
-              </Dialog>
+                }
+              />
               <InactiveLink
                 title="Orientation video coming soon"
                 className={cn(
