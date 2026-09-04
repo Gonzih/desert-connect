@@ -1,9 +1,16 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync, readdirSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { externalLinks, homeSectionAnchors, siteEmailAddresses } from "@/lib/siteLinks";
+import { externalLinks, homeSectionAnchors } from "@/lib/siteLinks";
 import { footerChapterLinks } from "@/lib/siteNavigation";
 import { projectSlugs, projects } from "@/data/projects";
+import {
+  CHAPTER_DOMAIN_EMAILS,
+  CHAPTER_INBOX,
+  USE_DOMAIN_EMAIL,
+  mailtoGeneral,
+  mailtoWorkgroup,
+} from "@/lib/siteEmails";
 
 const srcRoot = join(process.cwd(), "src");
 const root = process.cwd();
@@ -51,11 +58,8 @@ describe("link audit (static)", () => {
   });
 
   it("ships GitHub Pages SPA redirect for deep links", () => {
-    expect(existsSync(join(root, "public", "404.html"))).toBe(true);
-    const spa404 = readFileSync(join(root, "public", "404.html"), "utf8");
-    expect(spa404).toContain("segmentCount");
-    const indexHtml = readFileSync(join(root, "index.html"), "utf8");
-    expect(indexHtml).toContain("replaceState");
+    expect(readFileSync(join(root, "public", "404.html"), "utf8")).toContain("segmentCount");
+    expect(readFileSync(join(root, "index.html"), "utf8")).toContain("replaceState");
   });
 
   it("documents every home section anchor used in site components", () => {
@@ -113,20 +117,26 @@ describe("link audit (static)", () => {
     expect(footer).not.toContain("HomeAnchorLink");
   });
 
-  it("keeps mailto link text matching href addresses", () => {
-    const privacy = readFileSync(join(srcRoot, "components", "site", "PrivacyNotice.tsx"), "utf8");
-    expect(privacy).toContain('href="mailto:isocnevada@gmail.com"');
-    expect(privacy).toContain("isocnevada@gmail.com");
-    expect(privacy).not.toContain("privacy@isocnv.org");
+  it("routes all public mailto links through siteEmails while domain MX is offline", () => {
+    expect(USE_DOMAIN_EMAIL).toBe(false);
+    expect(siteSource).not.toMatch(/mailto:[^"'`]+@isocnv\.org/);
+    expect(siteSource).toContain("mailtoWorkgroup");
+    expect(siteSource).toContain("mailtoNewsletter");
+    expect(mailtoGeneral()).toContain(CHAPTER_INBOX);
+    expect(mailtoWorkgroup(CHAPTER_DOMAIN_EMAILS.workgroups.broadband, "Test")).toContain(
+      CHAPTER_INBOX,
+    );
+    expect(mailtoWorkgroup(CHAPTER_DOMAIN_EMAILS.workgroups.broadband, "Test")).toContain(
+      encodeURIComponent(CHAPTER_DOMAIN_EMAILS.workgroups.broadband),
+    );
   });
 
-  it("documents all site email addresses", () => {
-    for (const entry of siteEmailAddresses) {
-      expect(entry.address).toMatch(/^[^\s@]+@[^\s@]+\.[^\s@]+$/);
+  it("preserves original domain addresses for MX restoration", () => {
+    expect(CHAPTER_DOMAIN_EMAILS.general).toBe("hello@isocnv.org");
+    expect(Object.values(CHAPTER_DOMAIN_EMAILS.workgroups)).toHaveLength(8);
+    for (const project of projects) {
+      expect(project.intendedEmail).toMatch(/@isocnv\.org$/);
     }
-    expect(siteEmailAddresses.some((e) => e.address === "isocnevada@gmail.com" && e.receives)).toBe(
-      true,
-    );
   });
 });
 

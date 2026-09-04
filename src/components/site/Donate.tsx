@@ -1,4 +1,5 @@
 import { Heart, Building2, Mail } from "lucide-react";
+import { displayEmail, mailtoSponsorship, CHAPTER_DOMAIN_EMAILS } from "@/lib/siteEmails";
 import { Button } from "@/components/ui/button";
 import blackRockDesertBackground from "./black-rock-desert-donate-background.png";
 
@@ -113,11 +114,11 @@ export const Donate = () => {
               </p>
 
               <a
-                href="mailto:sponsorship@isocnv.org"
+                href={mailtoSponsorship()}
                 className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline"
               >
                 <Mail className="h-4 w-4" />
-                sponsorship@isocnv.org
+                {displayEmail(CHAPTER_DOMAIN_EMAILS.sponsorship)}
               </a>
             </div>
 

@@ -16,7 +16,8 @@ export type Project = {
   name: string;
   status: "Active" | "Pilot";
   lead: string;
-  email: string;
+  /** Original @isocnv.org address — routed via src/lib/siteEmails.ts until MX is live */
+  intendedEmail: string;
   summary: string;
   purpose: string;
   function: string;
@@ -30,7 +31,7 @@ export const projects: Project[] = [
     name: "Nevada Broadband Mapping",
     status: "Active",
     lead: "Broadband Committee",
-    email: "broadband@isocnv.org",
+    intendedEmail: "broadband@isocnv.org",
     summary:
       "Crowdsourced speed-and-coverage data across all 17 counties to inform state broadband policy and federal BEAD funding.",
     purpose:
@@ -49,7 +50,7 @@ export const projects: Project[] = [
     name: "Encryption Defense",
     status: "Active",
     lead: "Policy Committee",
-    email: "policy@isocnv.org",
+    intendedEmail: "policy@isocnv.org",
     summary:
       "Educate Nevada legislators and the public on the importance of strong, end-to-end encryption for everyday safety.",
     purpose:
@@ -68,7 +69,7 @@ export const projects: Project[] = [
     name: "Digital Literacy Outreach",
     status: "Active",
     lead: "Education Committee",
-    email: "education@isocnv.org",
+    intendedEmail: "education@isocnv.org",
     summary:
       "K-12 and community college partnerships bringing Internet fundamentals and online safety to underserved Nevada students.",
     purpose:
@@ -87,7 +88,7 @@ export const projects: Project[] = [
     name: "Tribal Connectivity Initiative",
     status: "Pilot",
     lead: "Community Networks WG",
-    email: "tribal@isocnv.org",
+    intendedEmail: "tribal@isocnv.org",
     summary:
       "Working with Nevada's tribal nations on community network feasibility and Indigenous data sovereignty.",
     purpose:
@@ -106,7 +107,7 @@ export const projects: Project[] = [
     name: "The Meta-Layer Initiative",
     status: "Active",
     lead: "Community Networks WG",
-    email: "metaweb@isocnv.org",
+    intendedEmail: "metaweb@isocnv.org",
     summary:
       "Working with The Meta-Layer to explore decentralized identity solutions for the Internet.",
     purpose:
@@ -125,7 +126,7 @@ export const projects: Project[] = [
     name: "Onboarding, Outreach, and Engagement",
     status: "Pilot",
     lead: "Community Networks WG",
-    email: "community@isocnv.org",
+    intendedEmail: "community@isocnv.org",
     summary:
       "Working with Nevada's communities towards better network connectivity and data literacy.",
     purpose:
@@ -144,7 +145,7 @@ export const projects: Project[] = [
     name: "Nevada Digital Policy and Regulations",
     status: "Pilot",
     lead: "Community Networks WG",
-    email: "nevada@isocnv.org",
+    intendedEmail: "nevada@isocnv.org",
     summary: "Nevada's Digital Policy and Regulations workgroup.",
     purpose:
       "This workgroup gives the chapter a focused place to understand Nevada policy and regulatory issues that affect connectivity, digital rights, infrastructure, and public access.",
@@ -162,7 +163,7 @@ export const projects: Project[] = [
     name: "Nevada Connectivity Initiative",
     status: "Pilot",
     lead: "Community Networks WG",
-    email: "nvstate@isocnv.org",
+    intendedEmail: "nvstate@isocnv.org",
     summary: "Working with Nevada's legislators to advance connectivity policies.",
     purpose:
       "This initiative focuses on practical state-level connectivity improvements and helps align chapter knowledge with legislative opportunities.",

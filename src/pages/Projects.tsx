@@ -9,6 +9,7 @@ import { Footer } from "@/components/site/Footer";
 import { CookieConsent } from "@/components/site/CookieConsent";
 import { projects, projectSlugs } from "@/data/projects";
 import { projectPath } from "@/lib/siteNavigation";
+import { displayEmail, mailtoWorkgroup } from "@/lib/siteEmails";
 import { smoothScrollTo } from "@/lib/navigation";
 
 const Projects = () => {
@@ -123,11 +124,11 @@ const Projects = () => {
                   </div>
 
                   <a
-                    href={`mailto:${project.email}`}
+                    href={mailtoWorkgroup(project.intendedEmail, project.name)}
                     className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-primary hover:underline"
                   >
                     <Mail className="h-4 w-4" />
-                    {project.email}
+                    {displayEmail(project.intendedEmail)}
                   </a>
                 </div>
 
