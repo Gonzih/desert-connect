@@ -2,6 +2,8 @@ import { describe, expect, it } from "vitest";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { externalLinks, homeSectionAnchors } from "@/lib/siteLinks";
+import { footerChapterLinks } from "@/lib/siteNavigation";
+import { projectSlugs, projects } from "@/data/projects";
 
 const srcRoot = join(process.cwd(), "src");
 
@@ -13,13 +15,25 @@ const collectFiles = (dir: string): string[] =>
   });
 
 const siteSource = collectFiles(join(srcRoot, "components", "site"))
-  .concat([join(srcRoot, "pages", "Index.tsx"), join(srcRoot, "pages", "Projects.tsx"), join(srcRoot, "pages", "CalendarPage.tsx"), join(srcRoot, "pages", "NotFound.tsx")])
+  .concat([
+    join(srcRoot, "pages", "Index.tsx"),
+    join(srcRoot, "pages", "Projects.tsx"),
+    join(srcRoot, "pages", "CalendarPage.tsx"),
+    join(srcRoot, "pages", "NotFound.tsx"),
+    join(srcRoot, "components", "site", "Footer.tsx"),
+  ])
   .map((file) => readFileSync(file, "utf8"))
   .join("\n");
 
 describe("link audit (static)", () => {
   it("does not use placeholder href=\"#\" in site components", () => {
     expect(siteSource).not.toMatch(/href="#"/);
+  });
+
+  it("does not use HashRouter", () => {
+    const appSource = readFileSync(join(srcRoot, "App.tsx"), "utf8");
+    expect(appSource).not.toContain("HashRouter");
+    expect(appSource).toContain("BrowserRouter");
   });
 
   it("documents every home section anchor used in site components", () => {
@@ -32,6 +46,49 @@ describe("link audit (static)", () => {
     for (const link of externalLinks) {
       expect(link.url).toMatch(/^https?:\/\//);
     }
+  });
+
+  it("maps every workgroup slug to a projects page section id", () => {
+    expect(projectSlugs).toHaveLength(projects.length);
+    for (const slug of projectSlugs) {
+      expect(slug).toMatch(/^[a-z0-9-]+$/);
+      expect(projects.some((project) => project.slug === slug)).toBe(true);
+    }
+  });
+
+  it("uses SiteLink for home page workgroup titles", () => {
+    const homeProjects = readFileSync(
+      join(process.cwd(), "src/components/site/Projects.tsx"),
+      "utf8",
+    );
+    expect(homeProjects).toContain("SiteLink");
+    expect(homeProjects).toContain('type: "project"');
+    expect(homeProjects).not.toContain('href={`#');
+  });
+
+  it("defines footer chapter links per site spec", () => {
+    expect(footerChapterLinks.map((l) => l.label)).toEqual([
+      "About",
+      "Membership",
+      "Workgroups",
+      "Bylaws & Minutes",
+      "Donate",
+    ]);
+    expect(footerChapterLinks[0].target).toEqual({ type: "section", section: "global" });
+    expect(footerChapterLinks[1].target).toMatchObject({
+      type: "external",
+      href: "https://forms.gle/NgvHEqj1LFFQ9NJ7A",
+    });
+    expect(footerChapterLinks[2].target).toEqual({ type: "route", path: "/projects" });
+    expect(footerChapterLinks[3].target).toMatchObject({ type: "inactive" });
+    expect(footerChapterLinks[4].target).toEqual({ type: "section", section: "donate" });
+  });
+
+  it("routes footer chapter links through SiteLink", () => {
+    const footer = readFileSync(join(srcRoot, "components", "site", "Footer.tsx"), "utf8");
+    expect(footer).toContain("footerChapterLinks");
+    expect(footer).toContain("SiteLink");
+    expect(footer).not.toContain("HomeAnchorLink");
   });
 });
 

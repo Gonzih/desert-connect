@@ -1,73 +1,9 @@
-import { Radio, Lock, GraduationCap, Scale, Mail, ArrowUpRight, Orbit, Landmark, Wifi, BookOpen, Network } from "lucide-react";
+import { Mail, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-
-const workgroups = [
-  {
-    icon: Radio,
-    name: "Nevada Broadband Mapping",
-    status: "Active",
-    body: "Crowdsourced speed-and-coverage data across all 17 counties to inform state broadband policy and federal BEAD funding.",
-    lead: "Broadband Committee",
-    email: "broadband@isocnv.org",
-  },
-  {
-    icon: Lock,
-    name: "Encryption Defense",
-    status: "Active",
-    body: "Educate Nevada legislators and the public on the importance of strong, end-to-end encryption for everyday safety.",
-    lead: "Policy Committee",
-    email: "policy@isocnv.org",
-  },
-  {
-    icon: GraduationCap,
-    name: "Digital Literacy Outreach",
-    status: "Active",
-    body: "K-12 and community college partnerships bringing Internet fundamentals and online safety to underserved Nevada students.",
-    lead: "Education Committee",
-    email: "education@isocnv.org",
-  },
-  {
-    icon: Scale,
-    name: "Tribal Connectivity Initiative",
-    status: "Pilot",
-    body: "Working with Nevada's tribal nations on community network feasibility and Indigenous data sovereignty.",
-    lead: "Community Networks WG",
-    email: "tribal@isocnv.org",
-  },
-  {
-    icon: BookOpen,
-    name: "The Meta-Layer Initiative",
-    status: "Active",
-    body: "Working with The Meta-Layer to explore decentralized identity solutions for the Internet.",
-    lead: "Community Networks WG",
-    email: "metaweb@isocnv.org",
-  },
-  {
-    icon: Orbit,
-    name: "Onboarding, Outreach, and Engagement",
-    status: "Pilot",
-    body: "Working with Nevada's communities towards better network connectivity and data literacy.",
-    lead: "Community Networks WG",
-    email: "community@isocnv.org",
-  },
-  {
-    icon: Wifi,
-    name: "Nevada Digital Policy and Regulations",
-    status: "Pilot",
-    body: "Nevada's Digital Policy and Regulations workgroup.",
-    lead: "Community Networks WG",
-    email: "nevada@isocnv.org",
-  }, 
-  {
-    icon: Landmark,
-    name: "Nevada Connectivity Initiative",
-    status: "Pilot",
-    body: "Working with Nevada's legislators to advance connectivity policies.",
-    lead: "Community Networks WG",
-    email: "nvstate@isocnv.org",
-  },
-];
+import { SiteLink } from "@/components/SiteLink";
+import { projects } from "@/data/projects";
 
 const helpWanted = [
   { role: "GIS Volunteer", group: "Broadband Mapping", commitment: "~4 hrs/mo" },
@@ -91,33 +27,42 @@ export const Projects = () => {
             Our workgroups translate the ISOC 2030 Strategy into concrete action — affordable
             access, secure infrastructure, and a trustworthy Internet for every Nevadan.
           </p>
+          <Button variant="outline" className="mt-6" asChild>
+            <Link to="/projects">View all workgroup details</Link>
+          </Button>
         </div>
 
         <div className="mt-12 grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {workgroups.map((w) => (
+          {projects.map((workgroup) => (
             <article
-              key={w.name}
+              key={workgroup.slug}
               className="group flex min-h-[13rem] flex-col rounded-lg border border-border bg-card p-4 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-smooth"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="grid h-9 w-9 shrink-0 place-items-center rounded-md bg-gradient-primary text-primary-foreground shadow-elegant">
-                  <w.icon className="h-4 w-4" />
+                  <workgroup.icon className="h-4 w-4" />
                 </div>
-                <Badge variant={w.status === "Active" ? "default" : "secondary"}>{w.status}</Badge>
+                <Badge variant={workgroup.status === "Active" ? "default" : "secondary"}>
+                  {workgroup.status}
+                </Badge>
               </div>
-              <h3 className="mt-4 font-display text-base font-bold leading-snug text-foreground">
-                {w.name}
-              </h3>
+              <SiteLink
+                target={{ type: "project", slug: workgroup.slug }}
+                className="mt-4 font-display text-base font-bold leading-snug text-foreground group-hover:text-primary"
+              >
+                {workgroup.name}
+              </SiteLink>
               <p className="mt-2 flex-1 text-xs leading-relaxed text-muted-foreground">
-                {w.body}
+                {workgroup.summary}
               </p>
               <div className="mt-4 flex items-center justify-between gap-2 border-t border-border pt-3 text-[11px]">
-                <span className="text-muted-foreground">{w.lead}</span>
+                <span className="text-muted-foreground">{workgroup.lead}</span>
                 <a
-                  href={`mailto:isocnevada@gmail.com`}
+                  href={`mailto:${workgroup.email}`}
                   className="inline-flex min-w-0 items-center gap-1 font-semibold text-primary hover:underline"
                 >
-                  <Mail className="h-3 w-3 shrink-0" /> <span className="truncate">{w.email}</span>
+                  <Mail className="h-3 w-3 shrink-0" />
+                  <span className="truncate">{workgroup.email}</span>
                 </a>
               </div>
             </article>
@@ -143,15 +88,15 @@ export const Projects = () => {
                     href={`mailto:isocnevada@gmail.com?subject=${encodeURIComponent(`Volunteer interest: ${h.role}`)}`}
                     className="flex items-center justify-between py-4 gap-4 group"
                   >
-                  <div>
-                    <p className="font-semibold text-foreground group-hover:text-primary transition-smooth">
-                      {h.role}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-0.5">
-                      {h.group} · {h.commitment}
-                    </p>
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-smooth" />
+                    <div>
+                      <p className="font-semibold text-foreground group-hover:text-primary transition-smooth">
+                        {h.role}
+                      </p>
+                      <p className="text-xs text-muted-foreground mt-0.5">
+                        {h.group} · {h.commitment}
+                      </p>
+                    </div>
+                    <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-smooth" />
                   </a>
                 </li>
               ))}
@@ -167,24 +112,24 @@ export const Projects = () => {
               Direct line to the people running each program.
             </p>
             <ul className="mt-6 space-y-3 text-sm">
-              {workgroups.map((w) => (
+              {projects.map((workgroup) => (
                 <li
-                  key={w.email}
+                  key={workgroup.email}
                   className="flex items-center justify-between gap-4 py-2 border-b border-white/10"
                 >
-                  <span className="text-white/85">{w.lead}</span>
+                  <span className="text-white/85">{workgroup.lead}</span>
                   <a
-                    href={`mailto:isocnevada@gmail.com`}
+                    href={`mailto:${workgroup.email}`}
                     className="text-accent hover:underline font-semibold text-xs"
                   >
-                    {w.email}
+                    {workgroup.email}
                   </a>
                 </li>
               ))}
               <li className="flex items-center justify-between gap-4 py-2">
                 <span className="text-white/85">General inquiries</span>
                 <a
-                  href="mailto:isocnevada@gmail.com"
+                  href="mailto:hello@isocnv.org"
                   className="text-accent hover:underline font-semibold text-xs"
                 >
                   hello@isocnv.org

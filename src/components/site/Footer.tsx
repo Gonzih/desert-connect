@@ -1,23 +1,12 @@
 import { Facebook, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { type FormEvent } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { HomeAnchorLink } from "@/components/HomeAnchorLink";
+import { SiteLink } from "@/components/SiteLink";
 import { InactiveLink } from "@/components/InactiveLink";
+import { footerChapterLinks, NEWSLETTER_EMAIL } from "@/lib/siteNavigation";
 import logo from "@/assets/isoc-nevada-logo.webp";
-
-const JOIN_FORM_URL = "https://forms.gle/NgvHEqj1LFFQ9NJ7A";
-const NEWSLETTER_EMAIL = "hello@isocnv.org";
-
-const chapterLinks = [
-  { label: "About", type: "anchor" as const, href: "#global" },
-  { label: "Membership", type: "external" as const, href: JOIN_FORM_URL },
-  { label: "Workgroups", type: "route" as const, href: "/projects" },
-  { label: "Bylaws & Minutes", type: "inactive" as const },
-  { label: "Donate", type: "anchor" as const, href: "#donate" },
-];
 
 const socialLinks = [
   { label: "Facebook", icon: Facebook },
@@ -27,14 +16,6 @@ const socialLinks = [
 ];
 
 export const Footer = () => {
-  const location = useLocation();
-
-  const goToProjectsTop = () => {
-    if (location.pathname === "/projects") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  };
-
   const handleSubscribe = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const email = new FormData(event.currentTarget).get("email");
@@ -85,37 +66,11 @@ export const Footer = () => {
             Chapter
           </h4>
           <ul className="mt-4 space-y-2.5 text-sm text-white/75">
-            {chapterLinks.map((link) => (
+            {footerChapterLinks.map((link) => (
               <li key={link.label}>
-                {link.type === "route" ? (
-                  <Link
-                    to={{ pathname: link.href, hash: "" }}
-                    onClick={goToProjectsTop}
-                    className="hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                ) : link.type === "external" ? (
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                ) : link.type === "inactive" ? (
-                  <InactiveLink
-                    title="Bylaws and minutes coming soon"
-                    className="text-white/50"
-                  >
-                    {link.label}
-                  </InactiveLink>
-                ) : (
-                  <HomeAnchorLink href={link.href} className="hover:text-white">
-                    {link.label}
-                  </HomeAnchorLink>
-                )}
+                <SiteLink target={link.target} className="hover:text-white">
+                  {link.label}
+                </SiteLink>
               </li>
             ))}
           </ul>

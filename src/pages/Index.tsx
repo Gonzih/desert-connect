@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { smoothScrollTo } from "@/lib/navigation";
+import { useScrollToHash } from "@/hooks/useScrollToSection";
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { Trinity } from "@/components/site/Trinity";
@@ -16,30 +14,7 @@ import { Footer } from "@/components/site/Footer";
 import { CookieConsent } from "@/components/site/CookieConsent";
 
 const Index = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const scrollTarget = (location.state as { scrollTo?: string } | null)?.scrollTo;
-    if (!scrollTarget) return;
-
-    const selector = scrollTarget.startsWith("#") ? scrollTarget : `#${scrollTarget}`;
-    let attempts = 0;
-
-    const tryScroll = () => {
-      if (document.querySelector(selector)) {
-        smoothScrollTo(selector);
-        navigate(location.pathname, { replace: true, state: null });
-        return;
-      }
-
-      if (attempts++ < 12) {
-        requestAnimationFrame(tryScroll);
-      }
-    };
-
-    tryScroll();
-  }, [location.state, location.pathname, navigate]);
+  useScrollToHash();
 
   return (
     <div className="min-h-screen flex flex-col bg-background">

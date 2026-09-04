@@ -1,8 +1,7 @@
 import { PlayCircle, UserPlus, MessageSquare, Users2, Eye, Hand, Handshake, Film } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { HomeAnchorLink } from "@/components/HomeAnchorLink";
+import { SiteLink } from "@/components/SiteLink";
 import { InactiveLink } from "@/components/InactiveLink";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
@@ -174,20 +173,13 @@ export const Membership = () => {
                       >
                         {s.cta} →
                       </a>
-                    ) : s.href.startsWith("/") ? (
-                      <Link
-                        to={s.href}
-                        className="mt-2 inline-block text-xs font-semibold text-primary hover:underline"
-                      >
-                        {s.cta} →
-                      </Link>
                     ) : (
-                      <HomeAnchorLink
-                        href={s.href}
+                      <SiteLink
+                        target={{ type: "route", path: s.href as "/projects" }}
                         className="mt-2 inline-block text-xs font-semibold text-primary hover:underline"
                       >
                         {s.cta} →
-                      </HomeAnchorLink>
+                      </SiteLink>
                     )}
                   </div>
                 </li>
