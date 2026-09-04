@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { InactiveLink } from "@/components/InactiveLink";
 import { smoothScrollTo } from "@/lib/navigation";
 import {
+  ABOUT_US_HASH,
   projectPath,
   sectionHash,
   type SiteLinkTarget,
@@ -61,6 +62,16 @@ export const SiteLink = ({ target, className, children, onNavigate }: SiteLinkPr
 
     return (
       <Link to={path} className={cn(className)} onClick={onNavigate}>
+        {children}
+      </Link>
+    );
+  }
+
+  if (target.type === "aboutVideo") {
+    const hash = `#${ABOUT_US_HASH}`;
+
+    return (
+      <Link to={{ pathname: "/", hash }} className={cn(className)} onClick={onNavigate}>
         {children}
       </Link>
     );

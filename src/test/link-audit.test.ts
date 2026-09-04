@@ -96,10 +96,7 @@ describe("link audit (static)", () => {
       "Bylaws & Minutes",
       "Donate",
     ]);
-    expect(footerChapterLinks[0].target).toMatchObject({
-      type: "external",
-      href: "/isoc-nevada-about.mp4",
-    });
+    expect(footerChapterLinks[0].target).toEqual({ type: "aboutVideo" });
     expect(footerChapterLinks[1].target).toMatchObject({
       type: "external",
       href: "https://forms.gle/NgvHEqj1LFFQ9NJ7A",
