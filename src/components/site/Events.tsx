@@ -14,14 +14,14 @@ const events = [
     ctaHref: "https://course.metawebbook.com/",
   },
   {
-    type: "Metaweb Summit",
-    title: "Desirable Properties Revealed",
-    date: "Sept 16, 2026",
-    time: "1:00 - 2:00 PM PT",
-    location: "Virtual",
+    type: "2026 Global Encryption Day",
+    title: "Securing the Internet for the Quantum Era: An Introduction to Post-Quantum Cryptography with Jessica",
+    date: "Oct 21, 2026",
+    time: "6:00 - 8:00 PM PT",
+    location: "Carson City, Virtual",
     icon: Video,
     cta: "Register",
-    ctaHref: "https://luma.com/wfi1z9lv",
+    ctaHref: "https://discord.com/events/1499228235186311262/1547807714162515998",
   },
 ];
 
