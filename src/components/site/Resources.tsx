@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BookOpen, ExternalLink, MapPin } from "lucide-react";
 
 const topics = [
@@ -11,11 +12,13 @@ const topics = [
     icon: BookOpen,
     title: "Data Sovereignty",
     body: "Frameworks for tribal nations and local governments to govern their own data.",
+    href: "/data-sovereignty",
   },
   {
     icon: BookOpen,
     title: "Rural Access",
     body: "Community networks, fixed-wireless, and middle-mile fiber strategies for rural Nevada.",
+    href: "/rural-access",
   },
 ];
 
@@ -64,15 +67,31 @@ export const Resources = () => {
             <p className="mt-1 text-xs text-muted-foreground">Chapter white papers coming soon</p>
             <ul className="mt-4 grid gap-3">
               {topics.map((t) => (
-                <li
-                  key={t.title}
-                  className="min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3"
-                >
-                  <div className="flex items-center gap-2">
-                    <t.icon className="h-4 w-4 text-accent" />
-                    <p className="text-sm font-semibold text-foreground">{t.title}</p>
-                  </div>
-                  <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed">{t.body}</p>
+                <li key={t.title}>
+                  {t.href ? (
+                    <Link
+                      to={t.href}
+                      className="group flex min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3 hover:border-primary/30 hover:shadow-sm transition-smooth"
+                    >
+                      <div className="flex w-full flex-col justify-between">
+                        <div className="flex items-center gap-2">
+                          <t.icon className="h-4 w-4 text-accent" />
+                          <p className="text-sm font-semibold text-foreground group-hover:text-primary transition-smooth">
+                            {t.title}
+                          </p>
+                        </div>
+                        <p className="text-xs leading-relaxed text-muted-foreground">{t.body}</p>
+                      </div>
+                    </Link>
+                  ) : (
+                    <div className="min-h-24 rounded-md border border-border/60 bg-card px-3.5 py-3">
+                      <div className="flex items-center gap-2">
+                        <t.icon className="h-4 w-4 text-accent" />
+                        <p className="text-sm font-semibold text-foreground">{t.title}</p>
+                      </div>
+                      <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">{t.body}</p>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
@@ -106,7 +125,7 @@ export const Resources = () => {
                         </div>
                         <p className="mt-1 text-xs text-muted-foreground">{p.meta}</p>
                       </div>
-                      <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-smooth shrink-0" />
+                      <ExternalLink className="h-4 w-4 shrink-0 text-muted-foreground group-hover:text-primary transition-smooth" />
                     </div>
                   </a>
                 </li>
