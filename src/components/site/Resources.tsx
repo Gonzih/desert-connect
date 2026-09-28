@@ -5,6 +5,7 @@ const topics = [
     icon: BookOpen,
     title: "Encryption & Privacy",
     body: "Why end-to-end encryption protects every Nevadan — from journalists to small businesses.",
+    href: "https://isocnv.org/EncryptionPrivacy/",
   },
   {
     icon: BookOpen,
