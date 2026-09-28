@@ -5,7 +5,7 @@ const topics = [
     icon: BookOpen,
     title: "Encryption & Privacy",
     body: "Why end-to-end encryption protects every Nevadan — from journalists to small businesses.",
-    href: "src/pages/EncryptionPrivacy.tsx",
+    href: "/encryption-privacy",
   },
   {
     icon: BookOpen,
