@@ -12,7 +12,7 @@ export const Hero = () => {
           alt="Nevada desert landscape with a digital connectivity network overlay"
           width={1920}
           height={880}
-          className="h-full w-full object-cover"
+          className="h-[880px] w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-hero" />
         <div className="absolute inset-0 bg-surface-slate/40" />
