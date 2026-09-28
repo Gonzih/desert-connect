@@ -18,7 +18,7 @@ const events = [
     title: "Securing the Internet for the Quantum Era",
     date: "Oct 20, 2026",
     time: "4:00PM reception - 5:00PM Jessica Velez - 6:00PM Ira Viktor",
-    location: "Innevation Center, Reno, NV and Virtual",
+    location: "Innevation Center Reno, NV and Virtual",
     icon: Video,
     cta: "Register",
     ctaHref: "https://isocnv.org",
