@@ -10,6 +10,7 @@ import { AboutUsVideoDialog } from "@/components/site/AboutUsVideoDialog";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
 import rubyMountainsBackground from "@/components/site/ruby-mountains-events-background.png";
+import isocNvGroupPhoto from "@/components/site/isoc-nv-group-photo.svg";
 
 const steps = [
   {
@@ -89,6 +90,48 @@ const MembershipPage = () => {
                 Whether you're a network engineer, educator, policymaker, rancher, student, or simply care
                 about a free and open Internet — there's a place for you in the ISOC Nevada chapter.
               </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 md:py-28 bg-background">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <div className="rounded-2xl border border-border/80 bg-card/50 backdrop-blur-sm p-8 md:p-12 shadow-elegant">
+                <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
+                  Forty-Two Founding Members
+                </h2>
+                <p className="mt-6 text-base md:text-lg leading-relaxed text-muted-foreground">
+                  Forty-two founding members of the newly chartered Internet Society US Nevada Chapter came together to celebrate a remarkable journey and the beginning of a new chapter for Nevada's Internet community. The celebration highlighted major milestones achieved since the chapter's founding, reaffirmed the members' pledge to steward the open Internet, recognized valued partners, and expressed appreciation to the sponsors whose support helped make the chapter possible.
+                </p>
+
+                <div className="mt-10 flex justify-center">
+                  <img
+                    src={isocNvGroupPhoto}
+                    alt="ISOC Nevada founding members group photo"
+                    className="w-full max-w-2xl rounded-lg"
+                  />
+                </div>
+
+                <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="https://www.internetsociety.org/become-a-member/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity"
+                  >
+                    Join ISOC Global
+                  </a>
+                  <a
+                    href="https://forms.gle/NgvHEqj1LFFQ9NJ7A"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-primary bg-transparent text-primary font-semibold hover:bg-primary/10 transition-colors"
+                  >
+                    Join ISOCNV
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
