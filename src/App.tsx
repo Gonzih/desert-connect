@@ -12,6 +12,7 @@ import ChangesPage from "./pages/ChangesPage.tsx";
 import EncryptionPrivacy from "./pages/EncryptionPrivacy.tsx";
 import DataSovereignty from "./pages/DataSovereignty.tsx";
 import RuralAccess from "./pages/RuralAccess.tsx";
+import MembershipPage from "./pages/MembershipPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -24,6 +25,7 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/membership" element={<MembershipPage />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<Projects />} />
           <Route path="/calendar" element={<CalendarPage />} />
