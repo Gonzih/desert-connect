@@ -16,9 +16,9 @@ const events = [
   {
     type: "2026 Global Encryption Day",
     title: "Securing the Internet for the Quantum Era: An Introduction to Post-Quantum Cryptography with Jessica",
-    date: "Oct 21, 2026",
-    time: "6:00 - 8:00 PM PT",
-    location: "Carson City, Virtual",
+    date: "Oct 20, 2026",
+    time: "4:00PM reception - 5:00PM Jessica Velez - 6:00PM Ira Viktor",
+    location: "Innevation Center, Reno, NV and Virtual",
     icon: Video,
     cta: "Register",
     ctaHref: "https://discord.com/events/1499228235186311262/1547807714162515998",
