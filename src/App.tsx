@@ -8,7 +8,6 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import Projects from "./pages/Projects.tsx";
 import CalendarPage from "./pages/CalendarPage.tsx";
-import ChangesPage from "./pages/ChangesPage.tsx";
 import EncryptionPrivacy from "./pages/EncryptionPrivacy.tsx";
 import DataSovereignty from "./pages/DataSovereignty.tsx";
 import RuralAccess from "./pages/RuralAccess.tsx";
@@ -29,7 +28,6 @@ const App = () => (
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<Projects />} />
           <Route path="/calendar" element={<CalendarPage />} />
-          <Route path="/changes" element={<ChangesPage />} />
           <Route path="/encryption-privacy" element={<EncryptionPrivacy />} />
           <Route path="/data-sovereignty" element={<DataSovereignty />} />
           <Route path="/rural-access" element={<RuralAccess />} />
