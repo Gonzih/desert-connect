@@ -16,8 +16,8 @@ export const calendarEvents = [
     time: "8:00pm PT",
     location: "https://www.hawaiipublicradio.org/events",
     description:
-      "Raise awareness and build capacity about digital technologies in Hawai'i and the Pacific region.",
-    rsvpUrl: "https://www.hawaiipublicradio.org/events",
+      "This event has passed, but you can still watch a preview of the recording here: https://www.youtube.com/live/MSRKvHAxCLE",
+    rsvpUrl: "https://www.youtube.com/live/MSRKvHAxCLE",
   },
   {
     id: "Global Encryption Day 2026",
@@ -25,7 +25,7 @@ export const calendarEvents = [
     date: "2026-10-21",
     time: "6:00 - 8:00 PM PT",
     location: "Carson City, Virtual",
-    description: "What is the future of data privacy? Join us as we welcome Jessica Velez, a leader on the cutting edge of quantum encryption technologies, explains the future of cyber security.Securing the Internet for the Quantum Era: An Introduction to Post-Quantum Cryptography",
+    description: "What is the future of data privacy? Join us as we welcome Jessica Velez, a leader on the cutting edge of quantum encryption technologies, explains the future of cyber security.Se[...]",
     rsvpUrl: "https://discord.com/events/1499228235186311262/1547807714162515998",
   },
   {
