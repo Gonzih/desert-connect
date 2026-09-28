@@ -11,7 +11,7 @@ import logo from "@/assets/isoc-nevada-logo.webp";
 
 const socialLinks = [
   { label: "Facebook", icon: Facebook },
-  { label: "LinkedIn", icon: Linkedin },
+  { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/isocnv/" },
   { label: "Twitter", icon: Twitter },
   { label: "GitHub", icon: Github },
 ];
@@ -77,18 +77,38 @@ export const Footer = () => {
           <h4 className="font-display text-sm font-semibold uppercase tracking-wider text-accent">
             Connect
           </h4>
-          <p className="mt-1 text-xs text-white/45">Social profiles coming soon</p>
+          <p className="mt-1 text-xs text-white/45">Follow us online</p>
           <div className="mt-4 flex gap-3">
-            {socialLinks.map(({ label, icon: Icon }) => (
-              <InactiveLink
-                key={label}
-                title={`${label} profile coming soon`}
-                className="grid h-9 w-9 place-items-center rounded-md border border-dashed border-white/20 bg-white/5 text-white/40"
-              >
-                <Icon className="h-4 w-4" aria-hidden="true" />
-                <span className="sr-only">{label} (coming soon)</span>
-              </InactiveLink>
-            ))}
+            {socialLinks.map(({ label, icon: Icon, href }) => {
+              const content = (
+                <>
+                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  <span className="sr-only">
+                    {label}
+                    {!href && " (coming soon)"}
+                  </span>
+                </>
+              );
+              const className =
+                "grid h-9 w-9 place-items-center rounded-md border border-dashed border-white/20 bg-white/5 text-white/40";
+
+              return href ? (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`Visit our ${label} profile`}
+                  className={className}
+                >
+                  {content}
+                </a>
+              ) : (
+                <InactiveLink key={label} title={`${label} profile coming soon`} className={className}>
+                  {content}
+                </InactiveLink>
+              );
+            })}
           </div>
           <p className="mt-6 text-xs text-white/55 leading-relaxed">
             Reno · Carson City · Las Vegas  
