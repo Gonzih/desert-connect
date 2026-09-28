@@ -11,6 +11,7 @@ import CalendarPage from "./pages/CalendarPage.tsx";
 import ChangesPage from "./pages/ChangesPage.tsx";
 import EncryptionPrivacy from "./pages/EncryptionPrivacy.tsx";
 import DataSovereignty from "./pages/DataSovereignty.tsx";
+import RuralAccess from "./pages/RuralAccess.tsx";
 
 const queryClient = new QueryClient();
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/changes" element={<ChangesPage />} />
           <Route path="/encryption-privacy" element={<EncryptionPrivacy />} />
           <Route path="/data-sovereignty" element={<DataSovereignty />} />
+          <Route path="/rural-access" element={<RuralAccess />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
