@@ -18,7 +18,7 @@ export const ABOUT_US_HASH = "about-us";
 
 export type SiteLinkTarget =
   | { type: "section"; section: HomeSectionId }
-  | { type: "route"; path: "/projects" | "/calendar" }
+  | { type: "route"; path: "/projects" | "/calendar" | "/membership" }
   | { type: "project"; slug: string }
   | { type: "aboutVideo" }
   | { type: "external"; href: string; newTab?: boolean }
@@ -33,7 +33,7 @@ export type SiteNavItem = {
 export const headerNav: SiteNavItem[] = [
   { label: "Home", target: { type: "section", section: "home" } },
   { label: "Global Roots", target: { type: "section", section: "global" } },
-  { label: "Membership", target: { type: "section", section: "membership" } },
+  { label: "Membership", target: { type: "route", path: "/membership" } },
   { label: "Projects", target: { type: "route", path: "/projects" } },
   { label: "Resources", target: { type: "section", section: "resources" } },
   { label: "Donate", target: { type: "section", section: "donate" } },
