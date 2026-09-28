@@ -13,7 +13,7 @@
  */
 
 /** Flip to `true` once isocnv.org MX is configured and tested. */
-export const USE_DOMAIN_EMAIL = false;
+export const USE_DOMAIN_EMAIL = true;
 
 /** Active inbox while domain email is offline. */
 export const CHAPTER_INBOX = "isocnevada@gmail.com";
