@@ -38,8 +38,14 @@ const datedEvents = calendarEvents
   }))
   .filter((event) => event.parsedDate);
 
+const today = new Date();
+today.setHours(0, 0, 0, 0);
+
+const upcomingEvents = datedEvents.filter((event) => event.parsedDate! >= today);
+const pastEvents = datedEvents.filter((event) => event.parsedDate! < today).reverse();
+
 const CalendarPage = () => {
-  const initialDate = datedEvents[0]?.parsedDate ?? new Date();
+  const initialDate = upcomingEvents[0]?.parsedDate ?? datedEvents[0]?.parsedDate ?? new Date();
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialDate);
 
   const selectedEvents = useMemo(() => {
@@ -124,46 +130,108 @@ const CalendarPage = () => {
               </div>
             </aside>
 
-            <div className="space-y-4">
-              {calendarEvents.map((event) => (
-                <article
-                  key={event.id}
-                  className="rounded-xl border border-border bg-card p-6 shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elegant"
-                >
-                  <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
-                    <div>
-                      <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
-                        <span className="inline-flex items-center gap-1.5">
-                          <CalendarDays className="h-4 w-4 text-primary" />
-                          {formatEventDate(event.date)}
-                        </span>
-                        <span className="inline-flex items-center gap-1.5">
-                          <Clock className="h-4 w-4 text-primary" />
-                          {event.time}
-                        </span>
-                        <span className="inline-flex items-center gap-1.5">
-                          <MapPin className="h-4 w-4 text-primary" />
-                          {event.location}
-                        </span>
-                      </div>
+            <div className="space-y-12">
+              {/* Upcoming Events */}
+              <div>
+                <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+                  Upcoming Events
+                </h2>
+                <div className="space-y-4">
+                  {upcomingEvents.length > 0 ? (
+                    upcomingEvents.map((event) => (
+                      <article
+                        key={event.id}
+                        className="rounded-xl border border-border bg-card p-6 shadow-card transition-smooth hover:-translate-y-1 hover:shadow-elegant"
+                      >
+                        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                          <div>
+                            <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                              <span className="inline-flex items-center gap-1.5">
+                                <CalendarDays className="h-4 w-4 text-primary" />
+                                {formatEventDate(event.date)}
+                              </span>
+                              <span className="inline-flex items-center gap-1.5">
+                                <Clock className="h-4 w-4 text-primary" />
+                                {event.time}
+                              </span>
+                              <span className="inline-flex items-center gap-1.5">
+                                <MapPin className="h-4 w-4 text-primary" />
+                                {event.location}
+                              </span>
+                            </div>
 
-                      <h2 className="mt-3 font-display text-2xl font-bold text-foreground">
-                        {event.title}
-                      </h2>
+                            <h2 className="mt-3 font-display text-2xl font-bold text-foreground">
+                              {event.title}
+                            </h2>
 
-                      <p className="mt-3 max-w-2xl text-muted-foreground">
-                        {event.description}
-                      </p>
-                    </div>
+                            <p className="mt-3 max-w-2xl text-muted-foreground">
+                              {event.description}
+                            </p>
+                          </div>
 
-                    <Button variant="hero" asChild>
-                      <a href={event.rsvpUrl} target="_blank" rel="noreferrer">
-                        Register <ArrowUpRight className="ml-1 h-4 w-4" />
-                      </a>
-                    </Button>
+                          <Button variant="hero" asChild>
+                            <a href={event.rsvpUrl} target="_blank" rel="noreferrer">
+                              Register <ArrowUpRight className="ml-1 h-4 w-4" />
+                            </a>
+                          </Button>
+                        </div>
+                      </article>
+                    ))
+                  ) : (
+                    <p className="text-muted-foreground">No upcoming events scheduled.</p>
+                  )}
+                </div>
+              </div>
+
+              {/* Previous Events */}
+              {pastEvents.length > 0 && (
+                <div>
+                  <h2 className="font-display text-2xl font-bold text-foreground mb-6">
+                    Previous Events
+                  </h2>
+                  <div className="space-y-4">
+                    {pastEvents.map((event) => (
+                      <article
+                        key={event.id}
+                        className="rounded-xl border border-border bg-card p-6 shadow-card opacity-75"
+                      >
+                        <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+                          <div>
+                            <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+                              <span className="inline-flex items-center gap-1.5">
+                                <CalendarDays className="h-4 w-4 text-primary" />
+                                {formatEventDate(event.date)}
+                              </span>
+                              <span className="inline-flex items-center gap-1.5">
+                                <Clock className="h-4 w-4 text-primary" />
+                                {event.time}
+                              </span>
+                              <span className="inline-flex items-center gap-1.5">
+                                <MapPin className="h-4 w-4 text-primary" />
+                                {event.location}
+                              </span>
+                            </div>
+
+                            <h2 className="mt-3 font-display text-2xl font-bold text-foreground">
+                              {event.title}
+                            </h2>
+
+                            <p className="mt-3 max-w-2xl text-muted-foreground">
+                              {event.description}
+                            </p>
+                          </div>
+
+                          <Button variant="hero" disabled asChild>
+                            <a href={event.rsvpUrl} target="_blank" rel="noreferrer">
+                              Register <ArrowUpRight className="ml-1 h-4 w-4" />
+                            </a>
+                          </Button>
+                        </div>
+                      </article>
+                    ))}
                   </div>
-                </article>
-              ))}
+                </div>
+              )}
             </div>
           </div>
         </section>
