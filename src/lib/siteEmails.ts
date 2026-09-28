@@ -2,8 +2,8 @@
  * Chapter email routing
  * ---------------------
  * isocnv.org does not yet have MX records. Until domain email is live, all
- * public mailto links route to the chapter Gmail inbox with subjects that name
- * the intended @isocnv.org recipient.
+ * public mailto links should route to the chapter Gmail inbox while the UI
+ * continues to display the intended @isocnv.org addresses.
  *
  * TO RESTORE DOMAIN EMAIL:
  * 1. Configure MX records for isocnv.org
@@ -13,21 +13,24 @@
  */
 
 /** Flip to `true` once isocnv.org MX is configured and tested. */
-export const USE_DOMAIN_EMAIL = true;
+export const USE_DOMAIN_EMAIL = false;
 
 /** Active inbox while domain email is offline. */
 export const CHAPTER_INBOX = "isocnevada@gmail.com";
 
 /**
  * Original chapter addresses — preserved for restoration when MX is live.
- * These are NOT used for mailto links while USE_DOMAIN_EMAIL is false.
+ * These are used for display in the UI. When USE_DOMAIN_EMAIL is false, mailto
+ * links will still route to CHAPTER_INBOX but the displayed addresses will show
+ * the intended @isocnv.org recipient.
  */
 export const CHAPTER_DOMAIN_EMAILS = {
   general: "hello@isocnv.org",
   newsletter: "hello@isocnv.org",
   sponsorship: "sponsorship@isocnv.org",
   privacy: "privacy@isocnv.org",
-  volunteer: "isocnevada@gmail.com",
+  // show the intended domain address in the UI even though mail will route to Gmail
+  volunteer: "volunteer@isocnv.org",
   workgroups: {
     broadband: "broadband@isocnv.org",
     policy: "policy@isocnv.org",
@@ -47,13 +50,13 @@ type MailtoOptions = {
   body?: string;
 };
 
-/** Address shown in the UI and used as mailto recipient. */
-export const displayEmail = (intended: string) =>
-  USE_DOMAIN_EMAIL ? intended : CHAPTER_INBOX;
+/** Address shown in the UI. Always show the intended domain address. */
+export const displayEmail = (intended: string) => intended;
 
 /** Build a mailto: href, routing to Gmail with intended recipient in subject when needed. */
 export const mailtoHref = ({ intended, subject, body = "" }: MailtoOptions) => {
-  const to = displayEmail(intended);
+  // mailto `to` should point to the real inbox while domain email is offline
+  const to = USE_DOMAIN_EMAIL ? intended : CHAPTER_INBOX;
   const routedSubject = USE_DOMAIN_EMAIL ? subject : `[${intended}] ${subject}`;
   const params = new URLSearchParams();
   params.set("subject", routedSubject);
