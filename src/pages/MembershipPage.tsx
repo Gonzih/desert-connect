@@ -159,7 +159,7 @@ const MembershipPage = () => {
                         </div>
                         <div>
                           <p className="font-display font-semibold text-foreground">About Us</p>
-                          <p className="text-xs text-muted-foreground mt-0.5">Our community impact story</p>
+                          <p className="text-xs text-muted-foreground mt-0.5">Our Community Impact Story</p>
                         </div>
                       </button>
                     }
@@ -175,12 +175,12 @@ const MembershipPage = () => {
                       <PlayCircle className="h-6 w-6" />
                     </div>
                     <div>
-                      <p className="font-display font-semibold text-foreground">Watch orientation - Coming Soon</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">5-min welcome video - Coming Soon</p>
+                      <p className="font-display font-semibold text-foreground">Watch Orientation - Coming Soon</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">5-min Welcome Video - Coming Soon</p>
                     </div>
                   </InactiveLink>
                   <InactiveLink
-                    title="Member handbook coming soon"
+                    title="Member Handbook coming soon"
                     className={cn(
                       "group relative flex items-center gap-4 rounded-xl border border-border/80 bg-card/90 p-5 shadow-card backdrop-blur-sm",
                       inactiveLinkClassName,
@@ -190,8 +190,8 @@ const MembershipPage = () => {
                       <UserPlus className="h-6 w-6" />
                     </div>
                     <div>
-                      <p className="font-display font-semibold text-foreground">Member handbook - Coming Soon</p>
-                      <p className="text-xs text-muted-foreground mt-0.5">PDF · onboarding guide - Coming Soon</p>
+                      <p className="font-display font-semibold text-foreground">Member Handbook - Coming Soon</p>
+                      <p className="text-xs text-muted-foreground mt-0.5">PDF · Onboarding Guide - Coming Soon</p>
                     </div>
                   </InactiveLink>
                 </div>
@@ -199,7 +199,7 @@ const MembershipPage = () => {
 
               <div className="rounded-2xl bg-card/90 border border-border/80 p-7 shadow-elegant backdrop-blur-sm">
                 <h3 className="font-display text-xl font-bold text-foreground">
-                  Get started in 3 steps
+                  Get Started in 3 Steps
                 </h3>
                 <ol className="mt-6 space-y-5">
                   {steps.map((s) => (
