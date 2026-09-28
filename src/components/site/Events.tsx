@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 const events = [
   {
     type: "Monthly Chapter Meeting",
-    title: "Member Monthly",
+    title: "Members Monthly",
     date: "October 19",
     time: "6:00 PM PST",
     location: "Virtual (Zoom)",
