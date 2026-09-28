@@ -10,7 +10,7 @@ import { AboutUsVideoDialog } from "@/components/site/AboutUsVideoDialog";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
 import rubyMountainsBackground from "@/components/site/ruby-mountains-events-background.png";
-import isocNvGroupPhoto from "@/components/site/isoc-nv-group-photo.svg";
+import isocNvGroupPhoto from "@/assets/isoc-nevada-group-photo.svg";
 
 const steps = [
   {
