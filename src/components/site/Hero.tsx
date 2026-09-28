@@ -11,7 +11,7 @@ export const Hero = () => {
           src={heroImg}
           alt="Nevada desert landscape with a digital connectivity network overlay"
           width={1920}
-          height={1080}
+          height={880}
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-hero" />
