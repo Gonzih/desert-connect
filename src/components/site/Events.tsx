@@ -4,18 +4,18 @@ import { Button } from "@/components/ui/button";
 
 const events = [
   {
-    type: "METAWEB COURSE",
-    title: "Sessions",
-    date: "Self-directed",
-    time: null,
+    type: "Monthly Chapter Meeting",
+    title: "Member Monthly",
+    date: "October 19",
+    time: "6:00 PM PST",
     location: "Virtual (Zoom)",
     icon: Video,
     cta: "Register",
-    ctaHref: "https://course.metawebbook.com/",
+    ctaHref: "https://us02web.zoom.us/j/9095338218?omn=89017851501#success",
   },
   {
     type: "2026 Global Encryption Day",
-    title: "Securing the Internet for the Quantum Era: An Introduction to Post-Quantum Cryptography with Jessica",
+    title: "Securing the Internet for the Quantum Era",
     date: "Oct 20, 2026",
     time: "4:00PM reception - 5:00PM Jessica Velez - 6:00PM Ira Viktor",
     location: "Innevation Center, Reno, NV and Virtual",
