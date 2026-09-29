@@ -2,7 +2,7 @@ export const calendarEvents = [
   {
     id: "October Meeting",
     title: "ISOC NV Member Monthly Meeting",
-    date: 2026-10-19,
+    date: "2026-10-19",
     time: "6:00 PM PST",
     location: "Virtual (Zoom)",
     description:
