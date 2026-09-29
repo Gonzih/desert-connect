@@ -18,7 +18,7 @@ export const Hero = () => {
         <div className="absolute inset-0 bg-surface-slate/40" />
       </div>
 
-      <div className="container relative py-24 md:py-36 lg:py-44">
+      <div className="container relative py-24 md:py-36 lg:pt-32 lg:pb-44">
         <div className="max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur px-3.5 py-1.5 text-xs font-medium text-white">
             <ShieldCheck className="h-3.5 w-3.5 text-accent" />
