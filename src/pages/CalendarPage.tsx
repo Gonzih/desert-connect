@@ -1,6 +1,4 @@
-import { useMemo, useState } from "react";
 import { CalendarDays, Clock, MapPin, ArrowUpRight } from "lucide-react";
-import { Calendar as CalendarPicker } from "@/components/ui/calendar";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
@@ -26,11 +24,6 @@ const formatEventDate = (date: string | null) => {
   }).format(parsed);
 };
 
-const isSameDay = (a: Date, b: Date) =>
-  a.getFullYear() === b.getFullYear() &&
-  a.getMonth() === b.getMonth() &&
-  a.getDate() === b.getDate();
-
 const datedEvents = calendarEvents
   .map((event) => ({
     ...event,
@@ -45,17 +38,6 @@ const upcomingEvents = datedEvents.filter((event) => event.parsedDate! >= today)
 const pastEvents = datedEvents.filter((event) => event.parsedDate! < today).reverse();
 
 const CalendarPage = () => {
-  const initialDate = upcomingEvents[0]?.parsedDate ?? datedEvents[0]?.parsedDate ?? new Date();
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(initialDate);
-
-  const selectedEvents = useMemo(() => {
-    if (!selectedDate) return [];
-
-    return datedEvents.filter((event) =>
-      event.parsedDate ? isSameDay(event.parsedDate, selectedDate) : false,
-    );
-  }, [selectedDate]);
-
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <Header />
@@ -76,60 +58,7 @@ const CalendarPage = () => {
         </section>
 
         <section className="py-12 md:py-16">
-          <div className="container grid gap-8 lg:grid-cols-[400px_1fr]">
-            <aside className="rounded-xl border border-border bg-card p-5 shadow-card">
-              <CalendarPicker
-                mode="single"
-                selected={selectedDate}
-                onSelect={setSelectedDate}
-                defaultMonth={initialDate}
-                modifiers={{
-                  event: datedEvents
-                    .map((event) => event.parsedDate)
-                    .filter(Boolean) as Date[],
-                }}
-                modifiersClassNames={{
-                  event:
-                    "bg-primary/15 text-primary font-bold hover:bg-primary hover:text-primary-foreground",
-                }}
-                className="mx-auto"
-                classNames={{
-                  months: "flex justify-center",
-                  month: "w-full max-w-[320px] space-y-5",
-                  caption_label: "text-base font-semibold text-foreground",
-                  head_cell: "w-10 text-xs font-semibold text-muted-foreground",
-                  cell: "h-10 w-10 text-center text-sm p-0 relative",
-                  day: "h-10 w-10 rounded-md p-0 font-medium hover:bg-accent hover:text-accent-foreground",
-                  day_selected:
-                    "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground",
-                  day_today: "bg-accent text-accent-foreground font-bold",
-                }}
-              />
-
-              <div className="mt-6 border-t border-border pt-5">
-                <h2 className="font-display text-lg font-bold text-foreground">
-                  Selected Date
-                </h2>
-
-                <div className="mt-3 space-y-3">
-                  {selectedEvents.length > 0 ? (
-                    selectedEvents.map((event) => (
-                      <div key={event.id} className="rounded-lg bg-muted/50 p-4">
-                        <p className="font-semibold text-foreground">{event.title}</p>
-                        <p className="mt-1 text-sm text-muted-foreground">
-                          {event.time} · {event.location}
-                        </p>
-                      </div>
-                    ))
-                  ) : (
-                    <p className="text-sm text-muted-foreground">
-                      No scheduled event for this date.
-                    </p>
-                  )}
-                </div>
-              </div>
-            </aside>
-
+          <div className="container">
             <div className="space-y-12">
               {/* Upcoming Events */}
               <div>
