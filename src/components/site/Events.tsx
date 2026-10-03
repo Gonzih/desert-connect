@@ -4,14 +4,14 @@ import { Button } from "@/components/ui/button";
 
 const events = [
   {
-    type: "METAWEB COURSE",
+    type: "Internet Society Nevada Chapter - Member Monthly",
     title: "Sessions",
-    date: "Self-directed",
-    time: null,
+    date: "October 19",
+    time: 06:00pm pst,
     location: "Virtual (Zoom)",
     icon: Video,
     cta: "Register",
-    ctaHref: "https://course.metawebbook.com/",
+    ctaHref: "https://us02web.zoom.us/j/9095338218?omn=89017851501",
   },
   {
     type: "2026 Global Encryption Day",
