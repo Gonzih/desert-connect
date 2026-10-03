@@ -64,10 +64,6 @@ export const Hero = () => {
               ))}
             </dl>
           </div>
-
-          </div>
-        </div>
-      </div>
     </section>
   );
 };
