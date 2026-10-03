@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { calendarEvents } from "@/data/events";
+import flyerImage from "@/assets/3.jpg";
 
 const parseEventDate = (date: string | null) => {
   if (!date) return null;
@@ -59,6 +60,32 @@ const CalendarPage = () => {
 
         <section className="py-12 md:py-16">
           <div className="container">
+            <div className="mb-12">
+              <a
+                href="https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event"
+                target="_blank"
+                rel="noreferrer"
+                className="block"
+              >
+                <img
+                  src={flyerImage}
+                  alt="Global Encryption Day Special Event Flyer"
+                  className="mx-auto max-w-2xl w-full rounded-xl shadow-elegant object-contain"
+                />
+              </a>
+              <div className="mt-4 text-center">
+                <Button variant="hero" asChild>
+                  <a
+                    href="https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Join Virtually <ArrowUpRight className="ml-1 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            </div>
+
             <div className="space-y-12">
               {/* Upcoming Events */}
               <div>
