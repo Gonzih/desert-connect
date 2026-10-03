@@ -7,7 +7,7 @@ const events = [
     type: "Internet Society Nevada Chapter - Member Monthly",
     title: "Sessions",
     date: "October 19",
-    time: 06:00pm pst,
+    time: "06:00 pm pst",
     location: "Virtual (Zoom)",
     icon: Video,
     cta: "Register",
