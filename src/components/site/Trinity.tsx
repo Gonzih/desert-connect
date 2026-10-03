@@ -2,6 +2,7 @@ import { Users, Target, Compass, ArrowUpRight } from "lucide-react";
 import { InactiveLink } from "@/components/InactiveLink";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
+import featureImg from "@/assets/2 (1).jpg";
 
 const pillars = [
   {
@@ -44,6 +45,45 @@ export const Trinity = () => {
           <p className="mt-4 text-muted-foreground leading-relaxed">
             Three commitments anchor everything we do as the Nevada chapter of the Internet Society.
           </p>
+        </div>
+
+        <div className="mt-12 overflow-hidden rounded-[28px] border border-border bg-white/80 shadow-card">
+          <div className="flex flex-col md:flex-row">
+            <div className="md:w-[28rem] shrink-0 overflow-hidden bg-slate-950">
+              <img
+                src={featureImg}
+                alt="Nevada chapter sponsor banner"
+                className="h-full w-full object-cover md:min-h-[220px]"
+              />
+            </div>
+
+            <div className="flex flex-1 flex-col justify-center bg-[#eef1f2] p-6 md:p-10">
+              <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                    Supporters
+                  </p>
+                  <h3 className="mt-2 font-display text-3xl font-bold text-foreground md:text-4xl">
+                    Thank you to our <span className="text-primary">Sponsors</span>
+                  </h3>
+                </div>
+                <div className="rounded-full border border-primary/20 bg-primary/5 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  Nevada Chapter
+                </div>
+              </div>
+
+              <p className="mt-5 text-base text-muted-foreground">
+                Community-led support for resilient, trustworthy, and accessible digital infrastructure.
+              </p>
+
+              <div className="mt-6 flex flex-wrap items-center gap-4 text-sm text-foreground/80">
+                <span className="rounded-md bg-white px-3 py-2 shadow-sm">University of Nevada, Reno</span>
+                <span className="rounded-md bg-white px-3 py-2 shadow-sm">ISOC Nevada</span>
+                <span className="rounded-md bg-white px-3 py-2 shadow-sm">IEEE</span>
+                <span className="rounded-md bg-white px-3 py-2 shadow-sm">swe</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
