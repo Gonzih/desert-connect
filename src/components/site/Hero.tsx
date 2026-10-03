@@ -2,6 +2,7 @@ import { ArrowRight, ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import heroImg from "@/assets/hero-nevada.jpg";
+import featureImg from "@/assets/2 (1).jpg";
 
 export const Hero = () => {
   return (
@@ -64,6 +65,16 @@ export const Hero = () => {
               ))}
             </dl>
           </div>
+
+          <div className="hidden lg:flex items-center justify-center">
+            <img
+              src={featureImg}
+              alt="Desert Connect initiative visual"
+              className="w-full h-auto rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.25)] object-contain"
+            />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
