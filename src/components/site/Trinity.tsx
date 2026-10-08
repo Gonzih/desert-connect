@@ -3,7 +3,7 @@ import { InactiveLink } from "@/components/InactiveLink";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
 import featureImg from "@/assets/ISOC NV Global Encryption Days Oct 20-21, 2026(1).jpg";
-
+import GED from "@/assets/3.jpg";
 const pillars = [
   {
     icon: Users,
@@ -90,7 +90,13 @@ export const Trinity = () => {
             </div>
           </div>
         </div>
-
+      <div>
+        <img 
+          source={GED}
+        alt="Nevada chapter sponsor banner"
+        className="h-full w-full object-cover md:min-h-[80px] hover:opacity-90 transition-opacity"
+              />
+          </div>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {pillars.map((p) => (
             <article
