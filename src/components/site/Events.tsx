@@ -21,7 +21,7 @@ const events = [
     location: "Carson City, Virtual",
     icon: Video,
     cta: "Register",
-    ctaHref: "https://discord.com/events/1499228235186311262/1547807714162515998",
+    ctaHref: "https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event",
   },
 ];
 
