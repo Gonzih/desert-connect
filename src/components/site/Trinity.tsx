@@ -90,12 +90,12 @@ export const Trinity = () => {
             </div>
           </div>
         </div>
-      <div>
-        <img 
-          source={GED}
-        alt="Nevada chapter sponsor banner"
-        className="h-full w-full object-cover md:min-h-[80px] hover:opacity-90 transition-opacity"
-              />
+          <div>
+            <img 
+            source={GED}
+            alt="Nevada chapter sponsor banner"
+            className="h-full w-full object-cover md:min-h-[80px] hover:opacity-90 transition-opacity"
+             />
           </div>
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {pillars.map((p) => (
