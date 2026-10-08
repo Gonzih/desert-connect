@@ -26,7 +26,7 @@ export const calendarEvents = [
     time: "4:00 PM Reception - 5:00 PM Quantum Era - 6:00 PM Ira Viktor",
     location: "Innevation, Reno, NV & Virtual",
     description: "What is the future of data privacy? Join us as we welcome Jessica Velez, a leader on the cutting edge of quantum encryption technologies, explains the future of cyber security.Se[...]",
-    rsvpUrl: "https://discord.com/events/1499228235186311262/1547807714162515998",
+    rsvpUrl: "https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event",
   },
   {
     id: "Oct-session",
