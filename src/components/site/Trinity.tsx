@@ -3,7 +3,6 @@ import { InactiveLink } from "@/components/InactiveLink";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
 import featureImg from "@/assets/ISOC NV Global Encryption Days Oct 20-21, 2026(1).jpg";
-import GED from "@/assets/3.jpg";
 
 const pillars = [
   {
