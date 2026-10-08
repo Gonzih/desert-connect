@@ -2,7 +2,7 @@ import { Users, Target, Compass, ArrowUpRight } from "lucide-react";
 import { InactiveLink } from "@/components/InactiveLink";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
-import featureImg from "@/assets/2 (1).jpg";
+import featureImg from "@/assets/ISOC NV Global Encryption Days Oct 20-21, 2026(1).jpg";
 
 const pillars = [
   {
