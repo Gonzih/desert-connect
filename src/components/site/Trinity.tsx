@@ -91,19 +91,7 @@ export const Trinity = () => {
             </div>
           </div>
         </div>
-        <a
-          href="https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event"
-          target="_blank"
-          rel="noreferrer"
-          className="mt-8 block overflow-hidden rounded-xl shadow-card hover:shadow-elegant transition-smooth"
-        >
-        <img
-          src={GED}
-          alt="Global Encryption Day 2026 flyer"
-          className="w-full h-auto object-contain hover:opacity-90 transition-opacity"
-        />
-      </a>
-
+        
         <div className="mt-14 grid gap-6 md:grid-cols-3">
           {pillars.map((p) => (
             <article
