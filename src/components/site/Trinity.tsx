@@ -49,13 +49,18 @@ export const Trinity = () => {
 
         <div className="mt-12 overflow-hidden rounded-[28px] border border-border bg-white/80 shadow-card">
           <div className="flex flex-col md:flex-row">
-            <div className="md:w-[28rem] shrink-0 overflow-hidden bg-slate-950">
+            <a
+              href="https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event"
+              target="_blank"
+              rel="noreferrer"
+              className="md:w-[28rem] shrink-0 overflow-hidden bg-slate-950 block"
+            >
               <img
                 src={featureImg}
                 alt="Nevada chapter sponsor banner"
-                className="h-full w-full object-cover md:min-h-[220px]"
+                className="h-full w-full object-cover md:min-h-[220px] hover:opacity-90 transition-opacity"
               />
-            </div>
+            </a>
 
             <div className="flex flex-1 flex-col justify-center bg-[#eef1f2] p-6 md:p-10">
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
