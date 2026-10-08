@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { calendarEvents } from "@/data/events";
-import flyerImage from "@/assets/3.jpg";
+import flyerImage from "@/assets/ISOC NV Global Encryption Days Oct 20-21, 2026(1).jpg";
 
 const parseEventDate = (date: string | null) => {
   if (!date) return null;
