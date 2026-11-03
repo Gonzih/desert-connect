@@ -6,7 +6,7 @@ const events = [
   {
     type: "Internet Society Nevada Chapter - Member Monthly",
     title: "Sessions",
-    date: "October 19",
+    date: "November 16",
     time: "06:00 pm pst",
     location: "Virtual (Zoom)",
     icon: Video,
@@ -14,14 +14,14 @@ const events = [
     ctaHref: "https://us02web.zoom.us/j/9095338218?omn=89017851501",
   },
   {
-    type: "2026 Global Encryption Day",
-    title: "Securing the Internet for the Quantum Era: An Introduction to Post-Quantum Cryptography with Jessica",
-    date: "Oct 21, 2026",
-    time: "6:00 - 8:00 PM PT",
-    location: "Carson City, Virtual",
+    type: "Digital Literacy",
+    title: "Cyber Safe Shopping Online for Seniors",
+    date: "Nov 21, 2026",
+    time: "10:00 - 11:30:00 AM PT",
+    location: "Virtual",
     icon: Video,
     cta: "Register",
-    ctaHref: "https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event",
+    ctaHref: "",
   },
 ];
 
