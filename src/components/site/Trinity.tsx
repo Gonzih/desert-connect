@@ -2,7 +2,7 @@ import { Users, Target, Compass, ArrowUpRight } from "lucide-react";
 import { InactiveLink } from "@/components/InactiveLink";
 import { cn } from "@/lib/utils";
 import { inactiveLinkClassName } from "@/lib/navigation";
-import featureImg from "@/assets/ISOC NV Global Encryption Days Oct 20-21, 2026(1).jpg";
+import featureImg from "@/assets/ISOC_NV_Nov_FS.png";
 
 const pillars = [
   {
@@ -85,7 +85,7 @@ export const Trinity = () => {
                 <span className="rounded-md bg-white px-3 py-2 shadow-sm">University of Nevada, Reno</span>
                 <span className="rounded-md bg-white px-3 py-2 shadow-sm">ISOC Nevada</span>
                 <span className="rounded-md bg-white px-3 py-2 shadow-sm">IEEE</span>
-                <span className="rounded-md bg-white px-3 py-2 shadow-sm">swe</span>
+                <span className="rounded-md bg-white px-3 py-2 shadow-sm">WiCy's U of A chapter</span>
               </div>
             </div>
           </div>
