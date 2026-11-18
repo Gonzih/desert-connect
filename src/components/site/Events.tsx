@@ -21,7 +21,7 @@ const events = [
     location: "Virtual",
     icon: Video,
     cta: "Register",
-    ctaHref: "",
+    ctaHref: "https://luma.com/u3dlmdox",
   },
 ];
 
