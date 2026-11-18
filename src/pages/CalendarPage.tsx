@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { calendarEvents } from "@/data/events";
-import flyerImage from "@/assets/Cyber%20Shopping%20Awareness%20Fireside%20Chat.png";
+import flyerImage from "@/assets/Cyber Shopping Awareness Fireside Chat.png";
 
 const parseEventDate = (date: string | null) => {
   if (!date) return null;
@@ -62,21 +62,21 @@ const CalendarPage = () => {
           <div className="container">
             <div className="mb-12">
               <a
-                href="https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event"
+                href="https://luma.com/u3dlmdoxt"
                 target="_blank"
                 rel="noreferrer"
                 className="block"
               >
                 <img
                   src={flyerImage}
-                  alt="Global Encryption Day Special Event Flyer"
+                  alt="Special Event Flyer"
                   className="mx-auto max-w-2xl w-full rounded-xl shadow-elegant object-contain"
                 />
               </a>
               <div className="mt-4 text-center">
                 <Button variant="hero" asChild>
                   <a
-                    href="https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event"
+                    href="https://luma.com/u3dlmdox"
                     target="_blank"
                     rel="noreferrer"
                   >
