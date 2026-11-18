@@ -50,7 +50,7 @@ export const Trinity = () => {
         <div className="mt-12 overflow-hidden rounded-[28px] border border-border bg-white/80 shadow-card">
           <div className="flex flex-col md:flex-row">
             <a
-              href="https://www.zeffy.com/en-US/ticketing/global-encryption-day-special-event"
+              href="https://luma.com/u3dlmdox"
               target="_blank"
               rel="noreferrer"
               className="md:w-[28rem] shrink-0 overflow-hidden bg-slate-950 block"
